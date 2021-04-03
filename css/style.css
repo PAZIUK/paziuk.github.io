@@ -112,7 +112,7 @@ header{
   visibility: hidden;
   transition: all 0.8s ease 0s;
   padding: 0;
-  border-radius: 0 0 10px 10px
+  border-radius: 0 0 0 10px
 }
 .toggleMenu ul li{
   list-style: none;
