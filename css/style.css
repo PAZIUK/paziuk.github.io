@@ -11,10 +11,10 @@ body{
   margin: 0px;
   overflow-x: hidden;
   overflow-y: scroll;
-  min-width: 1150px;
   display: flex;
   flex-direction: column;
   font-family: var(--f-f);
+  box-sizing: border-box;
 }
 h1,h2,h3,h4,h5,h6{
   color: white;
@@ -34,15 +34,15 @@ header{
 .logo{
   flex:1;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: flex-end;
 }
 .logo a img{
   border-radius: 50px;
   width: 40px;
 }
 .nav{
-  flex:6;
+  flex:10;
   padding: auto 1%;
 }
 .nav ul {
@@ -76,22 +76,31 @@ header{
   border-top: 3px solid #ff2e63;
   transition: all 0.5s;
 }
-.mobile-bar{
+#mobile-bar{
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 0.5em 1em;
-  border-radius: 10px;
-  border: 3px solid white;
   display: none;
   margin: 1%;
+  transition: all .8s;
+  border-radius: 10px;
 }
-.mobile-bar span{
+#mobile-bar span{
   display: block;
   height: 3px;
   width: 20px;
+  border-radius: 10px;
   margin: 2px auto;
-  background-color: white;
+  background-color: #ff2e63;
+}
+#mobile-bar:hover, #mobile-bar:active{
+  background-color: #fff;
+  opacity: .8;
+}
+#mobile-bar::hover, #mobile-bar::active{
+  background-color: #fff;
+  opacity: .8;
 }
 
 
@@ -160,7 +169,7 @@ main.wrapper{
   flex: 1 1 auto;
 }
 .project_desc .title{
-  font-size: 1.1em;
+  font-size: 1.5em;
   color: black;
   display: flex;
   justify-content: center;
@@ -224,7 +233,6 @@ main.wrapper{
   transition: all 2s;
   display: flex;
   margin-top: 2.5%;
-  margin-bottom: 2.5%;
   background-color: #fff;
   padding: 1.5%;
   font-size: 1.5em;
@@ -275,8 +283,171 @@ footer{
 
 
 
-
-
+@media(max-width: 320px){
+  main.wrapper{
+    margin: 0;
+  }
+  .projects{
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .project_box{
+    max-width: 300px;
+    padding: 2%;
+  }
+  .logo{
+    justify-content: flex-start;
+    padding: 1%;
+  }
+  .project_photo{
+    overflow: hidden;
+  }
+  nav.nav{
+    display: none;
+  }
+  #mobile-bar{
+    display: flex;
+  }
+  .about{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .study{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .tel-mail{
+    flex-direction: column;
+  }
+  .contacts ul.social-media li a img{
+    width: 50px;
+  }
+  .contacts .tel-mail p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .8em;
+    font-weight: bold;
+  }
+  .contacts .tel-mail {
+    margin-bottom: 2.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media(min-width: 320px) and (max-width: 767px){
+  main.wrapper{
+    margin: 0;
+  }
+  .project_box{
+    width: 300px;
+    padding: 2%;
+  }
+  .projects{
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .logo{
+    justify-content: flex-start;
+    padding: 1%;
+  }
+  .project_photo{
+    overflow: hidden;
+  }
+  nav.nav{
+    display: none;
+  }
+  #mobile-bar{
+    display: flex;
+  }
+  .about{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .study{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .tel-mail{
+    flex-direction: column;
+  }
+  .contacts ul.social-media li a img{
+    width: 50px;
+  }
+  .contacts .tel-mail p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    font-weight: bold;
+  }
+  .contacts .tel-mail {
+    margin-bottom: 2.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .logo{
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media(min-width: 481px) and (max-width: 767px){
+  nav.nav{
+    display: flex;
+  }
+  #mobile-bar{
+    display: none;
+  }
+  .logo{
+    justify-content: flex-start;
+    padding: 1%;
+  }
+}
+@media(min-width: 768px) and (max-width: 1024px){
+  .project_photo{
+    overflow: hidden;
+  }
+  .contacts .tel-mail p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
+  }
+  main.wrapper{
+    margin: 0;
+  }
+  .project_photo{
+    overflow: hidden;
+  }
+  .tel-mail{
+    flex-direction: column;
+  }
+  .contacts ul.social-media li a img{
+    width: 50px;
+  }
+  .contacts .tel-mail {
+    margin-bottom: 2.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media(min-width: 1024px){
+  .contacts .tel-mail p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6em;
+    font-weight: bold;
+  }
+}
 
 
 
