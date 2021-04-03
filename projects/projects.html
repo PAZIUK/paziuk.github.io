@@ -2,20 +2,18 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=1150">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>Serhiy Paziuk</title>
-	<link rel="stylesheet" href="../css/style.css">
-	<link rel="stylesheet" href="../css/popup.css">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/popup.css">
 
-	<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
-	<link rel="shortcut icon" href="../img/favicon-32x32.png" type="image/png">
-	<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-	<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
-	<link rel="manifest" href="../img/site.webmanifest">
-	<link rel="mask-icon" href="../img/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+	<link rel="manifest" href="/img/site.webmanifest">
+	<link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#5bbad5">
 	<meta name="msapplication-TileColor" content="#9f00a7">
-	<meta name="msapplication-TileImage" content="../img/mstile-144x144.png">
+	<meta name="msapplication-TileImage" content="/img/mstile-144x144.png">
 	<meta name="theme-color" content="#ffffff">
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -33,9 +31,9 @@
 		}
 	</style>
 	<header>
-		<div class="header" tabindex="1" id="top">
+		<div class="header" tabindex="1">
 			<div class="logo">
-				<a href="/"><img src="../img/logo.png" alt="Logo"></a>
+				<a href="/"><img src="/img/logo.png" alt="Logo"></a>
 			</div>
 			<nav class="nav">
 		        <ul>
@@ -43,10 +41,9 @@
 		          <li><a href="/#about">ABOUT ME</a></li>
 		          <li><a href="/#study">STUDY</a></li>
 		          <li><a href="/#contacts">CONTACTS</a></li>
-		          <li><a href="#bottom" class="big">&#129095;</a></li>
 		        </ul>
 		    </nav>
-		    <div class="mobile-bar">
+		    <div class="mobile-bar" onclick="toggle();">
 					<span></span>
 					<span></span>
 					<span></span>
@@ -54,19 +51,28 @@
 		</div>
 	</header>
 	<main class="wrapper">
-		<h1>All My Projects (<span id="allProjects"></span>)</h1>
+		
+		<div class="toggleMenu">
+			<ul>
+	          <li><a href="#projects">ALL PROJETCS</a></li>
+	          <li><a href="/#about">ABOUT ME</a></li>
+	          <li><a href="/#study">STUDY</a></li>
+	          <li><a href="/#contacts">CONTACTS</a></li>
+	        </ul>
+		</div>
+		<h1>All My Projects ( <span id="allProjects"></span> )</h1>
 		<div class="projects" id="projects">
 			<div class="project_box">
 				<div class="project_photo">
 					<a href="#iamhealth" class="popup-link">
-						<img src="../img/project/iamhealth/1.jpg" alt="Project Photo">
-						<img src="../img/project/iamhealth/2.jpg" alt="Project Photo">
-						<img src="../img/project/iamhealth/3.jpg" alt="Project Photo">
-						<img src="../img/project/iamhealth/4.jpg" alt="Project Photo">
-						<img src="../img/project/iamhealth/5.jpg" alt="Project Photo">
-						<img src="../img/project/iamhealth/6.jpg" alt="Project Photo">
-						<img src="../img/project/iamhealth/7.jpg" alt="Project Photo">
-						<img src="../img/project/iamhealth/8.jpg" alt="Project Photo">
+						<img src="/img/project/iamhealth/1.jpg" alt="Project Photo">
+						<img src="/img/project/iamhealth/2.jpg" alt="Project Photo">
+						<img src="/img/project/iamhealth/3.jpg" alt="Project Photo">
+						<img src="/img/project/iamhealth/4.jpg" alt="Project Photo">
+						<img src="/img/project/iamhealth/5.jpg" alt="Project Photo">
+						<img src="/img/project/iamhealth/6.jpg" alt="Project Photo">
+						<img src="/img/project/iamhealth/7.jpg" alt="Project Photo">
+						<img src="/img/project/iamhealth/8.jpg" alt="Project Photo">
 					</a>
 				</div>
 				<div class="project_desc">
@@ -79,12 +85,12 @@
 			<div class="project_box">
 				<div class="project_photo">
 					<a href="#mypizza" class="popup-link">
-						<img src="../img/project/mypizza/1.jpg" alt="Project Photo">
-						<img src="../img/project/mypizza/2.jpg" alt="Project Photo">
-						<img src="../img/project/mypizza/3.jpg" alt="Project Photo">
-						<img src="../img/project/mypizza/4.jpg" alt="Project Photo">
-						<img src="../img/project/mypizza/5.jpg" alt="Project Photo">
-						<img src="../img/project/mypizza/6.jpg" alt="Project Photo">
+						<img src="/img/project/mypizza/1.jpg" alt="Project Photo">
+						<img src="/img/project/mypizza/2.jpg" alt="Project Photo">
+						<img src="/img/project/mypizza/3.jpg" alt="Project Photo">
+						<img src="/img/project/mypizza/4.jpg" alt="Project Photo">
+						<img src="/img/project/mypizza/5.jpg" alt="Project Photo">
+						<img src="/img/project/mypizza/6.jpg" alt="Project Photo">
 					</a>
 				</div>
 				<div class="project_desc">
@@ -97,12 +103,12 @@
 			<div class="project_box">
 				<div class="project_photo">
 					<a href="#dilemaclothes" class="popup-link">
-						<img src="../img/project/dilemaclothes/1.jpg" alt="Project Photo">
-						<img src="../img/project/dilemaclothes/2.jpg" alt="Project Photo">
-						<img src="../img/project/dilemaclothes/3.jpg" alt="Project Photo">
-						<img src="../img/project/dilemaclothes/4.jpg" alt="Project Photo">
-						<img src="../img/project/dilemaclothes/5.jpg" alt="Project Photo">
-						<img src="../img/project/dilemaclothes/6.jpg" alt="Project Photo">
+						<img src="/img/project/dilemaclothes/1.jpg" alt="Project Photo">
+						<img src="/img/project/dilemaclothes/2.jpg" alt="Project Photo">
+						<img src="/img/project/dilemaclothes/3.jpg" alt="Project Photo">
+						<img src="/img/project/dilemaclothes/4.jpg" alt="Project Photo">
+						<img src="/img/project/dilemaclothes/5.jpg" alt="Project Photo">
+						<img src="/img/project/dilemaclothes/6.jpg" alt="Project Photo">
 					</a>
 				</div>
 				<div class="project_desc">
@@ -115,10 +121,10 @@
 			<div class="project_box">
 				<div class="project_photo">
 					<a href="#ilikethiscars" class="popup-link">
-						<img src="../img/project/ilikethiscars/1.jpg" alt="Project Photo">
-						<img src="../img/project/ilikethiscars/2.jpg" alt="Project Photo">
-						<img src="../img/project/ilikethiscars/3.jpg" alt="Project Photo">
-						<img src="../img/project/ilikethiscars/4.jpg" alt="Project Photo">
+						<img src="/img/project/ilikethiscars/1.jpg" alt="Project Photo">
+						<img src="/img/project/ilikethiscars/2.jpg" alt="Project Photo">
+						<img src="/img/project/ilikethiscars/3.jpg" alt="Project Photo">
+						<img src="/img/project/ilikethiscars/4.jpg" alt="Project Photo">
 					</a>
 				</div>
 				<div class="project_desc">
@@ -133,7 +139,7 @@
 	<footer>
 		<div class="footer" tabindex="3" id="bottom">
 			<div class="logo">
-				<a href="/"><img src="../img/logo.png" alt="Logo"></a>
+				<a href="/"><img src="/img/logo.png" alt="Logo"></a>
 			</div>
 			<nav class="nav">
 		        <ul>
@@ -168,14 +174,14 @@
 				<a href="#" class="popup_close close-popup">X</a>
 				<div class="popup_title">HealthOfHealth</div>
 				<div class="popup_photo">
-					<img src="../img/project/iamhealth/1.jpg" alt="Project Photo">
-					<img src="../img/project/iamhealth/2.jpg" alt="Project Photo">
-					<img src="../img/project/iamhealth/3.jpg" alt="Project Photo">
-					<img src="../img/project/iamhealth/4.jpg" alt="Project Photo">
-					<img src="../img/project/iamhealth/5.jpg" alt="Project Photo">
-					<img src="../img/project/iamhealth/6.jpg" alt="Project Photo">
-					<img src="../img/project/iamhealth/7.jpg" alt="Project Photo">
-					<img src="../img/project/iamhealth/8.jpg" alt="Project Photo">
+					<img src="/img/project/iamhealth/1.jpg" alt="Project Photo">
+					<img src="/img/project/iamhealth/2.jpg" alt="Project Photo">
+					<img src="/img/project/iamhealth/3.jpg" alt="Project Photo">
+					<img src="/img/project/iamhealth/4.jpg" alt="Project Photo">
+					<img src="/img/project/iamhealth/5.jpg" alt="Project Photo">
+					<img src="/img/project/iamhealth/6.jpg" alt="Project Photo">
+					<img src="/img/project/iamhealth/7.jpg" alt="Project Photo">
+					<img src="/img/project/iamhealth/8.jpg" alt="Project Photo">
 				</div>
 				<a href="projects/iamhealth/iamhealth.html" class="btn popup-btn">View all project</a>
 			</div>
@@ -187,12 +193,12 @@
 				<a href="#" class="popup_close close-popup">X</a>
 				<div class="popup_title">myPizza</div>
 				<div class="popup_photo">
-					<img src="../img/project/mypizza/1.jpg" alt="Project Photo">
-					<img src="../img/project/mypizza/2.jpg" alt="Project Photo">
-					<img src="../img/project/mypizza/3.jpg" alt="Project Photo">
-					<img src="../img/project/mypizza/4.jpg" alt="Project Photo">
-					<img src="../img/project/mypizza/5.jpg" alt="Project Photo">
-					<img src="../img/project/mypizza/6.jpg" alt="Project Photo">
+					<img src="/img/project/mypizza/1.jpg" alt="Project Photo">
+					<img src="/img/project/mypizza/2.jpg" alt="Project Photo">
+					<img src="/img/project/mypizza/3.jpg" alt="Project Photo">
+					<img src="/img/project/mypizza/4.jpg" alt="Project Photo">
+					<img src="/img/project/mypizza/5.jpg" alt="Project Photo">
+					<img src="/img/project/mypizza/6.jpg" alt="Project Photo">
 				</div>
 				<a href="projects/mypizza/mypizza.html" class="btn popup-btn">View all project</a>
 			</div>
@@ -204,12 +210,12 @@
 				<a href="#" class="popup_close close-popup">X</a>
 				<div class="popup_title">DiLeMaClothes</div>
 				<div class="popup_photo">
-					<img src="../img/project/dilemaclothes/1.jpg" alt="Project Photo">
-					<img src="../img/project/dilemaclothes/2.jpg" alt="Project Photo">
-					<img src="../img/project/dilemaclothes/3.jpg" alt="Project Photo">
-					<img src="../img/project/dilemaclothes/4.jpg" alt="Project Photo">
-					<img src="../img/project/dilemaclothes/5.jpg" alt="Project Photo">
-					<img src="../img/project/dilemaclothes/6.jpg" alt="Project Photo">
+					<img src="/img/project/dilemaclothes/1.jpg" alt="Project Photo">
+					<img src="/img/project/dilemaclothes/2.jpg" alt="Project Photo">
+					<img src="/img/project/dilemaclothes/3.jpg" alt="Project Photo">
+					<img src="/img/project/dilemaclothes/4.jpg" alt="Project Photo">
+					<img src="/img/project/dilemaclothes/5.jpg" alt="Project Photo">
+					<img src="/img/project/dilemaclothes/6.jpg" alt="Project Photo">
 				</div>
 				<a href="projects/dilemaclothes/dilemaclothes.html" class="btn popup-btn">View all project</a>
 			</div>
@@ -221,10 +227,10 @@
 				<a href="#" class="popup_close close-popup">X</a>
 				<div class="popup_title">ILikeThisCars</div>
 				<div class="popup_photo">
-					<img src="../img/project/ilikethiscars/1.jpg" alt="Project Photo">
-					<img src="../img/project/ilikethiscars/2.jpg" alt="Project Photo">
-					<img src="../img/project/ilikethiscars/3.jpg" alt="Project Photo">
-					<img src="../img/project/ilikethiscars/4.jpg" alt="Project Photo">
+					<img src="/img/project/ilikethiscars/1.jpg" alt="Project Photo">
+					<img src="/img/project/ilikethiscars/2.jpg" alt="Project Photo">
+					<img src="/img/project/ilikethiscars/3.jpg" alt="Project Photo">
+					<img src="/img/project/ilikethiscars/4.jpg" alt="Project Photo">
 				</div>
 				<a href="projects/ilikethiscars/ilikethiscars.html" class="btn popup-btn">View all project</a>
 			</div>
@@ -234,7 +240,7 @@
 
 	
 
-	<script src="../js/popup.js"></script>
-	<script src="../js/js.js"></script>
+	<script src="/js/popup.js"></script>
+	<script src="/js/js.js"></script>
 </body>
 </html>
