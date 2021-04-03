@@ -81,7 +81,7 @@ header{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1em;
+  padding: .8%;
   opacity: 0;
   visibility: hidden;
   margin: 1%;
