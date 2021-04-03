@@ -44,6 +44,7 @@
 	font-size: 2em;
 	margin: 0px 0px .2em 0px;
 	font-weight: bold;
+	letter-spacing: 3px;
 }
 .popup_photo{
 	max-height: 70vh;
