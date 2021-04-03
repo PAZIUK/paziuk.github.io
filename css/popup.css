@@ -17,6 +17,7 @@
 }
 .popup_content{
 	background-color: #fff;
+	border-radius: 10px;
 	color: #000;
 	width: 780px; 
 	padding: 1em;
@@ -25,7 +26,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	max-height: 580px; 
+	height: 580px; 
 	transition: all 0.8s ease 0s;
 	opacity: 0;
 	transform: translate(0px, -100%);
@@ -53,6 +54,7 @@
 	width: 100%;
 }
 .popup-btn{
+	margin: 1%;
 	padding: 1%;
 	letter-spacing: 1px;
 }
@@ -69,4 +71,18 @@
 
 body.lock{
 	overflow: hidden;
+}
+
+@media(min-height: 400px){
+	.popup_content{
+		height: 1400px;
+	}
+	.popup_photo{
+		max-height: 1200px;
+	}
+	.popup-btn{
+		letter-spacing: 2px;
+		font-weight: bold;
+		font-size: 2em;
+	}
 }
