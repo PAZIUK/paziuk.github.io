@@ -368,6 +368,7 @@ footer .logo img{
   .mobile-bar{
     opacity: 1;
     visibility: visible;
+    padding: 4%;
   }
   .about{
     flex-direction: column;
@@ -424,6 +425,7 @@ footer .logo img{
   .mobile-bar{
     opacity: 1;
     visibility: visible;
+    padding: 4%;
   }
   .about{
     flex-direction: column;
@@ -464,8 +466,9 @@ footer .logo img{
     display: flex;
   }
   .mobile-bar{
-    opacity: 0;
-    visibility: hidden;
+    opacity: 1;
+    visibility: visible;
+    padding: 4%;
   }
   .toggleMenu{
     display: none;
