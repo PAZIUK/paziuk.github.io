@@ -8,3 +8,8 @@ for (let i = 0; i != num2; i++) {
 	allProjects.innerHTML = num1;
 	allProjects.style.color = "red";
 };
+
+function toggle() {
+	document.querySelector('.toggleMenu').classList.toggle('active');
+	document.querySelector('.mobile-bar').classList.toggle('active');
+}
