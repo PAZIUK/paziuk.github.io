@@ -8,8 +8,8 @@
 	<link rel="stylesheet" href="css/popup.css">
 
 	<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-        <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/png"> 
-	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    	<link rel="shortcut icon" href="img/favicon-32x32.png" type="image/png"> 
+    	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"> 
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
 	<link rel="manifest" href="img/site.webmanifest">
@@ -39,7 +39,7 @@
 		          <li><a href="#contacts">CONTACTS</a></li>
 		        </ul>
 		    </nav>
-		    <div id="mobile-bar">
+		    <div class="mobile-bar" onclick="toggle();">
 					<span></span>
 					<span></span>
 					<span></span>
@@ -48,6 +48,14 @@
 	</header>
 	<main class="wrapper">
 		
+		<div class="toggleMenu">
+				<ul>
+		          <li><a href="projects/projects.html">ALL PROJETCS</a></li>
+		          <li><a href="#about">ABOUT ME</a></li>
+		          <li><a href="#study">STUDY</a></li>
+		          <li><a href="#contacts">CONTACTS</a></li>
+		        </ul>
+			</div>
 		<h1>Last Projects</h1>
 		<div class="projects" id="projects">
 			<div class="project_box">
@@ -202,14 +210,6 @@
 			<div class="logo">
 				<a href="/"><img src="img/logo.png" alt="Logo"></a>
 			</div>
-			<nav class="nav">
-		        <ul>
-		          <li><a href="projects/projects.html">ALL PROJETCS</a></li>
-		          <li><a href="#about">ABOUT ME</a></li>
-		          <li><a href="#study">STUDY</a></li>
-		          <li><a href="#contacts">CONTACTS</a></li>
-		        </ul>
-		    </nav>
 		</div>
 	</footer>
 
@@ -301,5 +301,6 @@
 	
 
 	<script src="js/popup.js"></script>
+	<script src="js/js.js"></script>
 </body>
 </html>
