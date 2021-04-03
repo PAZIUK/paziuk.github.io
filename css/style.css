@@ -95,7 +95,7 @@ header{
 }
 
 
-main{
+main.wrapper{
   max-width: 1150px;
   margin: 0px auto;
   min-height: 100%;
