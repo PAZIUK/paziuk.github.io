@@ -28,6 +28,8 @@
 	height: 580px; 
 	transition: all 0.8s ease 0s;
 	opacity: 0;
+	height: 90vh; 
+	width: 80vw;
 	transform: translate(0px, -100%);
 }
 .popup_close{
@@ -64,14 +66,10 @@
 .popup.open{
 	opacity: 1;
 	visibility: visible;
-	height: 90vh; 
-	width: 80vw;
 }
 .popup.open .popup_content{
 	transform: translate(0px,0px);
 	opacity: 1;
-	height: 90vh; 
-	width: 80vw;
 }
 
 body.lock{
