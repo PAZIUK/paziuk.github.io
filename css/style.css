@@ -323,7 +323,7 @@ main.wrapper{
 
 footer{
   background-color: #00adb5;
-  margin: 0px;
+  margin-top: auto;
 }
 .footer{
   max-width: 1150px;
