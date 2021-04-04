@@ -9,6 +9,7 @@
 
     <link rel="apple-touch-icon" sizes="76x76" href="img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
     <link rel="manifest" href="img/site.webmanifest">
     <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#2b5797">
@@ -39,7 +40,7 @@
             <input type="search" placeholder="Search">
             <button type="submit">SEARCH</button>
           </form>
-          <div class="mobile-bar">
+          <div class="mobile-bar" onclick="toggle();">
             <span></span>
             <span></span>
             <span></span>
@@ -61,25 +62,26 @@
               <input type="search" placeholder="Search">
               <button type="submit">SEARCH</button>
             </form>
-            <div class="mobile-bar">
+            <div class="mobile-bar" onclick="toggle();">
               <span></span>
               <span></span>
               <span></span>
             </div>
           </div>
         </div>
-        <ul class="menu">
-          <li><a href="#shop">SHOP</a></li>
-          <li><a href="#news">NEWS</a></li>
-          <li><a href="#be-health">FOR YOU</a></li>
-          <li><a href="#contacts">CONTACTS</a></li>
-        </ul>
       </div>
     </header>
 
     <main>
       <div class="wrapper">
-
+        <div class="toggleMenu">
+          <ul class="menu">
+            <li><a href="#shop">SHOP</a></li>
+            <li><a href="#news">NEWS</a></li>
+            <li><a href="#be-health">FOR YOU</a></li>
+            <li><a href="#contacts">CONTACTS</a></li>
+          </ul> 
+        </div>
         <section tabindex="2">
           <h1>ABOUT US</h1>
           <div class="info">
@@ -495,5 +497,7 @@
       </div>
     </footer>
     
+    <script src="js/js.js"></script>
+
   </body>
 </html>

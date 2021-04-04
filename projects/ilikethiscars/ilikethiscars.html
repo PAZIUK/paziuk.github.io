@@ -17,6 +17,7 @@
 
 		<!-- Link Favicon-->
 		<link rel="apple-touch-icon" sizes="76x76" href="img/apple-touch-icon.png">
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
 		<link rel="manifest" href="img/site.webmanifest">
@@ -56,10 +57,10 @@
 				<div class="search">
 					<form action="#">
 						<input type="search" placeholder="Search">
-						<button type="submit">Search</button>
+						<button type="submit"><img src="https://img.icons8.com/windows/32/ffffff/search-dollar.png"/></button>
 					</form>
 				</div>
-				<div class="mobile-bar">
+				<div class="mobile-bar"onclick="toggle();">
 					<span></span>
 					<span></span>
 					<span></span>
@@ -70,6 +71,26 @@
 		
 		<!-- Main part -->
 		<div class="wrapper">
+			<div class="toggleMenu">
+	        	<ul class="menu">
+					<li>
+						<a href="/">Main</a>
+					</li>
+					<li>
+						<a href="#">All our cars</a>
+					</li>
+					<li>
+						<a href="#">Price</a>
+					</li>
+					<li>
+						<a href="#">About us</a>
+					</li>
+				</ul>
+				<div class="search">
+					<input type="search" placeholder="Search">
+					<button type="submit"><img src="https://img.icons8.com/windows/32/ffffff/search-dollar.png"/></button>
+				</div>
+		     </div>
 			<aside>
 				<div class="title">
 					<p>Navigation</p>
@@ -285,6 +306,8 @@
 					</div>
 				</div>
 			</div>
+
+			<script src="js/js.js"></script>
 
 	</body>
 </html>

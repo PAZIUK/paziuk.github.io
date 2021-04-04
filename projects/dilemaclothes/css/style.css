@@ -112,9 +112,9 @@ h1,h2,h3,h4,h5,h6{
   justify-content: center;
   align-items: center;
   padding: 0.5em 1em;
-  display: none;
+  opacity: 0;
+  visibility: hidden;
   border-radius: 10px;
-  border: 2px solid #fa73ab;
   margin: 1%;
   transition: background-color .7s;
 }
@@ -122,14 +122,69 @@ h1,h2,h3,h4,h5,h6{
   display: block;
   height: 2px;
   width: 20px;
-  margin: 2px;
+  margin: .3em;
   background-color: black;
 }
-.mobile-bar:hover, .mobile-bar:active{
+.mobile-bar.active{
   background-color: #fa73ab;
 }
-.mobile-bar::hover, .mobile-bar::active{
-  background-color: #fa73ab;
+.mobile-bar.active span{
+  background-color: #fff;
+}
+.toggleMenu {
+  background-color: #fff;
+  border-top: 3px solid #fa73ab;
+  position: absolute;
+  top:0;
+  left:0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.8s ease 0s;
+  padding: 0;
+  border-radius: 0 0 10px 10px;
+  transform: translate(-100%, 0px);
+}
+.toggleMenu ul li{
+  list-style: none;
+  color: #000;
+  font-size: 1em;
+}
+.toggleMenu ul{
+  letter-spacing: 2px;
+  margin:0px;
+  list-style: none;
+  display: -webkit-flex; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 100vw;
+}
+.toggleMenu a {
+  padding: 1em;
+  color: #fff;
+  text-decoration: none;
+  border: 3px solid transparent;
+  transition: all .1s;
+  display: flex;
+  flex: 1 1 auto;
+}
+.toggleMenu a:hover, .toggleMenu a:active {
+  opacity: 1;
+  border-bottom: 3px solid #ff2e63;
+  transition: all 0.5s;
+}
+.toggleMenu a::hover, .toggleMenu a::active {
+  opacity: 1;
+  border-bottom: 3px solid #ff2e63;
+  border-top: 3px solid #ff2e63;
+  transition: all 0.5s;
+}
+.toggleMenu.active{
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0px,0px);
 }
 .banner{
   background-image: url(../img/banner.jpg);
@@ -139,6 +194,7 @@ h1,h2,h3,h4,h5,h6{
   background-position: center center;
   color: black;
   text-align: right;
+  position: relative;
 }
 .title{
   font-size: 3em;
@@ -309,7 +365,8 @@ footer{
     display: none;
   }
   .mobile-bar{
-    display: flex;
+    opacity: 1;
+    visibility: visible;
     max-width: 200px;
   }
   .mobile-bar span{

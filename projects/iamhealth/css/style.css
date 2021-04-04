@@ -38,6 +38,7 @@ header.header2{
 main .wrapper{
 	display: flex;
 	flex-direction: column;
+	position: relative;
 }
 .logo{
   	color: #fff;
@@ -117,28 +118,80 @@ ul.menu li a::hover, ul.menu li a::active{
 	cursor: pointer;
 }
 .mobile-bar{
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 0.5em 1em;
-	display: none;
-	border-radius: 10px;
-	border: 3px solid #ff3a00;
-	margin: 1%;
-	max-width: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  margin-right: 5%;
+  transition: all .8s;
+  border-radius: 10px;
 }
 .mobile-bar span{
-	display: block;
-	height: 2px;
-	width: 20px;
-	margin: 2px;
-	background-color: white;
-}
-.mobile-bar:hover, .mobile-bar:active{
+  display: block;
+  height: 3px;
+  width: 20px;
+  border-radius: 10px;
+  margin: 2px auto;
   background-color: #ff3a00;
 }
-.mobile-bar::hover, .mobile-bar::active{
-  background-color: #ff3a00;
+.mobile-bar.active{
+  transform: rotate(90deg);
+}
+.mobile-bar.active span{
+  background-color: #ff2e63;
+}
+.toggleMenu {
+  background-color: #275698;
+  border-top: 3px solid #ff2e63;
+  position: absolute;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.8s ease 0s;
+  padding: 0;
+  transform: translate(100%, 0px);
+}
+.toggleMenu ul.menu li{
+  list-style: none;
+  color: #000;
+  font-size: 1em;
+}
+.toggleMenu ul.menu{
+  letter-spacing: 2px;
+  margin:0px;
+  list-style: none;
+  display: -webkit-flex; 
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+.toggleMenu a {
+  padding: 1em;
+  color: #fff;
+  text-decoration: none;
+  border: 3px solid transparent;
+  transition: all .1s;
+  display: flex;
+  flex: 1 1 auto;
+}
+.toggleMenu a:hover, .toggleMenu a:active {
+  opacity: 1;
+  border-bottom: 3px solid #ff2e63;
+  transition: all 0.5s;
+}
+.toggleMenu a::hover, .toggleMenu a::active {
+  opacity: 1;
+  border-bottom: 3px solid #ff2e63;
+  border-top: 3px solid #ff2e63;
+  transition: all 0.5s;
+}
+.toggleMenu.active{
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0px,0px);
 }
 
 main .wrapper{
@@ -433,7 +486,8 @@ footer .wrapper{
 		display: none;
 	}
 	.mobile-bar{
-		display: flex;
+		opacity: 1;
+    	visibility: visible;
 	}
 	header.header1 .wrapper{
 		flex-direction: column;
