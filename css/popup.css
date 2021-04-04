@@ -64,6 +64,8 @@
 .popup.open{
 	opacity: 1;
 	visibility: visible;
+	height: 90vh; 
+	width: 80vw;
 }
 .popup.open .popup_content{
 	transform: translate(0px,0px);
