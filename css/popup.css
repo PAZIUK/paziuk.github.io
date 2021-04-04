@@ -25,7 +25,6 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 580px; 
 	transition: all 0.8s ease 0s;
 	opacity: 0;
 	height: 90vh; 
