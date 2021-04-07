@@ -211,6 +211,15 @@ main.wrapper{
 .project_photo a img{
   width: 100%;
 }
+.lang{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.lang img{
+  width: 50px;
+}
 .project_desc{
   display: flex;
   flex-direction: column;
