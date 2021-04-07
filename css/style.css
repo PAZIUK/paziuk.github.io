@@ -179,13 +179,15 @@ main.wrapper{
   border-radius: 10px;
   background-color: #00adb5;
   color: white;
-    padding: 4% 5rem;
+  padding-right: 5rem;
+  padding-left: 5rem;
 }
 .btn::hover{
   border-radius: 10px;
   background-color: #00adb5;
   color: white;
-  padding: 4% 5rem;
+  padding-right: 5rem;
+  padding-left: 5rem;
 }
 .projects{
   display: grid;
