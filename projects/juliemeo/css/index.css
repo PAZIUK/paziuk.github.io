@@ -213,10 +213,10 @@ a.watch{
   font-family: 'Londrina Solid', cursive;
 }
 a.watch:hover{
-  padding: 0 25%;
+  padding: 0% 25%;
 }
 a.watch::hover{
-  padding: 0 25%;
+  padding: 0% 25%;
 }
 
 .new{
@@ -442,6 +442,37 @@ footer {
   .film_title{
     letter-spacing: 2px;
     font-size: 1em;
+  }
+  .new {
+    margin: 1rem 5px;
+  }
+}
+@media(min-width: 768px) and (max-width: 960px){
+  .header nav, .header .search{
+    display: none;
+  }
+  .mobile-bar{
+    opacity: 1;
+    visibility: visible;
+  }
+  .search input[type="text"]{
+    width: 50%;
+  }
+  .banner{
+    display: flex;
+  }
+  .film{
+    grid-template-columns: repeat(2,1fr);
+  }
+  .desc_film{
+    font-size: 1rem;
+  }
+  .film_content{
+    display: flex;
+    flex-direction: column;
+  }
+  .new_content{
+    grid-template-columns: repeat(3,1fr);
   }
   .new {
     margin: 1rem 5px;
