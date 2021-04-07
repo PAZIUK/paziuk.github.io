@@ -171,20 +171,21 @@ main.wrapper{
   border-bottom: 2px solid #00adb5;
   padding: 4%;
   font-weight: bold;
-  transition: background-color 1s;
+  transition: all 1s;
   cursor: pointer;
   margin: 2%;
-  border-radius: 10px 10px 0 0;
 }
-.btn:hover,.btn:active{
-  border-radius: 10px 10px 0 0;
+.btn:hover{
+  border-radius: 10px;
   background-color: #00adb5;
   color: white;
+    padding: 4% 5rem;
 }
-.btn::hover,.btn::active{
-  border-radius: 10px 10px 0 0;
+.btn::hover{
+  border-radius: 10px;
   background-color: #00adb5;
   color: white;
+  padding: 4% 5rem;
 }
 .projects{
   display: grid;
@@ -205,7 +206,7 @@ main.wrapper{
   border-radius: 10px;
 }
 .project_photo{
-  max-height: 300px;
+  max-height: 290px;
   overflow-y: scroll;
 }
 .project_photo a img{
