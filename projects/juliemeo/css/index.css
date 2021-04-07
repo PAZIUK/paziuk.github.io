@@ -144,7 +144,7 @@ ul.nav  {
   align-items: center;
 }
 .film{
-  z-index: -1;
+  z-index: 0;
   position: relative;
   font-family: 'New Tegomin', serif;
   width: 100%;
@@ -332,6 +332,7 @@ footer {
   top:0;
   right:0;
   opacity: 0;
+  z-index: 2;
   visibility: hidden;
   transition: all 0.8s ease 0s;
   padding: 0;
