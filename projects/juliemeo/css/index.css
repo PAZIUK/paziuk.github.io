@@ -254,6 +254,18 @@ a.watch::hover{
 .new_box .img{
   margin: 0;
   padding: 0;
+  position: relative;
+}
+.new_box .img .sub-img{
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  top: 0;
+}
+.new_box .img .sub-img img{
+  width: 50px;
 }
 .new_box .img img{
   width: 100%;
