@@ -1,0 +1,302 @@
+*{
+    outline: none;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    overflow-x:hidden;
+    min-width: 320px;
+    color: #000;
+    font-family: 'Recursive', sans-serif;
+    background-image: url('../img/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+h1,h2,h3,h4,h5,h6{
+  margin: 0%;
+}
+.pre-header{
+    background-color: #f5f5f5;
+}
+.pre-header img{
+    width: 30px;
+}
+.pre-header .time{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 0 1%;
+}
+.pre-header .wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .4%;
+}
+.tel a, .mail a, .media a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: .1em 0;
+    white-space: nowrap;
+}
+.tel, .mail, .media{
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 0 1%;
+}
+header{
+    background-color: white;
+}
+header .wrapper{
+    display: flex;
+    position: sticky;
+  top: 0;
+}
+.wrapper{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0px 15px 0px 15px;
+}
+.logo{
+    flex: 1;
+    color: #000;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+.logo img{
+    display: block;
+    width: 80px;
+    margin-right: 10px;
+}
+a.logo{
+    display: flex;
+    text-decoration: none;
+}
+a.logo:hover, a.logo:active{
+    text-decoration: none;
+}
+ul.menu{
+    flex: 2;
+    padding: 1%;
+    display: flex;
+    align-items: center;
+    margin: 0%
+}
+ul.menu li{
+    border: 3px solid transparent;
+    list-style: none;
+}
+ul.menu li a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: .6em;
+    background-color: #fff;
+}
+ul.menu li a:hover{
+    border-bottom: 3px solid #f00;
+}
+
+main .wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+section.main{
+    padding: 0.1% 1%;
+    margin: 1%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+.news, .hi-block{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    margin-bottom: 3%;
+    border-radius: 10px;
+}
+.news .new , .hi{
+    display: flex;
+    flex-direction: column;
+    margin: 1%;
+}
+.news .new .new-title, .hi-title{
+    font-size: 1.2em;
+    display: flex;
+    flex: 1 1 auto;
+    border-bottom: 2px solid blue;
+    font-weight: bold;
+    padding-bottom: 1%;
+    color: #f00;
+}
+.hi-title{
+    justify-content: center;
+    margin-bottom: 1%;
+}
+.news .new .new-info, .hi-info{
+    font-size: 1.2em;
+    margin-bottom: 1%;
+    font-weight: bold;
+}
+.news .new a, .hi a{
+    padding: 2%;
+    background-color: blue;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+}
+.new-img , .hi-img{
+    border-radius: 10px;
+    margin: 0% auto 1% auto;
+}
+.new-img img, .hi-img img{
+    width:100%;
+}
+.study{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.study .title{
+    font-size: 2em;
+    font-weight: bold;
+    color: red;
+}
+.study p{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.study_items{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.study_item{
+    display: flex;
+}
+.study_item .photo{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.study_item .photo img{
+    width: 100%;
+}
+.study_item .desc_item{
+    flex:2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.desc_item .title{
+    font-weight: bold;
+    font-size: 1.7em;
+    padding: 2%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.desc_text{
+    margin: auto 0;
+    padding: 3%;
+    text-align: center;
+}
+.desc_text a{
+    transition: all .7s;
+    text-decoration: none;
+    color: red;
+    font-weight: bold;
+    padding: 2%;
+}
+.desc_text a:hover{
+    background-color: red;
+    color: white;
+}
+
+
+footer{
+    background-color: white;
+}
+footer .wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2% 0;
+}
+footer .wrapper p{
+    font-size: 1.2em;
+    color: black;
+    font-weight: bold;
+    margin: 1% 0;
+}
+
+
+
+
+
+
+.dropbtn{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1.2em;
+    border: 3px solid transparent;
+    padding: .6em;
+    background-color: #fff;
+}
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    opacity: 0;
+    visibility: visible;
+  position: absolute;
+  background-color: #f1f1f1;
+  width: 350px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border: 3px solid transparent;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  display: flex;
+  font-weight: normal!important;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+    border-bottom: none!important;
+    border-left: 3px solid #f00;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {opacity: 1;
+visibility: visible;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #f00;}
