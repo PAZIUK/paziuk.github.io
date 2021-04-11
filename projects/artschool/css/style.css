@@ -521,6 +521,13 @@ visibility: visible;}
   main .wrapper{
     position: relative;
   }
+  body{
+    background-image: url('../img/banner-small.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  }
 }
 @media(min-width: 480px) and (max-width: 768px){
   .pre-footer{
