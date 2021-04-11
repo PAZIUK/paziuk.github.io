@@ -29,9 +29,9 @@ h1,h2,h3,h4,h5,h6{
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
-    background-color: #fff;
     border-radius: 30px;
     padding: 0 1%;
+    height: 100%;
 }
 .time .h{
     display: flex;
@@ -57,7 +57,6 @@ h1,h2,h3,h4,h5,h6{
     white-space: nowrap;
 }
 .tel, .mail, .media{
-    background-color: #fff;
     border-radius: 30px;
     padding: 0 1%;
 }
@@ -216,6 +215,7 @@ ul.menu li a:hover{
 
 
 main .wrapper{
+  position: relative;
     display: flex;
     justify-content: space-between;
 }
@@ -520,8 +520,6 @@ visibility: visible;}
   }
   main .wrapper{
     position: relative;
-  }
-  body{
     background-image: url('../img/banner-small.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -533,9 +531,23 @@ visibility: visible;}
   .pre-footer{
       display: none;
   }
+  .mobile-bar{
+      display: flex;
+  }
   .pre-header .wrapper{
     display: flex;
     justify-content: space-between;
+  }
+  header .wrapper ul.menu{
+      display: none;
+  }
+  main .wrapper{
+    position: relative;
+    background-image: url('../img/banner-small.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
   }
 }
 @media(min-width: 768px) and (max-width: 923px){
