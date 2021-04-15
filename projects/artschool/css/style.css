@@ -164,19 +164,20 @@ ul.menu li a:hover{
   position: absolute;
   top: 0;
   left: 0;
-  overflow: auto;
+  visibility: hidden;
+  opacity: 0;
 }
 .toggleMenu {
   background-color: #fff;
   border: 3px solid #fa73ab;
   z-index: 2;
   margin: .5% 2%;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.8s ease 0s;
   padding: 0;
   border-radius: 10px;
+  visibility: hidden;
+  opacity: 0;
   transform: translate(0px,-100%);
+  transition: all 0.8s ease 0s;
 }
 .toggleMenu ul li{
   list-style: none;
@@ -213,6 +214,10 @@ ul.menu li a:hover{
   border-bottom: 3px solid #ff2e63;
   border-top: 3px solid #ff2e63;
   transition: all 0.5s;
+}
+.toggleMenuArea.active{
+  opacity: 1;
+  visibility: visible;
 }
 .toggleMenu.active{
   opacity: 1;

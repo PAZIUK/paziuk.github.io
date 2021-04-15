@@ -1,5 +1,6 @@
 function toggle() {
 	document.querySelector('.mobile-bar').classList.toggle('active');
+	document.querySelector('.toggleMenuArea').classList.toggle('active');
 	document.querySelector('.toggleMenu').classList.toggle('active');
 }
 function readNext() {
