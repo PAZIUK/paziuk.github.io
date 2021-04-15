@@ -14,6 +14,7 @@ body{
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
+    position: relative;
 }
 h1,h2,h3,h4,h5,h6{
   margin: 0%;
@@ -157,19 +158,25 @@ ul.menu li a:hover{
 .mobile-bar.active span{
   background-color: #000;
 }
+.toggleMenuArea{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: auto;
+}
 .toggleMenu {
   background-color: #fff;
-  border-top: 3px solid #fa73ab;
-  position: absolute;
+  border: 3px solid #fa73ab;
   z-index: 2;
-  top:0;
-  right:0;
+  margin: .5% 2%;
   opacity: 0;
   visibility: hidden;
   transition: all 0.8s ease 0s;
   padding: 0;
-  border-radius: 0 0 10px 10px;
-  transform: translate(0px,-30%);
+  border-radius: 10px;
+  transform: translate(0px,-100%);
 }
 .toggleMenu ul li{
   list-style: none;
@@ -215,7 +222,6 @@ ul.menu li a:hover{
 
 
 main .wrapper{
-  position: relative;
     display: flex;
     justify-content: space-between;
 }
