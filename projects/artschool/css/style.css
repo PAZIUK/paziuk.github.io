@@ -166,6 +166,8 @@ ul.menu li a:hover{
   left: 0;
   visibility: hidden;
   opacity: 0;
+  transform: translate(0px,-30%);
+  transition: all 0.8s ease 0s;
 }
 .toggleMenu {
   background-color: #fff;
@@ -174,10 +176,6 @@ ul.menu li a:hover{
   margin: .5% 2%;
   padding: 0;
   border-radius: 10px;
-  visibility: hidden;
-  opacity: 0;
-  transform: translate(0px,-100%);
-  transition: all 0.8s ease 0s;
 }
 .toggleMenu ul li{
   list-style: none;
@@ -216,10 +214,6 @@ ul.menu li a:hover{
   transition: all 0.5s;
 }
 .toggleMenuArea.active{
-  opacity: 1;
-  visibility: visible;
-}
-.toggleMenu.active{
   opacity: 1;
   visibility: visible;
   transform: translate(0px,0px);
