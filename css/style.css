@@ -132,20 +132,16 @@ header{
   padding: 1em;
   color: #fff;
   text-decoration: none;
-  border: 3px solid transparent;
   transition: all .1s;
   display: flex;
   flex: 1 1 auto;
 }
 .toggleMenu a:hover, .toggleMenu a:active {
   opacity: 1;
-  border-bottom: 3px solid #ff2e63;
   transition: all 0.5s;
 }
 .toggleMenu a::hover, .toggleMenu a::active {
   opacity: 1;
-  border-bottom: 3px solid #ff2e63;
-  border-top: 3px solid #ff2e63;
   transition: all 0.5s;
 }
 .toggleMenu.active{
@@ -471,14 +467,7 @@ footer .logo img{
   }
 }
 @media(min-width: 481px) and (max-width: 767px){
-  nav.nav{
-    display: flex;
-  }
   .mobile-bar{
-    opacity: 1;
-    visibility: visible;
-  }
-  .toggleMenu{
     opacity: 1;
     visibility: visible;
   }
@@ -505,10 +494,6 @@ footer .logo img{
     overflow: hidden;
   }
   .mobile-bar{
-    opacity: 1;
-    visibility: visible;
-  }
-  .toggleMenu{
     opacity: 1;
     visibility: visible;
   }
