@@ -530,16 +530,6 @@ footer .logo img{
     font-weight: bold;
   }
 }
-@media(max-width 768px){
-  .colors{
-      grid-template-columns: repeat(2,1fr);
-  }
-}
-@media(max-width 960px){
-  .colors{
-      grid-template-columns: repeat(3,1fr);
-  }
-}
 
 
 

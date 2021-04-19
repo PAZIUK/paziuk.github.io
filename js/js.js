@@ -9,15 +9,6 @@ for (let i = 0; i != num2; i++) {
 	allProjects.style.color = "red";
 };
 
-let color = document.getElementsByClassName("color_box");
-let color1 = color.length;
-let color2 = color.length + 1;
-let allColors = document.getElementById('allColors');
-for (let i = 0; i != color2; i++) {
-	allColors.innerHTML = color1;
-	allColors.style.color = "red";
-};
-
 function toggle() {
 	document.querySelector('.toggleMenu').classList.toggle('active');
 	document.querySelector('.mobile-bar').classList.toggle('active');
