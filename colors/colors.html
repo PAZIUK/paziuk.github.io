@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Serhiy Paziuk</title>
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/popup.css">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+	<link rel="manifest" href="/img/site.webmanifest">
+	<link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#9f00a7">
+	<meta name="msapplication-TileImage" content="/img/mstile-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Della+Respira&display=swap" rel="stylesheet">
+
+	
+</head>
+<body>
+	<style>
+		.colors{
+			display: grid;
+            grid-template-columns: repeat(3,1fr);
+		}
+        .color_box{
+            padding: 1%;
+            border-radius: 10px;
+            background-color: white;
+        }
+        .color_box a img{
+            width: 100%;
+        }
+	</style>
+	<header>
+		<div class="header" tabindex="1">
+			<div class="logo">
+				<a href="/"><img src="/img/logo.png" alt="Logo"></a>
+			</div>
+			<nav class="nav">
+		        <ul>
+		          <li><a href="#projects">ALL PROJETCS</a></li>
+		          <li><a href="/#about">ABOUT ME</a></li>
+		          <li><a href="/#study">STUDY</a></li>
+				  <li><a href="#colors">My colors</a></li>
+		          <li><a href="/#contacts">CONTACTS</a></li>
+		        </ul>
+		    </nav>
+		    <div class="mobile-bar" onclick="toggle();">
+					<span></span>
+					<span></span>
+					<span></span>
+			</div>
+		</div>
+	</header>
+	<main class="wrapper">
+		
+		<div class="toggleMenu">
+			<ul>
+	          <li><a href="#projects">ALL PROJETCS</a></li>
+	          <li><a href="/#about">ABOUT ME</a></li>
+	          <li><a href="/#study">STUDY</a></li>
+			  <li><a href="#colors">My colors</a></li>
+	          <li><a href="/#contacts">CONTACTS</a></li>
+	        </ul>
+		</div>
+
+		<h1 tabindex="2" id="colors">All My Colors ( <span id="allColors"></span> )</h1>
+        <div class="colors">
+            <div class="color_box">
+                <a href="my-colors-1.html"><img src="img/color-1.jpg" alt="My Color"></a>
+            </div>
+            <div class="color_box">
+                <a href="my-colors-2.html"><img src="img/color-2.jpg" alt="My Color"></a>
+            </div>
+            <div class="color_box">
+                <a href="my-colors-3.html"><img src="img/color-3.jpg" alt="My Color"></a>
+            </div>
+            <div class="color_box">
+                <a href="my-colors-4.html"><img src="img/color-4.jpg" alt="My Color"></a>
+            </div>
+        </div>
+		
+		
+	</main>
+	<footer>
+		<div class="footer" tabindex="3" id="bottom">
+			<div class="logo">
+				<a href="/"><img src="/img/logo.png" alt="Logo"></a>
+			</div>
+		</div>
+	</footer>
+	<script src="/js/js.js"></script>
+</body>
+</html>
