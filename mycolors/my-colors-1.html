@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PAZIUK - My Colors 1</title>
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+        <link rel="manifest" href="/img/site.webmanifest">
+        <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#9f00a7">
+        <meta name="msapplication-TileImage" content="/img/mstile-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Della+Respira&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <style>
+            body{
+                font-family: Della Respira;
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+            }
+            .logo{
+                position: absolute;
+                top: 10px;
+                left: 10px;
+            }
+            .color{
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-start;
+            }
+            .color p{
+                padding: .5%;
+                background-color: #00adb5;
+                color: white;
+                font-weight: bold;
+                border: 3px solid #fff;
+                font-size: 1.2em;
+                margin: 0;
+                width: 80px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            #color1{
+                background-color: #222831;
+                height: 40vh;
+            }
+            #color2{
+                background-color: #00adb5;
+                height: 30vh;
+            }
+            #color3{
+                background-color: #ffffff;
+                height: 20vh;
+            }
+            #color4{
+                background-color: #ff2e63;
+                height: 10vh;
+            }
+        </style>
+
+        <div class="logo">
+            <img src="/img/logo.png" alt="Logo">
+        </div>
+
+        <div class="color" id="color1">
+            <p>#222831</p>
+        </div>
+        <div class="color" id="color2">
+            <p>#00adb5</p>
+        </div>
+        <div class="color" id="color3">
+            <p>#ffffff</p>
+        </div>
+        <div class="color" id="color4">
+            <p>#ff2e63</p>
+        </div>
+    </body>
+</html>
