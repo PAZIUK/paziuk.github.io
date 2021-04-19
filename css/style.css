@@ -475,12 +475,12 @@ footer .logo img{
     display: flex;
   }
   .mobile-bar{
-    opacity: 0;
-    visibility: hidden;
+    opacity: 1;
+    visibility: visible;
   }
   .toggleMenu{
-    opacity: 0;
-    visibility: hidden;
+    opacity: 1;
+    visibility: visible;
   }
   .logo{
     justify-content: flex-start;
@@ -505,8 +505,12 @@ footer .logo img{
     overflow: hidden;
   }
   .mobile-bar{
-    opacity: 0;
-    visibility: hidden;
+    opacity: 1;
+    visibility: visible;
+  }
+  .toggleMenu{
+    opacity: 1;
+    visibility: visible;
   }
   .tel-mail{
     flex-direction: column;
@@ -528,6 +532,18 @@ footer .logo img{
     align-items: center;
     font-size: 1.6em;
     font-weight: bold;
+  }
+  .mobile-bar{
+    opacity: 0;
+    visibility: hidden;
+  }
+  .toggleMenu{
+    opacity: 0;
+    visibility: hidden;
+  }
+  .logo{
+    justify-content: flex-start;
+    padding: .6%;
   }
 }
 

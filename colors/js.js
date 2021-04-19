@@ -5,3 +5,8 @@ for (let i = 0; i != color + 1; i++) {
 	allColors.innerHTML = color;
 	allColors.style.color = "red";
 };
+
+function toggle() {
+	document.querySelector('.toggleMenu').classList.toggle('active');
+	document.querySelector('.mobile-bar').classList.toggle('active');
+}
