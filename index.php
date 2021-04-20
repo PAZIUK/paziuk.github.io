@@ -26,38 +26,15 @@
 	
 </head>
 <body>
-	<header>
-		<div class="header" tabindex="1">
-			<div class="logo">
-				<a href="/"><img src="img/logo.png" alt="Logo"></a>
-			</div>
-			<nav class="nav">
-		        <ul>
-		          <li><a href="projects/projects.html">ALL PROJETCS</a></li>
-		          <li><a href="#about">ABOUT ME</a></li>
-		          <li><a href="#study">STUDY</a></li>
-				  <li><a href="colors/colors.html">MY PALETTES</a></li>
-		          <li><a href="#contacts">CONTACTS</a></li>
-		        </ul>
-		    </nav>
-		    <div class="mobile-bar" onclick="toggle();">
-					<span></span>
-					<span></span>
-					<span></span>
-			</div>
-		</div>
-	</header>
+  <?php 
+    require_once 'header.php';
+  ?>
+
 	<main class="wrapper">
-		
-		<div class="toggleMenu">
-				<ul>
-		          <li><a href="projects/projects.html">ALL PROJETCS</a></li>
-		          <li><a href="#about">ABOUT ME</a></li>
-		          <li><a href="#study">STUDY</a></li>
-				  <li><a href="colors/colors.html">MY PALETTES</a></li>
-		          <li><a href="#contacts">CONTACTS</a></li>
-		        </ul>
-			</div>
+    <?php 
+      require_once 'toggleMenu.php';
+    ?>
+
 		<h1>Last Projects</h1>
 		<div class="projects" id="projects">
 			<div class="project_box">
