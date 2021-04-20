@@ -10,7 +10,7 @@ let headerPart =
         '<li><a href="/#about">ABOUT ME</a></li>' +
         '<li><a href="/#study">STUDY</a></li>' +
         '<li><a href="/colors/colors.html">MY PALETTES</a></li>' +
-        '<li><a href="/#contacts">CONTACTS</a></li>'
+        '<li><a href="/#contacts">CONTACTS</a></li>' +
       '</ul>' +
     '</nav>' +
     '<div class="mobile-bar" onclick="toggle();">' +
