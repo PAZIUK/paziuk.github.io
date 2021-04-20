@@ -1,5 +1,8 @@
 let project = document.querySelector('.projects');
-let projectPart = 
+
+
+
+let juliemeo = 
   '<div class="project_box">' +
     '<div class="project_photo">' +
       '<a href="#juliemeo" class="popup-link">' +
@@ -21,7 +24,11 @@ let projectPart =
         '<img src="/img/js.png" alt="JavaScript">' +
       '</div>' +
     '</div>' +
-  '</div>' +
+  '</div>';
+
+
+
+let helloblogger = 
   '<div class="project_box">' +
     '<div class="project_photo">' +
       '<a href="#helloblogger" class="popup-link">' +
@@ -44,7 +51,11 @@ let projectPart =
         '<img src="/img/js.png" alt="JavaScript">' +
       '</div>' +
     '</div>' +
-  '</div>' +
+  '</div>';
+
+
+
+let iamhealth = 
   '<div class="project_box">' +
     '<div class="project_photo">' +
       '<a href="#iamhealth" class="popup-link">' +
@@ -69,7 +80,11 @@ let projectPart =
         '<img src="/img/js.png" alt="JavaScript">' +
       '</div>' +
     '</div>' +
-  '</div>' +
+  '</div>';
+
+
+
+let mypizza = 
   '<div class="project_box">' +
     '<div class="project_photo">' +
       '<a href="#mypizza" class="popup-link">' +
@@ -92,7 +107,11 @@ let projectPart =
         '<img src="/img/js.png" alt="JavaScript">' +
       '</div>' +
     '</div>' +
-  '</div>' +
+  '</div>';
+
+
+
+let dilemaclothes = 
   '<div class="project_box">' +
     '<div class="project_photo">' +
       '<a href="#dilemaclothes" class="popup-link">' +
@@ -115,7 +134,11 @@ let projectPart =
         '<img src="/img/js.png" alt="JavaScript">' +
       '</div>' +
     '</div>' +
-  '</div>' +
+  '</div>';
+
+
+
+let ilikethiscars = 
   '<div class="project_box">' +
     '<div class="project_photo">' +
       '<a href="#ilikethiscars" class="popup-link">' +
@@ -139,4 +162,7 @@ let projectPart =
   '</div>' +
 '</div>';
 
+
+
+let projectPart = juliemeo + helloblogger + iamhealth + mypizza + dilemaclothes + ilikethiscars;
 project.innerHTML = projectPart; 

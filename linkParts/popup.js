@@ -1,5 +1,8 @@
 let popup = document.querySelector('.popups');
-let popupPart = 
+
+
+
+let juliemeo = 
   '<div id="juliemeo" class="popup">' +
 		'<div class="popup_body">' +
 			'<div class="popup_content">' +
@@ -15,7 +18,11 @@ let popupPart =
 				'<a href="/projects/juliemeo/juliemeo.html" class="btn popup-btn">View all project</a>' +
 			'</div>' +
 		'</div>' +
-	'</div>' +
+	'</div>';
+
+
+
+let helloBlogger =   
 	'<div id="helloblogger" class="popup">' +
 		'<div class="popup_body">' +
 			'<div class="popup_content">' +
@@ -32,7 +39,11 @@ let popupPart =
 				'<a href="/projects/helloblogger/helloblogger.html" class="btn popup-btn">View all project</a>' +
 			'</div>' +
 		'</div>' +
-	'</div>' +
+	'</div>';
+
+
+
+let iamhealth = 
 	'<div id="iamhealth" class="popup">' +
 		'<div class="popup_body">' +
 			'<div class="popup_content">' +
@@ -51,7 +62,11 @@ let popupPart =
 				'<a href="/projects/iamhealth/iamhealth.html" class="btn popup-btn">View all project</a>' +
 			'</div>' +
 		'</div>' +
-	'</div>' +
+	'</div>';
+
+
+
+let mypizza = 
 	'<div id="mypizza" class="popup">' +
 		'<div class="popup_body">' +
 			'<div class="popup_content">' +
@@ -68,7 +83,11 @@ let popupPart =
 				'<a href="/projects/mypizza/mypizza.html" class="btn popup-btn">View all project</a>' +
 			'</div>' +
 		'</div>' +
-	'</div>' +
+	'</div>';
+
+
+
+let dilemaclothes =
 	'<div id="dilemaclothes" class="popup">' +
 		'<div class="popup_body">' +
 			'<div class="popup_content">' +
@@ -85,7 +104,11 @@ let popupPart =
 				'<a href="/projects/dilemaclothes/dilemaclothes.html" class="btn popup-btn">View all project</a>' +
 			'</div>' +
 		'</div>' +
-	'</div>' +
+	'</div>';
+
+
+
+let ilikethiscars = 
 	'<div id="ilikethiscars" class="popup">' +
 		'<div class="popup_body">' +
 			'<div class="popup_content">' +
@@ -102,4 +125,7 @@ let popupPart =
 		'</div>' +
 	'</div>';
 
+
+
+let popupPart = juliemeo + helloblogger + iamhealth + mypizza + dilemaclothes + ilikethiscars;
 popup.innerHTML = popupPart;
