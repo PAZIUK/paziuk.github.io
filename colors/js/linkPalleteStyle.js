@@ -1,3 +1,3 @@
-let head = document.querySelector('head');
-let headPart = '<link rel="stylesheet" href="style.css">';
+let head = document.querySelectorAll('head');
+let headPart = '<link rel="stylesheet" href="/colors/style.css">';
 head.innerHTML += headPart;
