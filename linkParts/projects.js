@@ -5,7 +5,7 @@ let project = document.querySelector('.projects');
 let juliemeo = 
   '<div class="project_box">' +
     '<div class="project_photo">' +
-      '<a href="#juliemeo" class="popup-link">' +
+      '<a href="/projects/juliemeo/juliemeo.html" class="popup-link">' +
         '<img src="/img/project/JulieMeo/1.jpg" alt="Project Photo">' +
         '<img src="/img/project/JulieMeo/2.jpg" alt="Project Photo">' +
         '<img src="/img/project/JulieMeo/3.jpg" alt="Project Photo">' +
@@ -31,7 +31,7 @@ let juliemeo =
 let helloblogger = 
   '<div class="project_box">' +
     '<div class="project_photo">' +
-      '<a href="#helloblogger" class="popup-link">' +
+      '<a href="/projects/helloblogger/helloblogger.html" class="popup-link">' +
         '<img src="/img/project/helloblogger/1.jpg" alt="Project Photo">' +
         '<img src="/img/project/helloblogger/2.jpg" alt="Project Photo">' +
         '<img src="/img/project/helloblogger/3.jpg" alt="Project Photo">' +
@@ -58,7 +58,7 @@ let helloblogger =
 let iamhealth = 
   '<div class="project_box">' +
     '<div class="project_photo">' +
-      '<a href="#iamhealth" class="popup-link">' +
+      '<a href="/projects/iamhealth/iamhealth.html" class="popup-link">' +
         '<img src="/img/project/iamhealth/1.jpg" alt="Project Photo">' +
         '<img src="/img/project/iamhealth/2.jpg" alt="Project Photo">' +
         '<img src="/img/project/iamhealth/3.jpg" alt="Project Photo">' +
@@ -87,7 +87,7 @@ let iamhealth =
 let mypizza = 
   '<div class="project_box">' +
     '<div class="project_photo">' +
-      '<a href="#mypizza" class="popup-link">' +
+      '<a href="/projects/mypizza/mypizza.html" class="popup-link">' +
         '<img src="/img/project/mypizza/1.jpg" alt="Project Photo">' +
         '<img src="/img/project/mypizza/2.jpg" alt="Project Photo">' +
         '<img src="/img/project/mypizza/3.jpg" alt="Project Photo">' +
@@ -114,7 +114,7 @@ let mypizza =
 let dilemaclothes = 
   '<div class="project_box">' +
     '<div class="project_photo">' +
-      '<a href="#dilemaclothes" class="popup-link">' +
+      '<a href="/projects/dilemaclothes/dilemaclothes.html" class="popup-link">' +
         '<img src="/img/project/dilemaclothes/1.jpg" alt="Project Photo">' +
         '<img src="/img/project/dilemaclothes/2.jpg" alt="Project Photo">' +
         '<img src="/img/project/dilemaclothes/3.jpg" alt="Project Photo">' +
@@ -141,7 +141,7 @@ let dilemaclothes =
 let ilikethiscars = 
   '<div class="project_box">' +
     '<div class="project_photo">' +
-      '<a href="#ilikethiscars" class="popup-link">' +
+      '<a href="/projects/ilikethiscars/ilikethiscars.html" class="popup-link">' +
         '<img src="/img/project/ilikethiscars/1.jpg" alt="Project Photo">' +
         '<img src="/img/project/ilikethiscars/2.jpg" alt="Project Photo">' +
         '<img src="/img/project/ilikethiscars/3.jpg" alt="Project Photo">' +
