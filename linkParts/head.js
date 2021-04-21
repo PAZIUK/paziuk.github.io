@@ -7,7 +7,6 @@ let headPart =
 
   //STYLES
   '<link rel="stylesheet" href="/css/style.css">' +
-  '<link rel="stylesheet" href="/css/popup.css">' +
 
   //FAVICONS
   '<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">' +
@@ -26,4 +25,4 @@ let headPart =
   '<link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">' +
   '<link href="https://fonts.googleapis.com/css2?family=Della+Respira&display=swap" rel="stylesheet">';
 
-head.innerHTML = headPart;
+head.innerHTML += headPart;
