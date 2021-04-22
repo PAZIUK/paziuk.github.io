@@ -6,4 +6,4 @@ let footerPart =
     '</div>' +
   '</div>';
 
-footer.innerHTML = footerPart;
+footer.innerHTML += footerPart;
