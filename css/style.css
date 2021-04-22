@@ -158,7 +158,7 @@ header {
   visibility: visible;
 }
 
-main.wrapper {
+.wrapper {
   max-width: 1150px;
   margin: 5px auto 1px auto;
   position: relative;
