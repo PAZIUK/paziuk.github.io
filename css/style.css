@@ -9,7 +9,8 @@ body {
   background-color: #222831;
   scroll-behavior: smooth;
   margin: 0px;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   font-family: var(--f-f);
@@ -29,7 +30,6 @@ h6 {
 header {
   background-color: #00adb5;
   margin: 0px;
-  border-bottom: 2px solid #ff2e63; 
 }
 .header {
   max-width: 1150px;
@@ -158,12 +158,11 @@ header {
   visibility: visible;
 }
 
-.wrapper {
+main.wrapper {
   max-width: 1150px;
-  margin: 5px auto 1px auto;
+  margin: 0px auto;
+  min-height: 100%;
   position: relative;
-  overflow-y:scroll;
-  padding:1%
 }
 .btn {
   font-size: 1em;
@@ -213,7 +212,6 @@ header {
 .project_photo {
   max-height: 290px;
   overflow-y: scroll;
-  padding: 1%;
 }
 .project_photo a img {
   width: 100%;
@@ -548,18 +546,14 @@ footer .logo img {
 ::-webkit-scrollbar {
   width: 10px;
   height: 8px;
-  background-color: #0f19284a;
-  border-radius: 10px;
+  background-color: #222831;
 }
 ::-webkit-scrollbar-thumb {
   background-color: #ff2e63;
-  border-radius: 10px;
-  margin:1%;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #ff2e63;
-  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-button:vertical:start:decrement {
