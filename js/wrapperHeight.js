@@ -1,3 +1,3 @@
-let wrapperHeight = document.height - document.querySelector('header');
+let wrapperHeight = document.body.clientHeight - document.querySelector('header').clientHeight;
 let wrapper = document.querySelector('.wrapper');
-console.log(wrapperHeight+'px;');
+wrapper.style.maxHeight = wrapperHeight+'px;';
