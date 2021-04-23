@@ -487,6 +487,11 @@ footer .logo img {
     justify-items: center;
   }
 }
+@media(min-width:768px) and (max-width:800px){
+  nav.nav a{
+    font-size: .8rem;
+  }
+}
 @media (min-width: 768px) and (max-width: 1024px) {
   .project_photo {
     overflow: hidden;
