@@ -470,7 +470,24 @@ footer .logo img {
     align-items: center;
   }
 }
-@media (min-width: 481px) and (max-width: 767px) {
+@media (min-width: 481px) and (max-width: 700px) {
+  .mobile-bar {
+    opacity: 1;
+    visibility: visible;
+  }
+  .logo {
+    justify-content: flex-start;
+    padding: 1%;
+  }
+  nav.nav {
+    display: none;
+  }
+  .projects {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+@media (min-width: 700px) and (max-width: 767px) {
   .mobile-bar {
     opacity: 1;
     visibility: visible;
