@@ -10,3 +10,5 @@ let studyPart =
       '<p>In 13 years old I realized that I want to work as a web developer.</p>' +
     '</div>' +
   '</div>';
+
+  study.innerHTML += studyPart; 

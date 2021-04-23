@@ -251,6 +251,7 @@ main.wrapper {
 }
 .about_box{
   margin: 2.5%;
+  display: flex;
 }
 .about .photo {
   flex: 1;
@@ -279,6 +280,7 @@ main.wrapper {
 }
 .study_box{
   margin: 2.5%;
+  display: flex;
 }
 .study .photo {
   flex: 1;
