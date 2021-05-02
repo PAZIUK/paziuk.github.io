@@ -75,6 +75,7 @@ function drawSnake() {
     for (let i = index + 1; i < snake.tails.length; i++) {
 
       if (el.x == snake.tails[i].x && el.y == snake.tails[i].y) {
+        localStorage.setItem("record", (record - 1))
         refreshGame();
       }
 
