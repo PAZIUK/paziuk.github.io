@@ -138,8 +138,8 @@ function drawScore() {
     recordBlock.innerHTML = "Record: " + record;
     if (score >= record) {
       recordBlock.innerHTML = "Record: " + record++;
-      if ((record - 1) > localStorage.record) {
-        localStorage.setItem("record", (record - 1));
+      if (record > localStorage.record) {
+        localStorage.setItem("record", record);
       }
     }
   }
