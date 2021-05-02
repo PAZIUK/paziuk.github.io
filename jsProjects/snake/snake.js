@@ -75,7 +75,6 @@ function drawSnake() {
     for (let i = index + 1; i < snake.tails.length; i++) {
 
       if (el.x == snake.tails[i].x && el.y == snake.tails[i].y) {
-        localStorage.setItem("record", record)
         refreshGame();
       }
 
@@ -137,10 +136,8 @@ function drawScore() {
   record = localStorage.getItem("record");
   recordBlock.innerHTML = "Record: " + record;
   if (score >= record) {
-    recordBlock.innerHTML = "Record: " + record++;
-    if (record > localStorage.record) {
-      localStorage.setItem("record", record);
-    }
+    recordBlock.innerHTML = "Record: " + score;
+    localStorage.setItem("record", score);
   }
 }
 
