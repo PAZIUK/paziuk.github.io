@@ -2,9 +2,6 @@
 function animation() {
   setTimeout(() => document.querySelector('.config-wrapper').classList.add('active'), 1);
   setTimeout(() => document.querySelector('.config-wrapper').style.transition = "all 5s ease 0s", 1000);
-  if (window.innerWidth <= "480") {
-    setTimeout(() => document.querySelector('.config-wrapper').height = "unset", 1);
-  }
 }
 document.addEventListener("DOMContentLoaded", animation);
 
@@ -35,13 +32,21 @@ function refresh() {
   snakeStyleTail();
   snakeStyleBerry();
 }
-function game() {
+function gameShow() {
   document.querySelector('body').style.overflow = "hidden";
   document.querySelector(".config-wrapper").classList.toggle('noactive');
+  setTimeout(() => document.querySelector(".config-wrapper").classList.toggle('active'), 2000);
   setTimeout(() => document.querySelector('.config-wrapper').style.display = "none", 2000);
   setTimeout(() => document.querySelector("#game").style.display = "flex", 500);
   setTimeout(() => document.querySelector("#game").classList.toggle('active'), 1000);
 }
+// function gameHide() {
+//   document.querySelector(".config-wrapper").classList.toggle('noactive');
+//   setTimeout(() => document.querySelector(".config-wrapper").classList.toggle('active'), 2000);
+//   setTimeout(() => document.querySelector('.config-wrapper').style.display = "flex", 2000);
+//   setTimeout(() => document.querySelector("#game").style.display = "none", 500);
+//   setTimeout(() => document.querySelector("#game").classList.toggle('active'), 1000);
+// }
 
 
 window.onload = function () {

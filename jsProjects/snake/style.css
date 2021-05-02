@@ -26,7 +26,8 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
+  height: 100%;
   transition: all 1s ease 0s;
   transform: translate(0px, -150%) rotate(90deg);
 }
@@ -169,7 +170,7 @@ p {
 
   flex-direction: column;
   justify-content: center;
-  transition: all 3s ease 0s;
+  transition: all 4s ease 0s;
   transform: perspective(600px) translate(0px, 150%) rotateX(-120deg);
   display: none;
 }
@@ -252,6 +253,12 @@ p {
   .game-max {
     padding: 0 10px;
   }
+  .config-part label{
+    font-size: .7rem;
+  }
+  .config .subtitle{
+    font-size: .9rem;
+  }
 }
 @media (min-width: 768px) {
   .game-header {
@@ -260,9 +267,9 @@ p {
 }
 @media (max-width: 768px) {
   .game-score {
-    width: 30vw;
+    width: 40vw;
   }
   .game-max {
-    width: 30vw;
+    width: 40vw;
   }
 }
