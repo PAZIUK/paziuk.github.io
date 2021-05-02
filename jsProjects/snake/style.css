@@ -32,10 +32,13 @@ p {
   transform: translate(0px, -150%) rotate(90deg);
 }
 .config-wrapper.active {
-  transform: translate(0px) rotate(0deg);
+  transform: translate(0px) rotate(0deg) perspective(0px);
 }
 .config-wrapper.noactive {
   transform: perspective(600px) translate(0px, -150%) rotateX(120deg);
+}
+.config-wrapper.backActive {
+  transform: perspective(0px) translate(0px) rotateX(0deg);
 }
 .config {
   display: flex;
@@ -146,7 +149,6 @@ p {
   justify-content: center;
 }
 .button button {
-  padding: 2%;
   cursor: pointer;
   font-weight: bold;
   font-size: 1.3rem;
@@ -158,14 +160,13 @@ p {
 }
 .button button:hover {
   padding: 2% 15%;
-  background-color: yellow;
   background: rgb(255, 240, 0);
   background: linear-gradient(90deg, rgba(255, 240, 0, 1) 0%, rgba(255, 0, 0, 1) 100%);
 }
 
 #game {
   width: 100vw;
-  height: 90vh;
+  height: 100%;
   overflow: hidden;
 
   flex-direction: column;
@@ -173,6 +174,48 @@ p {
   transition: all 4s ease 0s;
   transform: perspective(600px) translate(0px, 150%) rotateX(-120deg);
   display: none;
+}
+#game .assets{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#game .assets .nickname{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2%;
+  font-weight: bold;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  border: none;
+  padding: 0 3%;
+  transition: all 1s ease 0s;
+  background: #fff;
+  white-space: nowrap;
+}
+#game .assets .nickname .change{
+  padding: 2% 3%;
+}
+#game .assets .nickname .change img{
+  width: 10vw;
+}
+#game .assets button{
+  margin: 2%;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  border: none;
+  padding: 2% 3%;
+  transition: all 1s ease 0s;
+  background: #fff;
+  white-space: nowrap;
+  float: left;
+  display: block;
+}
+#game .assets button img{
+  width: 8vw;
 }
 #game.active {
   transform: perspective(0px) translate(0px) rotate(0deg);
@@ -253,11 +296,11 @@ p {
   .game-max {
     padding: 0 10px;
   }
-  .config-part label{
-    font-size: .7rem;
+  .config-part label {
+    font-size: 0.79rem;
   }
-  .config .subtitle{
-    font-size: .9rem;
+  .config .subtitle {
+    font-size: 0.9rem;
   }
 }
 @media (min-width: 768px) {

@@ -33,20 +33,26 @@ function refresh() {
   snakeStyleBerry();
 }
 function gameShow() {
-  document.querySelector('body').style.overflow = "hidden";
-  document.querySelector(".config-wrapper").classList.toggle('noactive');
-  setTimeout(() => document.querySelector(".config-wrapper").classList.toggle('active'), 2000);
-  setTimeout(() => document.querySelector('.config-wrapper').style.display = "none", 2000);
-  setTimeout(() => document.querySelector("#game").style.display = "flex", 500);
-  setTimeout(() => document.querySelector("#game").classList.toggle('active'), 1000);
+  if(document.querySelector('#nickname').value.length == 0){
+    document.querySelector('#nickname').placeholder = "You not writed your nickname";
+    document.querySelector('#nickname').style.backgroundColor = "#ff0000";
+  } else {
+    document.querySelector('#nickname').style.backgroundColor = "#fff";
+    document.querySelector('body').style.overflow = "hidden";
+    document.querySelector(".config-wrapper").classList.toggle('noactive');
+    setTimeout(() => document.querySelector(".config-wrapper").classList.toggle('active'), 2000);
+    setTimeout(() => document.querySelector('.config-wrapper').style.display = "none", 2000);
+    setTimeout(() => document.querySelector("#game").style.display = "flex", 500);
+    setTimeout(() => document.querySelector("#game").classList.toggle('active'), 1000);
+  }
 }
-// function gameHide() {
-//   document.querySelector(".config-wrapper").classList.toggle('noactive');
-//   setTimeout(() => document.querySelector(".config-wrapper").classList.toggle('active'), 2000);
-//   setTimeout(() => document.querySelector('.config-wrapper').style.display = "flex", 2000);
-//   setTimeout(() => document.querySelector("#game").style.display = "none", 500);
-//   setTimeout(() => document.querySelector("#game").classList.toggle('active'), 1000);
-// }
+function gameHide() {
+  document.querySelector(".config-wrapper").classList.toggle('noactive');
+  setTimeout(() => document.querySelector(".config-wrapper").classList.toggle('active'), 1000);
+  setTimeout(() => document.querySelector('.config-wrapper').style.display = "flex", 2000);
+  setTimeout(() => document.querySelector("#game").classList.toggle('active'), 500);
+  setTimeout(() => document.querySelector("#game").style.display = "none", 3000);
+}
 
 
 window.onload = function () {
@@ -58,10 +64,13 @@ window.onload = function () {
   let snakeHead = document.querySelector('#resultHead');
   let snakeTail = document.querySelector('#snake-parts').querySelector('.tail');
   let berryStyle = document.querySelector('#berryStyle');
+  let nicknameHtml = document.querySelector(".assets").querySelector(".nickname").querySelector(".name");
 
   if (localStorage.getItem("nickname")) {
     nickname.value = localStorage.getItem("nickname");
   }
+  localStorage.nickname = nickname.value;
+  nicknameHtml.innerHTML = localStorage.nickname;
   nickname.oninput = function () {
     localStorage.setItem("nickname", nickname.value);
   };
@@ -93,3 +102,20 @@ window.onload = function () {
     localStorage.setItem("berry", berry.value);
   };
 };
+
+function changeName(){
+  let nickname = document.querySelector('#nickname');
+  let nicknameHtml = document.querySelector(".assets").querySelector(".nickname").querySelector(".name");
+  let doYouChangeName = confirm("Do you wan`t to change name?");
+    if(doYouChangeName){
+      if (localStorage.getItem("nickname")) {
+        nickname.value = localStorage.getItem("nickname");
+      }
+    let changeName = prompt('CHANGE NAME', nickname.value);
+    if(changeName){
+      localStorage.setItem("nickname", changeName);
+      nicknameHtml.innerHTML = localStorage.nickname;
+      nickname.value =  localStorage.nickname;
+    }
+  }
+}
