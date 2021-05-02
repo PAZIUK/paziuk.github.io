@@ -1,266 +1,268 @@
-*{
-	outline: none;
+* {
+  outline: none;
 }
 body {
-	margin: 0px;
-	font-family: "Zen Dots", cursive;
-	background: rgb(255,0,0);
-	background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,240,0,1) 100%);
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	overflow-x: hidden;
+  margin: 0px;
+  font-family: "Zen Dots", cursive;
+  background: rgb(255, 0, 0);
+  background: linear-gradient(90deg, rgba(255, 0, 0, 1) 0%, rgba(255, 240, 0, 1) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-x: hidden;
 }
 
-h1,h2,h3,h4,h5,h6,p{
-	margin: 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
 }
-.config-wrapper{
-	margin: auto;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100vw;
-	transition: all 1s ease 0s;
-	transform: translate(0px,-150%) rotate(90deg);
+.config-wrapper {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  transition: all 1s ease 0s;
+  transform: translate(0px, -150%) rotate(90deg);
 }
-.config-wrapper.active{
-	transform: translate(0px) rotate(0deg);
+.config-wrapper.active {
+  transform: translate(0px) rotate(0deg);
 }
-.config-wrapper.noactive{
-	transform: perspective(600px) translate(0px,-150%) rotateX(120deg);
+.config-wrapper.noactive {
+  transform: perspective(600px) translate(0px, -150%) rotateX(120deg);
 }
-.config{
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	margin: 0;
-	background-color: #fff;
-	max-width:768px; 
-	padding: 0 2vw 2vw 2vw;
-	border-radius: 10px;
+.config {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+  background-color: #fff;
+  max-width: 768px;
+  padding: 0 2vw 2vw 2vw;
+  border-radius: 10px;
 }
-.config .header{
-	flex: 0 0;
-	padding-top: 3vh
+.config .header {
+  flex: 0 0;
+  padding-top: 3vh;
 }
-.config .title{
-	font-weight: bold;
-	font-size:.9rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	white-space: nowrap;
+.config .title {
+  font-weight: bold;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
 }
-.config .subtitle{
-	font-family: "Century gothic";
-	font-weight: bold;
-	margin-top: 2%;
-	font-size: 1.1rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+.config .subtitle {
+  font-family: "Century gothic";
+  font-weight: bold;
+  margin-top: 2%;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.config .subtitle p{
-	margin-bottom: 2%;
+.config .subtitle p {
+  margin-bottom: 2%;
 }
-.config-part{
-	flex: 1 1;
-	display: flex;
-	flex-direction: column;
+.config-part {
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
 }
-.config-part .part{
-	margin: 1rem 0;
+.config-part .part {
+  margin: 1rem 0;
 }
-.config-part input[type="text"]{
-	padding:.7rem;
-	border: 2px solid red;
-	border-radius: 1000px;
-	width: 70%;
+.config-part input[type="text"] {
+  padding: 0.7rem;
+  border: 2px solid red;
+  border-radius: 1000px;
+  width: 70%;
 }
-.config-part .result{
-	margin: 1rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+.config-part .result {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.config-part .result .snake{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-right: 1rem;
-	padding: .2rem;
-	border: 2px solid #000;
-	background-color: #161618;
+.config-part .result .snake {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+  padding: 0.2rem;
+  border: 2px solid #000;
+  background-color: #161618;
 }
-.config-part .result .snake #snake-parts{
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.config-part .result .snake #snake-parts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.config-part .result .snake #berryStyle{
-	background-color: #f00;
-	padding:.3rem;
-	border-radius: 100px;
-	margin-right: .2rem;
+.config-part .result .snake #berryStyle {
+  background-color: #f00;
+  padding: 0.3rem;
+  border-radius: 100px;
+  margin-right: 0.2rem;
 }
-.config-part .result .snake #snake-parts #resultHead{
-	background-color: #FA0556;
-	padding:.4rem;
+.config-part .result .snake #snake-parts #resultHead {
+  background-color: #fa0556;
+  padding: 0.4rem;
 }
-.config-part .result .snake #snake-parts .tail{
-	background-color: #A00034;
-	padding:.4rem 1.2rem;
+.config-part .result .snake #snake-parts .tail {
+  background-color: #a00034;
+  padding: 0.4rem 1.2rem;
 }
-.config-part .result .snake-and-refresh{
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.config-part .result .snake-and-refresh {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.config-part .result .snake-and-refresh .refresh{
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.config-part .result .snake-and-refresh .refresh {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.config-part .result .snake-and-refresh .refresh button{
-	padding: 0 .2rem;
-	background: none;
-	border: none;
-	cursor: pointer;
+.config-part .result .snake-and-refresh .refresh button {
+  padding: 0 0.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
-.config-part .result .snake-and-refresh .refresh img{
-	width: 25px;
+.config-part .result .snake-and-refresh .refresh img {
+  width: 25px;
 }
-.button{
-	display: flex;
-	align-items: center;
-	justify-content: center;
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.button button{
-	padding: 2%;
-	cursor: pointer;
-	font-weight: bold;
-	font-size: 1.3rem;
-	border-radius: 100px;
-	border: 2px solid red;
-	padding: 2% 5%;
-	transition: all 1s ease 0s;
-	background: none;
+.button button {
+  padding: 2%;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.3rem;
+  border-radius: 100px;
+  border: 2px solid red;
+  padding: 2% 5%;
+  transition: all 1s ease 0s;
+  background: none;
 }
-.button button:hover{
-	padding: 2% 15%;
-	background-color: yellow;
-	background: rgb(255,240,0);
-	background: linear-gradient(90deg, rgba(255,240,0,1) 0%, rgba(255,0,0,1) 100%);
+.button button:hover {
+  padding: 2% 15%;
+  background-color: yellow;
+  background: rgb(255, 240, 0);
+  background: linear-gradient(90deg, rgba(255, 240, 0, 1) 0%, rgba(255, 0, 0, 1) 100%);
 }
-
-
-
-
 
 #game {
-	width: 100vw;
-	height: 100vh;
-	overflow:hidden;
+  width: 100vw;
+  height: 90vh;
+  overflow: hidden;
 
-	flex-direction: column;
-	justify-content: center;
-	transition: all 3s ease 0s;
-	transform: perspective(600px) translate(0px,150%) rotateX(-120deg);
-	display: none;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 3s ease 0s;
+  transform: perspective(600px) translate(0px, 150%) rotateX(-120deg);
+  display: none;
 }
 #game.active {
-	transform: perspective(0px) translate(0px) rotate(0deg);
+  transform: perspective(0px) translate(0px) rotate(0deg);
 }
 
 #game-canvas {
-	display: block;	
+  display: block;
 }
 
 .game-header {
-	padding: 1rem;
+  padding: 1rem;
 
-	display: flex;
-	justify-content: space-between;	
+  display: flex;
+  justify-content: space-between;
 }
 .game-score {
-	padding: 10px 15px;
-	height: 50px;
-	width: 15vw;
-	background: #fff;
-	border-radius: 5px;
+  padding: 10px 15px;
+  height: 50px;
+  width: 15vw;
+  background: #fff;
+  border-radius: 5px;
 
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.game-max{
-	width: 15vw;
-	padding: 10px 15px;
-	height: 50px;
-	background: #fff;
-	border-radius: 5px;
+.game-max {
+  width: 15vw;
+  padding: 10px 15px;
+  height: 50px;
+  background: #fff;
+  border-radius: 5px;
 
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.score-count{
-	font-size: 1rem;
-	color: #D21855;
-	font-weight: bold;
-	padding: 1rem;
+.score-count {
+  font-size: 1rem;
+  color: #d21855;
+  font-weight: bold;
+  padding: 1rem;
 }
-.max-count{
-	font-size: 1rem;
-	color: #D21855;
-	font-weight: bold;
+.max-count {
+  font-size: 1rem;
+  color: #d21855;
+  font-weight: bold;
 }
 
-.canvas{
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.canvas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .canvas-wrapper {
-	border-radius: 5px;
-	border: 5px solid #fff;
-	background-color: #161618;
-	background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.2'%3E%3Ccircle cx='8' cy='8' r='4' fill='%23525053'/%3E%3C/g%3E%3C/svg%3E%0A");
+  border-radius: 5px;
+  border: 5px solid #fff;
+  background-color: #161618;
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.2'%3E%3Ccircle cx='8' cy='8' r='4' fill='%23525053'/%3E%3C/g%3E%3C/svg%3E%0A");
 }
-@media(min-width: 480px){
-	.config-wrapper{
-		height: 100vh;
-	}
+@media (min-width: 480px) {
+  .config-wrapper {
+    height: 100vh;
+  }
 }
-@media(max-width: 480px){
-	.canvas-wrapper{
-		border-radius: unset;
-		overflow: hidden;
-		border: 1px solid #fff;
-	}
-	.config{
-		margin: 2%;
-	}
-	.game-score {
-		padding: unset;
-	}
-	.game-max{
-		padding: 0 10px;
-	}
+@media (max-width: 480px) {
+  .canvas-wrapper {
+    border-radius: unset;
+    overflow: hidden;
+    border: 1px solid #fff;
+  }
+  .config {
+    margin: 2%;
+  }
+  .game-score {
+    padding: unset;
+  }
+  .game-max {
+    padding: 0 10px;
+  }
 }
-@media(min-width: 768px){
-	.game-header {
-		justify-content: space-around;
-	}
+@media (min-width: 768px) {
+  .game-header {
+    justify-content: space-around;
+  }
 }
-@media(max-width: 768px){
-	.game-score{
-		width: 30vw;
-	}
-	.game-max{
-		width: 30vw;
-	}
+@media (max-width: 768px) {
+  .game-score {
+    width: 30vw;
+  }
+  .game-max {
+    width: 30vw;
+  }
 }
