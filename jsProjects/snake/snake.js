@@ -133,14 +133,13 @@ function drawScore() {
   scoreBlock.innerHTML = score;
   if (localStorage.getItem('record') === null) {
     localStorage.setItem("record", 0);
-  } else {
-    record = localStorage.getItem("record");
-    recordBlock.innerHTML = "Record: " + record;
-    if (score >= record) {
-      recordBlock.innerHTML = "Record: " + record++;
-      if (record > localStorage.record) {
-        localStorage.setItem("record", record);
-      }
+  }
+  record = localStorage.getItem("record");
+  recordBlock.innerHTML = "Record: " + record;
+  if (score >= record) {
+    recordBlock.innerHTML = "Record: " + record++;
+    if (record > localStorage.record) {
+      localStorage.setItem("record", record);
     }
   }
 }
