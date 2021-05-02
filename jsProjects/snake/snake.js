@@ -26,7 +26,6 @@ let berry = {
 
 let canvas = document.querySelector("#game-canvas");
 let context = canvas.getContext("2d");
-let record = 0;
 scoreBlock = document.querySelector(".game-score .score-count");
 recordBlock = document.querySelector(".game-max .max-count");
 drawScore();
