@@ -137,9 +137,9 @@ function drawScore() {
     record = localStorage.getItem("record");
     recordBlock.innerHTML = "Record: " + record;
     if (score >= record) {
-      recordBlock.innerHTML = "Record: " + record;
-      if (record > localStorage.record) {
-        localStorage.setItem("record", record);
+      recordBlock.innerHTML = "Record: " + record++;
+      if (--record > localStorage.record) {
+        localStorage.setItem("record", --record);
       }
     }
   }
