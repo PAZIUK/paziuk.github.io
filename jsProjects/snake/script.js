@@ -1,9 +1,10 @@
 //ANIMATION
 function animation() {
   setTimeout(() => document.querySelector('.config-wrapper').classList.add('active'), 1);
-  setTimeout(() => document.querySelector('.config-wrapper').style.transition = "all 5s ease 0s", 1000);
+  setTimeout(() => document.querySelector("#game").style.display = "none", 1);
 }
 document.addEventListener("DOMContentLoaded", animation);
+
 
 //SNAKE STYLE 
 let snakeHead = document.querySelector('#resultHead');
@@ -38,20 +39,18 @@ function gameShow() {
     document.querySelector('#nickname').style.backgroundColor = "#ff0000";
   } else {
     document.querySelector('#nickname').style.backgroundColor = "#fff";
-    document.querySelector('body').style.overflow = "hidden";
-    document.querySelector(".config-wrapper").classList.toggle('noactive');
-    setTimeout(() => document.querySelector(".config-wrapper").classList.toggle('active'), 2000);
-    setTimeout(() => document.querySelector('.config-wrapper').style.display = "none", 2000);
-    setTimeout(() => document.querySelector("#game").style.display = "flex", 500);
-    setTimeout(() => document.querySelector("#game").classList.toggle('active'), 1000);
+    setTimeout(() => document.querySelector('body').style.overflow = "hidden",1);
+    setTimeout(() => document.querySelector(".config-wrapper").classList.toggle('active'), 2);
+    setTimeout(() => document.querySelector('.config-wrapper').style.display = "none", 400);
+    setTimeout(() => document.querySelector("#game").style.display = "flex", 2);
+    setTimeout(() => document.querySelector("#game").classList.toggle('active'), 100);
   }
 }
 function gameHide() {
-  document.querySelector(".config-wrapper").classList.toggle('noactive');
-  setTimeout(() => document.querySelector(".config-wrapper").classList.toggle('active'), 1000);
-  setTimeout(() => document.querySelector('.config-wrapper').style.display = "flex", 2000);
-  setTimeout(() => document.querySelector("#game").classList.toggle('active'), 500);
-  setTimeout(() => document.querySelector("#game").style.display = "none", 3000);
+  setTimeout(() => document.querySelector(".config-wrapper").classList.toggle('active'), 700);
+  setTimeout(() => document.querySelector("#game").classList.toggle('active'), 200);
+  setTimeout(() => document.querySelector('.config-wrapper').style.display = "flex", 600);
+  setTimeout(() => document.querySelector("#game").style.display = "none", 800);
 }
 
 
@@ -116,6 +115,13 @@ function changeName(){
       localStorage.setItem("nickname", changeName);
       nicknameHtml.innerHTML = localStorage.nickname;
       nickname.value =  localStorage.nickname;
+      hiNickname.innerHTML =  localStorage.nickname + " !";
     }
   }
+}
+let hiNickname = document.querySelector("#hiNickname");
+if(localStorage.getItem("nickname").length == null){
+  hiNickname.innerHTML = "my friend!"
+} else {
+  hiNickname.innerHTML = localStorage.getItem("nickname") + " !";
 }
