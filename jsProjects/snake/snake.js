@@ -1,6 +1,10 @@
 //SNAKE
 let scoreBlock;
 let score = 0;
+let blockBack = {
+  x: null,
+  y: null
+}
 
 const config = {
   step: 0,
@@ -11,20 +15,16 @@ const config = {
 
 const snake = {
   x: -160,
-  y: 160,
+  y: -16,
   dx: 0,
-  dy: -config.sizeCell,
+  dy: config.sizeCell,
   tails: [],
   maxTails: 3
 }
 
-let berry1 = {
-  x: 0,
-  y: 0
-}
-let berry2 = {
+let berry = {
   x: 160,
-  y: 160
+  y: 0
 }
 
 
@@ -46,7 +46,7 @@ function gameLoop() {
   drawBerry();
   drawSnake();
 }
-setInterval(() => gameLoop(),25);
+setInterval(() => gameLoop(),20);
 
 function drawSnake() {
   snake.x += snake.dx;
@@ -69,80 +69,17 @@ function drawSnake() {
     }
     context.fillRect(el.x, el.y, config.sizeCell, config.sizeCell);
 
-    if (el.x === berry1.x && el.y === berry1.y) {
+    if (el.x === berry.x && el.y === berry.y) {
       snake.maxTails++;
       incScore();
-      randomPositionBerry1();
-    }
-    if (el.x === berry2.x && el.y === berry2.y) {
-      snake.maxTails++;
-      incScore();
-      randomPositionBerry2();
+      randomPositionBerry();
     }
 
     for (let i = index + 1; i < snake.tails.length; i++) {
-
-      //CONTROLS
-      document.addEventListener("keydown", function (e) {
-        if (e.code == "KeyW" || e.code == "ArrowUp") {
-          snake.dy = -config.sizeCell;
-          snake.dx = 0;
-        } else if (e.code == "KeyA" || e.code == "ArrowLeft") {
-          snake.dx = -config.sizeCell;
-          snake.dy = 0;
-        } else if (e.code == "KeyS" || e.code == "ArrowDown") {
-          snake.dy = config.sizeCell;
-          snake.dx = 0;
-        } else if (e.code == "KeyD" || e.code == "ArrowRight") {
-          snake.dx = config.sizeCell;
-          snake.dy = 0;
-        }
-      });
-
-      document.addEventListener('touchstart', handleTouchStart, false);
-      document.addEventListener('touchmove', handleTouchMove, false);
-
-      let x1 = null;
-      let x2 = null;
-
-      function handleTouchStart(event) {
-        let firstTouch = event.touches[0];
-        x1 = firstTouch.clientX;
-        y1 = firstTouch.clientY;
-      }
-      function handleTouchMove(event) {
-        if (!x1 || !y1) {
-          return false;
-        }
-        let x2 = event.touches[0].clientX;
-        let y2 = event.touches[0].clientY;
-
-        let xDiff = x2 - x1;
-        let yDiff = y2 - y1;
-
-        if (Math.abs(xDiff) > Math.abs(yDiff)) {
-          if (xDiff > 0) {
-            //right
-            snake.dx = config.sizeCell;
-            snake.dy = 0;
-          } else {
-            //left
-            snake.dx = -config.sizeCell;
-            snake.dy = 0;
-          }
-        } else {
-          if (yDiff > 0) {
-            //down
-            snake.dy = config.sizeCell;
-            snake.dx = 0;
-          } else {
-            //top
-            snake.dy = -config.sizeCell;
-            snake.dx = 0;
-          }
-        }
-      }
-      if (el.x == snake.tails[i].x && el.y == snake.tails[i].y) {
+      if(i==2 && el.x == snake.tails[i].x && el.y == snake.tails[i].y){
+        snake.dx = blockBack.x;
+        snake.dy = blockBack.y;
+      } else if (i > 2 && el.x == snake.tails[i].x && el.y == snake.tails[i].y) {
         refreshGame();
       }
 
@@ -169,32 +106,24 @@ function refreshGame() {
   score = 0;
   drawScore();
 
-  snake.x = -160;
-  snake.y = -160;
   snake.tails = [];
   snake.maxTails = 3;
+  snake.x = -160;
+  snake.y = -16;
   snake.dx = 0;
-  snake.dy = -config.sizeCell;
-
-  randomPositionBerry1();
-  randomPositionBerry2();
+  snake.dy = config.sizeCell;
 }
 
 function drawBerry() {
   context.beginPath();
   context.fillStyle = document.querySelector('#berry').value;
-  context.arc(berry1.x + (config.sizeCell / 2), berry1.y + (config.sizeCell / 2), config.sizeBerry, 0, 2 * Math.PI);
-  context.arc(berry2.x + (config.sizeCell / 2), berry2.y + (config.sizeCell / 2), config.sizeBerry, 0, 2 * Math.PI);
+  context.arc(berry.x + (config.sizeCell / 2), berry.y + (config.sizeCell / 2), config.sizeBerry, 0, 2 * Math.PI);
   context.fill();
 }
 
-function randomPositionBerry1() {
-  berry1.x = getRandomInt(0, canvas.width / config.sizeCell) * config.sizeCell;
-  berry1.y = getRandomInt(0, canvas.height / config.sizeCell) * config.sizeCell;
-}
-function randomPositionBerry2() {
-  berry2.x = getRandomInt(0, canvas.width / config.sizeCell) * config.sizeCell;
-  berry2.y = getRandomInt(0, canvas.height / config.sizeCell) * config.sizeCell;
+function randomPositionBerry() {
+  berry.x = getRandomInt(0, canvas.width / config.sizeCell) * config.sizeCell;
+  berry.y = getRandomInt(0, canvas.height / config.sizeCell) * config.sizeCell;
 }
 
 function incScore() {
@@ -220,3 +149,70 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
+document.addEventListener("keydown", function (e) {
+      if (e.code == "KeyW" || e.code == "ArrowUp") {
+        snake.dy = -config.sizeCell;
+        snake.dx = 0; 
+        blockBack.x = snake.dx;
+        blockBack.y = config.sizeCell;
+      } else if (e.code == "KeyA" || e.code == "ArrowLeft") {
+        snake.dx = -config.sizeCell;
+        snake.dy = 0;
+        blockBack.x = config.sizeCell;
+        blockBack.y = snake.dy;
+      } else if (e.code == "KeyS" || e.code == "ArrowDown") {
+        snake.dy = config.sizeCell;
+        snake.dx = 0;
+        blockBack.y = -config.sizeCell;
+        blockBack.x = snake.dx;
+      } else if (e.code == "KeyD" || e.code == "ArrowRight") {
+        snake.dx = config.sizeCell;
+        snake.dy = 0;
+        blockBack.y = snake.dy;
+        blockBack.x = -config.sizeCell;
+      }
+    });
+
+    document.addEventListener('touchstart', handleTouchStart, false);
+    document.addEventListener('touchmove', handleTouchMove, false);
+
+    let x1 = null;
+    let x2 = null;
+
+    function handleTouchStart(event) {
+      let firstTouch = event.touches[0];
+      x1 = firstTouch.clientX;
+      y1 = firstTouch.clientY;
+    }
+    function handleTouchMove(event) {
+      if (!x1 || !y1) {
+        return false;
+      }
+      let x2 = event.touches[0].clientX;
+      let y2 = event.touches[0].clientY;
+
+      let xDiff = x2 - x1;
+      let yDiff = y2 - y1;
+
+      if (Math.abs(xDiff) > Math.abs(yDiff)) {
+        if (xDiff > 0) {
+          //right
+          snake.dx = config.sizeCell;
+          snake.dy = 0;
+        } else {
+          //left
+          snake.dx = -config.sizeCell;
+          snake.dy = 0;
+        }
+      } else {
+        if (yDiff > 0) {
+          //down
+          snake.dy = config.sizeCell;
+          snake.dx = 0;
+        } else {
+          //top
+          snake.dy = -config.sizeCell;
+          snake.dx = 0;
+        }
+      }
+    }

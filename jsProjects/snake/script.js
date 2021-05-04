@@ -120,7 +120,7 @@ function changeName(){
   }
 }
 let hiNickname = document.querySelector("#hiNickname");
-if(localStorage.getItem("nickname").length == null){
+if(localStorage.getItem("nickname").length == 0){
   hiNickname.innerHTML = "my friend!"
 } else {
   hiNickname.innerHTML = localStorage.getItem("nickname") + " !";
