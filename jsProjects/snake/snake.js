@@ -199,20 +199,28 @@ document.addEventListener("keydown", function (e) {
           //right
           snake.dx = config.sizeCell;
           snake.dy = 0;
+          blockBack.y = snake.dy;
+          blockBack.x = -config.sizeCell;
         } else {
           //left
           snake.dx = -config.sizeCell;
           snake.dy = 0;
+          blockBack.x = config.sizeCell;
+          blockBack.y = snake.dy;
         }
       } else {
         if (yDiff > 0) {
           //down
           snake.dy = config.sizeCell;
           snake.dx = 0;
+          blockBack.y = -config.sizeCell;
+          blockBack.x = snake.dx;
         } else {
           //top
           snake.dy = -config.sizeCell;
-          snake.dx = 0;
+          snake.dx = 0; 
+          blockBack.x = snake.dx;
+          blockBack.y = config.sizeCell;
         }
       }
     }
