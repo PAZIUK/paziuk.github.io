@@ -76,10 +76,7 @@ function drawSnake() {
     }
 
     for (let i = index + 1; i < snake.tails.length; i++) {
-      if(i==2 && el.x == snake.tails[i].x && el.y == snake.tails[i].y){
-        snake.dx = blockBack.x;
-        snake.dy = blockBack.y;
-      } else if (i > 2 && el.x == snake.tails[i].x && el.y == snake.tails[i].y) {
+      if (el.x == snake.tails[i].x && el.y == snake.tails[i].y) {
         refreshGame();
       }
 
