@@ -24,6 +24,10 @@
 						</ul>
 						<div class="nosf">?</div>
 					</div>
+					<div class="change-num">
+						<p>Change</p>
+						<img src="https://img.icons8.com/emoji/48/000000/left-right-arrow-emoji.png" class="change-btn" onclick="changeNum();" />
+					</div>
 					<div class="to">
 						<p>TO</p>
 						<button class="select" onclick="showTo();">Select <img src="https://img.icons8.com/pastel-glyph/64/000000/expand-arrow.png"/></button>
@@ -37,11 +41,21 @@
 					</div>
 				</div>
 				<div class="input">
-					<input type="text" id="from">
-					<textarea id="to" readonly></textarea>
+					<div class="from">
+						<p>FROM</p>
+						<input type="text" id="from">
+					</div>
+					<div class="change-num" style="opacity: 0;visibility: hidden;">
+						<p>Change</p>
+						<img src="https://img.icons8.com/emoji/48/000000/left-right-arrow-emoji.png" class="change-btn" onclick="changeNum();" />
+					</div>
+					<div class="to">
+						<p>TO</p>	
+						<textarea id="to" readonly></textarea>
+					</div>
 				</div>
 				<div class="lets">
-					<button class="select" onclick="lets();">LETS GO</button>
+					<button class="select" onclick="lets();" type="submit">LETS GO</button>
 				</div>
 			</section>
 		</main>
