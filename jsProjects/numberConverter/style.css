@@ -7,6 +7,10 @@ body{
 	background-color: #26001B;
 	overflow-x: hidden;
 	width: 100vw;
+	font-family: Ranchers;
+}
+button{
+	font-family: Ranchers;
 }
 .select{
 	display: flex;
@@ -34,6 +38,7 @@ body{
 	width: 40px;
 }
 .from p, .to p{
+	letter-spacing: 3px;
 	text-align: center;
 	color: white;
 	font-weight: bold;
