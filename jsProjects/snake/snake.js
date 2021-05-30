@@ -1,3 +1,11 @@
+//sounds
+let sound = true;
+let eat = new Audio();
+let lose = new Audio();
+
+eat.src = "mp3/eat.mp3";
+lose.src = "mp3/lose.mp3";
+
 //SNAKE
 let scoreBlock;
 let score = 0;
@@ -27,6 +35,17 @@ let berry = {
   y: 0
 }
 
+function soundTurn(){
+  if (sound){
+    document.querySelector("#sound1").style.display = "none";
+    document.querySelector("#sound2").style.display = "flex";
+    sound = false;
+  } else {
+    document.querySelector("#sound2").style.display = "none";
+    document.querySelector("#sound1").style.display = "flex";
+    sound = true;
+  }
+}
 
 let canvas = document.querySelector("#game-canvas");
 let context = canvas.getContext("2d");
@@ -77,6 +96,9 @@ function drawSnake() {
 
     for (let i = index + 1; i < snake.tails.length; i++) {
       if (el.x == snake.tails[i].x && el.y == snake.tails[i].y) {
+        if(sound){
+          lose.play();
+        }
         refreshGame();
       }
 
@@ -126,6 +148,9 @@ function randomPositionBerry() {
 function incScore() {
   score++;
   drawScore();
+  if(sound){
+    eat.play();
+  }
 }
 
 

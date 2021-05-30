@@ -51,6 +51,7 @@ function gameHide() {
   setTimeout(() => document.querySelector("#game").classList.toggle('active'), 200);
   setTimeout(() => document.querySelector('.config-wrapper').style.display = "flex", 600);
   setTimeout(() => document.querySelector("#game").style.display = "none", 800);
+  setTimeout(() => document.querySelector('body').style.overflow = "visible",1000);
 }
 
 
