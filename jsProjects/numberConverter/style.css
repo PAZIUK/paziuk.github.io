@@ -129,15 +129,15 @@ ul.list li{
 	display: flex;
 	justify-content: space-around;
 }
-.input input,.input #to{
+.input #from,.input #to{
 	border: 2px solid #FF005C;
 	background-color: #FFf;
 	width: 200px;
-	height: 50px;
+	height: 100px;
 	padding: 1%;
 	box-sizing: border-box;
 	font-weight: bold;
-	white-space: pre-wrap;
+	resize: none; 
 }
 .error{
 	position: absolute;

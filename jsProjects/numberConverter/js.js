@@ -85,8 +85,8 @@ function changeNum(){
 	systemsToSelect = sFS;
 	nost.innerHTML = systemsToSelect;
 	nosf.innerHTML = systemsFromSelect;
-	document.querySelector("#from").innerHTML = "";
-	document.querySelector("#to").innerHTML = "";
+	document.querySelector("#from").value = "";
+	document.querySelector("#to").value = "";
 	document.querySelector("img.change-btn").classList.toggle("active");
 }
 
