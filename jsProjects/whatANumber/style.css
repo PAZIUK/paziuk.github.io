@@ -15,6 +15,7 @@ body{
 }
 h1{
 	letter-spacing: 3px;
+	margin: 0;
 }
 button{
 	font-family: Ranchers;
@@ -48,7 +49,7 @@ button{
 	color: red;
 }
 .level{
-	margin: 3rem 0; 
+	margin: 1rem 0; 
 	position: relative;
 	font-size: 60px;
 	/*display: inline-block;*/
@@ -169,4 +170,21 @@ button{
 }
 .win.active{
 	transform: scale(1);
+}
+@media(max-width: 768px){
+	.start{
+		width: unset;
+		height: unset;
+		margin: 1rem;
+	}
+	.game input{
+		margin: 2rem;
+	}
+	.game h1{
+		font-size: 1.3rem;
+	}
+	h1#answer{
+		margin-top: 1rem;
+		font-size: 1.3rem;
+	}
 }

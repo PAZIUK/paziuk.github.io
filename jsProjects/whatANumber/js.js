@@ -22,6 +22,7 @@ let winSound = new Audio();
  	winSound.src = 'mp3/winSound.mp3'
 
 let levelNum = 0;
+let lastLevelNum;
 let levelNumbers = document.querySelector("#levelNumbers");
 let level = {
 	first: function(){
@@ -71,28 +72,75 @@ function random(){
 	console.log(number);
 }
 function back(){
+	lastLevelNum = levelNum;
 	setTimeout(()=>document.querySelector(".start").classList.toggle('active'),1050);
 	setTimeout(()=>document.querySelector(".start").style.display = "flex",1001);
 	setTimeout(()=>document.querySelector(".game").classList.toggle('active'),1);
 	setTimeout(()=>document.querySelector(".game").style.display = "none",1000);
+	setTimeout(()=>document.querySelector("#error").innerHTML = "0",2000);
+
 }
 function start(){
 	if(levelNum == 0){
 		document.querySelector(".start").querySelectorAll("h1")[1].style.color = "red";
-		document.querySelector(".start").querySelectorAll("h1")[1].innerHTML = "CHOOSE LEVEL";
+		document.querySelector(".start").querySelectorAll("h1")[1].innerHTML = "CHOOSE LEVEL!!";
 	} else {
 		setTimeout(()=>document.querySelector(".game").classList.toggle('active'),1050);
 		setTimeout(()=>document.querySelector(".game").style.display = "flex",1001);
 		setTimeout(()=>document.querySelector(".start").classList.toggle('active'),1);
 		setTimeout(()=>document.querySelector(".start").style.display = "none",1000);
-		random();
+		setTimeout(()=>document.querySelector(".start").querySelectorAll("h1")[1].style.color = "black",1001);
+		setTimeout(()=>document.querySelector(".start").querySelectorAll("h1")[1].innerHTML = "Now you need to choose a level of game!",1001);
+		if(levelNum == lastLevelNum){
+			document.querySelector("#error").innerHTML = tryIt;
+		} else {
+			document.querySelector("#num").value = "";
+			tryIt = 0;
+			random();
+		}
+		
 	}
+}
+function win(){
+	document.querySelector("#tryIt").style.color = "red";
+	document.querySelector("#tryIt").innerHTML = "&nbsp;"+tryIt+"&nbsp;";
+	document.querySelector(".win").classList.toggle("active");
+}
+function restart(){
+	tryIt = 0;
+	document.querySelector("#error").innerHTML = tryIt;
+	document.querySelector(".win").classList.toggle("active");
+	document.querySelector("#answer").innerHTML = "&#8291;";
+	document.querySelector("#num").value = "";
+	random();
+}
+function refresh(){
+	tryIt = 0;
+	document.querySelector("#error").innerHTML = tryIt;
+	document.querySelector("#answer").innerHTML = "&#8291;";
+	random();
+	document.querySelector("#num").value = "";
+}
+function soundTurn(){
+	if (sound){
+		document.querySelector("#sound1").style.display = "none";
+		document.querySelector("#sound2").style.display = "flex";
+		sound = false;
+	} else {
+		document.querySelector("#sound2").style.display = "none";
+		document.querySelector("#sound1").style.display = "flex";
+		sound = true;
+	}
+
+}
+function cleerAnswer(){
+	answer.innerHTML = "&#8291;";
 }
 function game(){
 	let answer = document.querySelector("#answer");
 	let num = document.querySelector("#num").value;
 
-	if (isNaN(Number(num))) {
+	if (isNaN(Number(num))||num.length == 0) {
 		answer.innerHTML = "You writed wrong info";
 		answer.style.color = "red";
 		if(sound){
@@ -316,36 +364,4 @@ function game(){
 			}
 		}
 	}
-}
-function win(){
-	document.querySelector("#tryIt").style.color = "red";
-	document.querySelector("#tryIt").innerHTML = "&nbsp;"+tryIt+"&nbsp;";
-	document.querySelector(".win").classList.toggle("active");
-}
-function restart(){
-	tryIt = 0;
-	document.querySelector("#error").innerHTML = tryIt;
-	document.querySelector(".win").classList.toggle("active");
-	document.querySelector("#answer").innerHTML = "&#8291;";
-	document.querySelector("#num").value = "";
-	random();
-}
-function refresh(){
-	tryIt = 0;
-	document.querySelector("#error").innerHTML = tryIt;
-	document.querySelector("#answer").innerHTML = "&#8291;";
-	random();
-	document.querySelector("#num").value = "";
-}
-function soundTurn(){
-	if (sound){
-		document.querySelector("#sound1").style.display = "none";
-		document.querySelector("#sound2").style.display = "flex";
-		sound = false;
-	} else {
-		document.querySelector("#sound2").style.display = "none";
-		document.querySelector("#sound1").style.display = "flex";
-		sound = true;
-	}
-
 }
