@@ -1,7 +1,7 @@
-let lessonsLength = +prompt("Скільки уроків у вас є щодня?");
-let start = prompt("Коли починається перший урок?");
-let howMuch = +prompt("Скільки часу тривають уроки?");
-let timeout = +prompt("Скільки часу тривають перерви?");
+let lessonsLength = +prompt("How many lessons do you have each day?");
+let start = prompt("When does the first lesson begin?");
+let howMuch = +prompt("How long do the lessons last?");
+let timeout = +prompt("How long are the breaks between lessons?");
 let end = document.querySelectorAll(".endLesson");
 
 let table = document.querySelector("table").querySelector("tbody");
