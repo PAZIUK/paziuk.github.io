@@ -731,6 +731,7 @@ header ul li:hover{
   }
   .content .info .photo {
     max-height: 350px;
+    overflow: hidden;
   }
   .contacts .tel-mail p {
     justify-content: flex-start;
