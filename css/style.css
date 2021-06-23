@@ -239,6 +239,7 @@ header ul li:hover{
 .content .info-tabcontent .description-text {
   margin-top: 30px;
   color: #fff;
+  border-right: 2px solid #fff;
   font-weight: 300;
   padding-right: 20px;
   font-size: 1.2rem;
