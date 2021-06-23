@@ -912,3 +912,8 @@ header ul li:hover{
     font-size: 2.3vw;
   }
 }
+@media(max-width: 960px){
+  .content .info .btnMore, .content .info .btnNoMore{
+    width: 100%;
+  }
+}
