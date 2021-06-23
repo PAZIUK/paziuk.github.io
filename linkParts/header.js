@@ -1,23 +1,23 @@
-let header = document.querySelector('header');
-let headerPart = 
-  '<div class="header" tabindex="1">' +
-    '<div class="logo">' +
-      '<a href="/"><img src="/img/logo.png" alt="Logo"></a>' +
-    '</div>' +
-    '<nav class="nav">' +
-      '<ul>' +
-        '<li><a href="/projects/projects.html">ALL PROJETCS</a></li>' +
-        '<li><a href="/#about">ABOUT ME</a></li>' +
-        '<li><a href="/#study">STUDY</a></li>' +
-        '<li><a href="/colors/colors.html">MY PALETTES</a></li>' +
-        '<li><a href="/#contacts">CONTACTS</a></li>' +
-      '</ul>' +
-    '</nav>' +
-    '<div class="mobile-bar" onclick="toggle();">' +
-      '<span></span>' +
-      '<span></span>' +
-      '<span></span>' +
-    '</div>' +
-  '</div>';
+let headerMenu = ['About','Projects','Contacts'];
 
-header.innerHTML = headerPart;
+let header = document.createElement("header"),
+    container = document.createElement("div"),
+    nav =  document.createElement("nav"),
+    ul = document.createElement("ul");
+
+    for (let i = 0; i < headerMenu.length; i++) {
+      let li = document.createElement('li');
+      let a = document.createElement('a');
+      a.setAttribute("href","#"+headerMenu[i].toLowerCase());
+      a.innerHTML = headerMenu[i];
+      li.appendChild(a);
+      ul.appendChild(li);
+    }
+
+    container.className = "container"; 
+
+    nav.appendChild(ul);
+    container.appendChild(nav);
+    header.appendChild(container);
+document.body.appendChild(header);
+
