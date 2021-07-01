@@ -112,6 +112,31 @@ let appData = {
     link:projectLinkFolder+"other/timetableLessons/index.html",
     description:`This small web-programm can help you with timetable of school lessons`
   },
+  // Timer:{
+  //   type:"other",
+  //   date:"25.06.21",
+  //   imgLink:"timer/",
+  //   img:["1.jpg"],
+  //   link:projectLinkFolder+"other/timer/index.html",
+  //   //description:``
+  // },
+  "Is it a palindrome?":{
+    type:"other",
+    date:"29.06.21",
+    imgLink:"palindrome/",
+    img:["1.jpg"],
+    link:projectLinkFolder+"other/palindrome/index.html",
+    description:`A palindrome is a word, number, phrase, or other sequence of characters which reads the same backward as forward, such as madam or racecar.`
+  },
+  "What your zodiac sign?":{
+    type:"other",
+    date:"30.06.21",
+    imgLink:"zodiac/",
+    img:["1.jpg"],
+    link:projectLinkFolder+"other/zodiac/index.html",
+    //description:``,
+
+  }
 }
  
 

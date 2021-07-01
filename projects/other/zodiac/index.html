@@ -4,7 +4,8 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Serhiy Paziuk</title>
-	  	<link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon.png">	 
+
+		<link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon.png">	 
 	  	<link rel="shortcut icon" href="/img/favicons/favicon-32x32.png" type="image/png">	 
 	  	<link rel="shortcut icon" href="/img/favicons/favicon.ico" type="image/x-icon">	 
 	  	<link rel="icon" type="image/png" sizes="32x32" href="/img/favicons/favicon-32x32.png">	 
@@ -14,19 +15,28 @@
 	  	<meta name="msapplication-TileColor" content="#00ffd7">	 
 	  	<meta name="msapplication-TileImage" content="/img/favicons/mstile-144x144.png">	 
 	  	<meta name="theme-color" content="#00ffd7">	
-		<link rel="stylesheet" href="style.css">
-		<link rel="preconnect" href="https://fonts.gstatic.com">
-  		<link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
+
+	  	<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<div class="block">
-			<textarea id="input" placeholder="Enter a list, but with a period"></textarea>
-			<textarea id="result" readonly></textarea>
-			<input type="checkbox" id="checkbox">
-			<label for="checkbox">Are you want delete element after that?</label>
-			<button id="submit" onclick="submit();">Lets Go</button>
+		<select class="lang">
+			<option value="ENG" selected>ENG</option>
+			<option value="UA">UA</option>
+			<option value="RU">RU</option>
+		</select>
+		<div class="check">
+			<div class="header">
+				<h1></h1>
+			</div>
+			<div class="body">
+				<div class="preout">&#8291;</div>
+				<input type="text" maxlength="5">
+				<div class="out">&#8291;</div>
+			</div>
+			<div class="footer">
+				<input type="submit" value="CHECK">
+			</div>
 		</div>
-		
 		<script src="js.js"></script>
 	</body>
 </html>
