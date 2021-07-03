@@ -135,8 +135,15 @@ let appData = {
     img:["1.jpg"],
     link:projectLinkFolder+"other/zodiac/index.html",
     //description:``,
-
-  }
+  },
+  "Alisa Portman CV":{
+    type:"sites",
+    date:"04.07.21",
+    imgLink:"alisa-portman-CV/",
+    img:["1.jpg","2.jpg","3.jpg"],
+    link:projectLinkFolder+"sites/alisa-portman-CV/index.html",
+    //description:``,
+  },
 }
  
 

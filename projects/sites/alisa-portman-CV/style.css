@@ -1,0 +1,281 @@
+:root{
+	--color-1:#1dbac9;
+	--color-2:#4f5668;
+	--color-3:#404040;
+}
+*{
+	outline: none;
+}
+body{
+	margin: 0;
+	overflow-x: hidden;
+	box-sizing: border-box;
+	background-color: white;
+	font-family: 'Londrina Solid', cursive;
+}
+.container{
+	max-width: 1100px;
+	margin: 0 auto;
+}
+h1,h2,h3,h4,h5,h6{
+	margin: 0;
+}
+header .container,footer .container{
+	padding: .5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.logo h1{
+	font-size: 1.6rem;
+	letter-spacing: 1.5px;
+}
+.logo span{
+	color: var(--color-1);
+}
+header ul {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+header ul li{
+	list-style: none;
+	margin-right: 1rem;
+}
+header ul li a{
+	text-decoration:none;
+	color: #60636c;
+	font-family: "Noto Sans JP",cursive;
+	font-size: .8rem;
+	border: 2px solid transparent;
+	border-top: 2px solid var(--color-1);
+	transition: all .7s ease 0s;
+	padding: .4rem
+}
+header ul li a:hover{
+	border-bottom: 2px solid var(--color-1);
+}
+.main{
+	height: 600px;
+	background-color: #ececec;
+}
+.main .container{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.main .photo img{
+	height: 600px;
+}
+.main .about .name{
+	color: var(--color-2);
+	font-family: "Noto Sans JP",cursive;
+	font-size: 6rem;
+}
+.main .about .job{
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 3rem;
+	color: var(--color-3);
+}
+.main .about .contacts{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 2rem;
+	border-radius: 1000px;
+	background-color: white;
+}
+.main .about .contacts .box{
+	padding: .8rem;
+}
+.main .about .contacts .box:hover{
+	cursor: pointer;
+}
+.main .about .contacts .box img{
+	width: 40px;
+	display: block;
+}
+
+section.about{
+	background-color: white;
+	height: 600px;
+}
+section.about .container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+section.about .photo{
+	flex: 1;
+	margin-right: 2rem;
+}
+section.about .photo img{
+	height: 600px;
+}
+section.about .about_desc{
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+}
+.about_desc .title{
+	color: var(--color-2);
+	font-family: "Noto Sans JP",cursive;
+	font-size: 2rem;
+	margin-bottom: 1rem;
+	padding-left: 1rem;
+}
+.about_desc .desc{
+	color: var(--color-3);
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 1.3rem;
+	border-bottom: 1px solid #dedede;
+	padding: 0 1rem 1rem 1rem;
+	margin-bottom: 1rem;
+}
+.about_desc .skills{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+}
+.skills .skillbox{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+.skills .skillbox .title-and_percent{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	margin-bottom: .5rem;
+}
+.skills .skillbox .title-and_percent .title{
+	font-size: 1rem;
+	margin-bottom: unset;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--color-3);
+}
+.skills .skillbox .title-and_percent .percent{
+	color: var(--color-3);
+}
+.skills .skillbox .linebox{
+	width: 98%;
+	background-color: #dedede;
+	height: 4px;
+	border-radius: 100px;
+	margin-left: 1rem;
+	overflow: hidden;
+}
+.skills .skillbox .linebox .line{
+	background-color: var(--color-1);
+	height: 4px;
+	border-radius: 100px;
+}
+.experience{
+	height: 350px;
+	background-color: #ececec;
+	display: grid;
+}
+.experience .container{
+	display: grid;
+	grid-template-columns: repeat(4,1fr);
+	grid-template-rows: repeat(1,1fr);
+	grid-gap: 5px;
+	padding: 5rem 0;
+}
+.exp_block{
+	background-color: #fff;
+	padding: 1rem;
+	border-top: 2px solid var(--color-1);
+	border-bottom: 2px solid var(--color-1);
+}
+.exp_block:first-child{
+	border-radius: 20px 0 0 20px;
+	border-left: 2px solid var(--color-1);
+}
+.exp_block:last-child{
+	border-radius: 0 20px 20px 0;
+	border-right: 2px solid var(--color-1);
+}
+.exp_block .title{
+	margin-bottom: .5rem;
+	font-family: "Noto Sans JP",cursive;
+}
+.exp_block .desc{
+	font-family: 'Nanum Gothic', sans-serif;
+	color: var(--color-2);
+}
+.exp_block .img{
+	margin-bottom: .5rem;
+}
+.exp_block .img img{
+	display: block;
+}
+
+.contacts{
+	background-color: white;
+}
+.contacts .container{
+	padding: 3rem 0rem;
+}
+.contacts .container .title{
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	font-size: 2rem;
+	color: var(--color-2);
+	font-family: "Noto Sans JP",cursive;
+	margin-bottom: 1.5rem;
+}
+.contacts .container .desc{
+	width: 80%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	font-family: 'Nanum Gothic', sans-serif;
+	color: var(--color-2);
+}
+.contacts .container .items{
+	widows: 100%;
+	margin-top: 2rem; 
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	grid-template-rows: repeat(1,1fr);
+	justify-content: space-between;
+}
+.contacts .container .items .item{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border-right: 2px solid var(--color-1);
+}
+.contacts .container .items .item:last-child{
+	border-right: none;
+}
+.contacts .container .items .item .title{
+	width: unset;
+	display: unset;
+}
+.contacts .container .items .item .desc{
+	width: unset;
+	display: unset;
+}
+
+footer {
+	background-color: #ececec;
+}
+footer .copyright{
+	font-size: 1.4rem;
+}
+footer .copyright span{
+	font-family: unset;
+}
