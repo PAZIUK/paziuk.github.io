@@ -137,7 +137,7 @@ let appData = {
     //description:``,
   },
   "Alisa Portman CV":{
-    type:"sites",
+    type:"site",
     date:"04.07.21",
     imgLink:"alisa-portman-CV/",
     img:["1.jpg","2.jpg","3.jpg"],
