@@ -510,7 +510,12 @@ footer .copyright span{
 	.contacts .container .items .item .title {
 	    margin-bottom: .3rem;
 	}
-
+	header nav{
+		display: none;
+	}
+	header .mobile-bar{
+		display: flex;
+	}
 }
 @media(min-width: 481px) and (max-width: 767px){
 	.about .photo {
@@ -531,5 +536,8 @@ footer .copyright span{
 	section.main{
 		height: 300px;
 		padding-left: 1rem;
+	}
+	header nav{
+		display: flex;
 	}
 }
