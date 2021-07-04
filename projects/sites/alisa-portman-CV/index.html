@@ -28,10 +28,25 @@
 						<li><a href="#contacts">CONTACTS</a></li>
 					</ul>
 				</nav>
+				<div class="mobile-bar">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
 			</div>
 		</header>
 
 		<section class="main">
+			<div class="toggleMenu">
+				<nav>
+					<ul>
+						<li><a href="/">HOME</a></li>
+						<li><a href="#about">ABOUT</a></li>
+						<li><a href="#experience">EXPERIENCE</a></li>
+						<li><a href="#contacts">CONTACTS</a></li>
+					</ul>
+				</nav>
+			</div>
 			<div class="container">
 				<div class="about">
 					<div class="name">Alisa Portman</div>
@@ -157,6 +172,19 @@
 				</div>
 			</div>
 		</footer>
+
+		<script>
+			document.querySelector(".mobile-bar").onclick = function() {
+				this.classList.toggle("active");
+				document.querySelector(".toggleMenu").classList.toggle("active");
+			}
+			window.addEventListener('scroll',()=>{
+				if(document.querySelector('.toggleMenu').classList.contains('active')){
+					document.querySelector('.toggleMenu').classList.remove('active');
+					document.querySelector('.mobile-bar').classList.remove('active');
+				}
+			})
+		</script>
 
 	</body>
 </html>
