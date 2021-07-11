@@ -51,9 +51,11 @@ document.addEventListener("keydown", function (e) {
 		keyBoard = "";
 		if (secret) {
 			document.body.appendChild(secretBlock);
+			setTimeout(()=>document.querySelector("#secret").focus(),50);
 			document.querySelector(".secret").addEventListener("keydown", function(e){
 				if(e.code == "Enter"){
-					secretCommands();
+					// console.log(commands)
+					secretCommands()
 				}
 				document.querySelector("#secret").oninput = ()=>{
 					let secret = document.querySelector("#secret");
@@ -112,9 +114,18 @@ function changeTypeOfInput(){
 
 
 let commands = {
-	dilema:{
-		type:"link",
-		link:"projects/sites/dilemaclothes/index.html",
+	ip:{
+		type: "func",
+		func: function (){
+			let ip = document.querySelector("#secret").value.substring(4, document.querySelector("#secret").value.length);
+			if(ip.toLowerCase() == "my"){
+				$.get("https://ipinfo.io/",function(response){
+					location.href = location.href = "js/secretFiles/ip.html#"+response.ip;
+				},"jsonp")
+			} else {
+				location.href = "js/secretFiles/ip.html#"+ip;
+			}
+		}
 	}
 }
 
@@ -122,10 +133,17 @@ function secretCommands(){
 	let secret = document.querySelector("#secret");
 	let command = secret.value.substring(1, secret.value.length);
 	for(let i = 0; i<Object.keys(commands).length;i++){
-		if (command == (Object.keys(commands)[i])) {
-			if(Object.values(commands)[i].type == "link"){
-				window.open(Object.values(commands)[i].link,"_self")
-			}
+		if (command.toLowerCase() == Object.keys(commands)[i] && Object.values(commands)[i].type.toLowerCase() == "link") {
+			location.href = Object.values(commands)[i].command;
+		}
+		if (command.toLowerCase() == Object.keys(commands)[i] && Object.values(commands)[i].type.toLowerCase() == "func") {
+			Object.values(commands)[i].func();
+		}
+
+
+
+		if(command.substring(0,2).toLowerCase()=="ip"){
+			commands.ip.func();
 		}
 	}
 }

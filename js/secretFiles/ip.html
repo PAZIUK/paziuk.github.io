@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>IP</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400&display=swap" rel="stylesheet">
+
+		<link rel="apple-touch-icon" sizes="76x76" href="imgIP/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="imgIP/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="imgIP/favicon-16x16.png">
+		<link rel="manifest" href="imgIP/site.webmanifest">
+		<meta name="msapplication-TileColor" content="#00aba9">
+		<meta name="theme-color" content="#ffffff">
+	</head>
+	<body>
+		<style>
+			body{
+				background-color: #F9ED69;
+				overflow: hidden;
+				font-family: "Work Sans",cursive;
+			}
+			.container{
+				width: 100vw;
+				height: 100vh;
+				display: flex;
+				max-width: 1000px;
+				margin: 0 auto;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.block{
+				background-color: #EAFFD0;
+				border-radius: 10px;
+				padding: .5rem;
+				min-width: 250px;
+				display: grid;
+				grid-template-columns: repeat(2,1fr);
+				grid-template-rows: 1fr;
+			}
+			.block_item{
+				width: 100%;
+				padding: .3rem;
+				color: red;
+				font-weight: bold;
+			}
+			.error{
+				color: red;
+				font-weight: bold;
+			}
+			dt,dd{
+				margin-bottom: 1rem;
+				display: flex;
+				flex: 0 0;
+				width: unset;
+				font-weight: bold;
+			}
+			a{
+				text-decoration:none;
+				color:black;
+				cursor: default;
+			}
+		</style>
+
+		<div class="container">
+			<dl class="block"></dl>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+		<script>
+			let ipIndex = window.location.href.indexOf("#");
+			let ip = window.location.href.substring((ipIndex+1),window.location.href.length);
+			document.querySelector("title").innerHTML = "IP - "+ip;
+			fetch("https://ipinfo.io/"+ip).then(response=>{
+				if (response.status == "404") {
+					document.querySelector(".block").innerHTML = `<div class="error">Sorry ERROR ${response.status}</div>`;
+					setTimeout(()=>{
+						let cutHrefIndex = window.location.href.lastIndexOf("#");
+						let newHref = window.location.href.substring(0,(cutHrefIndex+1));
+						$.get("https://ipinfo.io/",function(response){
+							location.href = newHref+response.ip;
+							location.reload();
+						},"jsonp")
+					},1500)
+				}
+				else if(response.status == "429"){
+					document.querySelector(".block").style.display = "flex"
+					document.querySelector(".block").innerHTML = `<div class="error">Sorry ERROR ${response.status}, you can try later</div>`;
+				}
+				else if(response.status == "200") {
+					$.get("https://ipinfo.io/"+ip,function (response) {
+						let block = $(response).find("dl.row").html()
+						document.querySelector(".block").innerHTML = block;
+						document.querySelectorAll("a.flag").forEach((item)=>{
+							item.setAttribute("href",ip)
+							item.addEventListener("click",function(e){
+								e.preventDefault();
+							})
+						})
+					})
+				}
+			})
+
+		</script>
+		
+	</body>
+</html>
