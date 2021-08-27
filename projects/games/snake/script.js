@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", animation);
 //SNAKE STYLE 
 let snakeHead = document.querySelector('#resultHead');
 let berryStyle = document.querySelector('#berryStyle');
-let snakeTail = document.querySelector('#snake-parts').querySelector('.tail');
+let snakeTail = document.querySelector('#snake-parts .tail');
 function snakeStyleHead() {
   let head = document.querySelector('#head').value;
   snakeHead.style.backgroundColor = head;
@@ -64,15 +64,15 @@ window.onload = function () {
   let snakeHead = document.querySelector('#resultHead');
   let snakeTail = document.querySelector('#snake-parts').querySelector('.tail');
   let berryStyle = document.querySelector('#berryStyle');
-  let nicknameHtml = document.querySelector(".assets").querySelector(".nickname").querySelector(".name");
+  let nicknameHtml = document.querySelector(".assets .nickname .name");
 
   if (localStorage.getItem("nickname")) {
     nickname.value = localStorage.getItem("nickname");
   }
-  localStorage.nickname = nickname.value;
+  localStorage.nickname = nickname.value.trim();
   nicknameHtml.innerHTML = localStorage.nickname;
   nickname.oninput = function () {
-    localStorage.setItem("nickname", nickname.value);
+    localStorage.setItem("nickname", nickname.value.trim());
   };
 
   if (localStorage.getItem("head")) {
@@ -105,7 +105,7 @@ window.onload = function () {
 
 function changeName(){
   let nickname = document.querySelector('#nickname');
-  let nicknameHtml = document.querySelector(".assets").querySelector(".nickname").querySelector(".name");
+  let nicknameHtml = document.querySelector(".assets .nickname .name");
   let doYouChangeName = confirm("Do you wan`t to change name?");
     if(doYouChangeName){
       if (localStorage.getItem("nickname")) {
@@ -113,7 +113,7 @@ function changeName(){
       }
     let changeName = prompt('CHANGE NAME', nickname.value);
     if(changeName){
-      localStorage.setItem("nickname", changeName);
+      localStorage.setItem("nickname", changeName.trim());
       nicknameHtml.innerHTML = localStorage.nickname;
       nickname.value =  localStorage.nickname;
       hiNickname.innerHTML =  localStorage.nickname + " !";
@@ -126,3 +126,18 @@ if(localStorage.getItem("nickname").length == 0){
 } else {
   hiNickname.innerHTML = localStorage.getItem("nickname") + " !";
 }
+
+document.querySelector('#nickname').onchange = function(){
+  localStorage.setItem("nickname", this.value.trim());
+  document.querySelector(".assets .nickname .name").innerHTML = this.value.trim();
+  document.querySelector("#hiNickname").innerHTML = this.value.trim() + " !";
+  console.log(this.value.trim())
+}
+
+window.onload = ()=>{
+  document.body.style.minHeight = window.innerHeight+"px"
+}
+
+window.addEventListener("resize", ()=>{
+  document.body.style.minHeight = window.innerHeight+"px"
+})

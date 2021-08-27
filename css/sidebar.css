@@ -1,0 +1,236 @@
+.sidebar{
+  height: 100vh;
+  width: 2rem;
+  position: fixed;
+  top: .2rem;
+  left: 0;
+  background-color: var(--color-1);
+  padding: .5rem 1rem;
+  transition: all .5s ease 0s;
+  z-index: 100000;
+}
+.sidebar.active{
+  width: 13rem;
+
+}
+.sidebar .bx:hover{
+  cursor: pointer;
+}
+.sidebar .logo_content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+}
+.sidebar .logo_content .logo{
+  color: white;
+  align-items: center;
+  width: 100%;
+  display: none;
+}
+.sidebar.active .logo_content .logo{
+  display: flex;
+}
+.sidebar.active .logo_content .logo:hover{
+  cursor: pointer;
+}
+.logo_content .logo i{
+  margin-right: .4rem;
+  font-size: 2rem;
+}
+.logo_content .logo .logo_name{
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+.logo_content .logo .logo_name span{
+        font-family: 'Arial', sans-serif;
+        color: var(--color-3)
+}
+.logo_content .bx-menu:before {
+  content: "\edc2";
+  color: white;
+  font-size: 1.5rem;
+}
+.logo_content .bx-x-circle:before {
+  content: "\eef1";
+  color: red;
+  font-size: 1.5rem;
+}
+
+.sidebar ul{
+  margin-top: .8rem;
+  padding-top: .8rem;
+  border-top: 1px solid #7d7d7d;
+}
+.sidebar ul li{
+  position: relative;
+  height: 2rem;
+  width: 100%;
+  list-style: none;
+  line-height: 2rem;
+  margin-bottom: .3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sidebar.active ul li{
+  justify-content: unset;
+  width: 100%;
+}
+.sidebar.active ul li a{
+  width: 100%;
+  justify-content: unset;
+}
+
+.sidebar ul li a{
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  border-radius: 100px;
+  transition: all .4s ease 0s;
+  padding: 0 1rem;
+  height: 2rem;
+  justify-content: center;
+}
+.sidebar ul li a:hover{
+  color: var(--color-1); 
+  background-color: white;
+  cursor: pointer;
+}
+.sidebar ul i{
+  font-size: 1.5rem;
+}
+.sidebar.active ul i{
+  margin-right: .6rem;
+}
+.sidebar .links_name{
+  display: none;
+}
+.sidebar.active .links_name{
+  display: unset;
+}
+.sidebar ul.navigation li input{
+  display: none;
+  background-color:unset;
+}
+.sidebar.active ul.navigation li input{
+  border: none;
+  width: 100%;
+  position: relative;
+  z-index: 9;
+  color: white;
+  display: unset;
+  border-radius: 100px;
+  height: 2rem;
+  padding: 0 1rem 0 3rem;
+  background-color: var(--color-2);
+}
+.sidebar ul li .tooltip{
+  position: absolute;
+  top: 0;
+  left: 3.5rem;
+  transform: translateY(-50%);
+  border-radius: 10px;
+  height: 2rem;
+  width: 8rem;
+  background-color: white;
+  line-height: 2rem;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  transition: 0s;
+  opacity: 0;
+  color: var(--color-2);
+  pointer-events: none;
+  font-weight: bold;
+}
+.sidebar ul li:hover .tooltip{
+  transition: all .5s ease 0s;
+  top: 50%;
+  opacity: 1;
+}
+.sidebar ul.log-reg li .tooltip{
+  font-size: .8rem;
+}
+.sidebar.active .tooltip{
+  display: none;
+}
+.sidebar .profile_content .profile .tooltip{
+  position: absolute;
+  top: 0;
+  left: 4.5rem;
+  transform: translateY(-50%);
+  border-radius: 10px;
+  height: 2rem;
+  width: 8rem;
+  background-color: white;
+  line-height: 2rem;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  transition: 0s;
+  opacity: 0;
+  pointer-events: none;
+  color: var(--color-2);
+}
+.sidebar i:hover .tooltip{
+  transition: all .5s ease 0s;
+  top: 50%;
+  opacity: 1;
+}
+.sidebar .profile_content .profile_details{
+  display: none;
+}
+
+
+.sidebar .profile_content{
+  position: absolute;
+  left: 0;
+  bottom: 1rem;
+  color: white;
+  width: 100%;
+}
+.sidebar.active .profile_content .profile,.sidebar .profile_content .profile{
+  position: relative; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1rem 1rem .5rem;
+  background-color: var(--color-2);
+  color: white;
+}
+.sidebar .profile_content .profile{
+  justify-content: center;
+}
+.sidebar .profile_content .profile i {
+  font-size: 1.4rem;
+}
+.sidebar.active .profile_content .profile .profile_details{
+  display: flex;
+  align-items: center;
+}
+.sidebar .profile_content .profile .profile_details .job{
+  font-size: .8rem;
+}
+.sidebar .profile_content .profile .profile_details img{
+  width: 2rem;
+  margin-right: .5rem;
+  border-radius: 10px;
+}
+
+
+
+@media(min-width: 1920px){
+  .sidebar{
+    width: 1920px;
+    height: 2rem;
+    padding: 1rem 0rem;
+    left:calc((100vw - 1920px) / 2);
+    display: flex;
+  }
+  .sidebar ul{
+    display: flex;
+  }
+  .sidebar .profile_content{
+    display: none;
+  }
+}

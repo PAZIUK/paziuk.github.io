@@ -4,8 +4,9 @@
 body {
   margin: 0px;
   font-family: "Zen Dots", cursive;
-  background: rgb(255, 0, 0);
-  background: linear-gradient(90deg, rgba(255, 0, 0, 1) 0%, rgba(255, 240, 0, 1) 100%);
+  background-color: rgb(241 255 121);
+  /*background: rgb(255, 0, 0);*/
+  /*background: linear-gradient(90deg, rgba(255, 0, 0, 1) 0%, rgba(255, 240, 0, 1) 100%);*/
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -156,6 +157,7 @@ p {
 .button button:hover {
   padding: 2% 15%;
   background: rgb(255, 240, 0);
+  color: white;
   background: linear-gradient(90deg, rgba(255, 240, 0, 1) 0%, rgba(255, 0, 0, 1) 100%);
 }
 

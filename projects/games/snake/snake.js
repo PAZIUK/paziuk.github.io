@@ -246,3 +246,11 @@ document.addEventListener("keydown", function (e) {
         }
       }
     }
+
+
+document.querySelector('.refresh button').onclick = ()=>{
+  sound = true;
+}
+document.querySelector("#backBTN").onclick = ()=>{
+  sound = false;
+}
