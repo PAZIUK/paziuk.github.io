@@ -760,6 +760,14 @@ body{
     border-bottom: 2px solid white; 
   }
 }
+@media(max-width: 900px){
+  .scrollbar{
+    display: none;
+  }
+  .sidebar{
+    top: 0;
+  }
+}
 @media(min-width: 768px) and (max-width: 900px){
   .Projects .projects{
     grid-template-columns: repeat(2,1fr);
@@ -771,11 +779,6 @@ body{
 @media(min-width: 768px) and (max-width: 1100px){
   .about .skills .hard_skills .blocks{
     grid-template-columns: repeat(3,1fr);
-  }
-}
-@media(min-width: 768px) and (max-width: 960px){
-  .Filters .btns button,.Filters .tech button{
-    font-size: 1.3rem; 
   }
 }
 
