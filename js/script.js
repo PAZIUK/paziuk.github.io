@@ -2,12 +2,11 @@
 let progressLine = document.querySelector(".scrollLine"),
 	totalHeight;
 
-window.onscroll = ()=>{
+window.addEventListener("scroll",()=>{
 	totalHeight = document.body.scrollHeight - window.innerHeight;
 	let progress = (window.pageYOffset / totalHeight) * 100;
-	console.log(progress)
 	progressLine.style.width = progress+"vw";
-}
+})
 
 //to main page link
 document.querySelector(".sidebar .logo_content .logo").addEventListener("click",()=>{
