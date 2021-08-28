@@ -330,6 +330,9 @@ if(window.location.href.split("/").pop().substr(0,13)=="projects.html"){
         if (Object.values(appData)[i].id==15) {
           photo.style.backgroundColor = "#000000";
         }
+        if (Object.values(appData)[i].id==16) {
+          photo.style.backgroundColor = "#56baed";
+        }
       }
     }
 
@@ -436,6 +439,9 @@ if(window.location.href.split("/").pop().substr(0,13)=="projects.html"){
         }
         if (Object.values(appData)[i].id==15) {
           photo.style.backgroundColor = "#000000";
+        }
+        if (Object.values(appData)[i].id==16) {
+          photo.style.backgroundColor = "#56baed";
         }
       }
     }
