@@ -10,8 +10,7 @@ window.addEventListener("scroll",()=>{
 
 //to main page link
 document.querySelector(".sidebar .logo_content .logo").addEventListener("click",()=>{
-	if(window.location.href.split("/").pop().substr(0,13)=="projects.html") window.location.href = "../index.html"
-	if(window.location.href.split("/").pop().substr(0,10)=="index.html") window.location.href = "";
+	window.location.href = "/"
 })
 
 

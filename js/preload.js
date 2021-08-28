@@ -12,15 +12,15 @@ function hidePreload(){
 	}
 }
 document.addEventListener("DOMContentLoaded",()=>{
-	// if (howManyPreload>=9900) {
-	// 	hidePreload();
-	// } else {
-	// 	setTimeout(()=>{
-	// 		hidePreload();
-	// 		clearInterval(int)
-	// 	},9900-howManyPreload)
-	// }
+	if (howManyPreload>=9900) {
+		hidePreload();
+	} else {
+		setTimeout(()=>{
+			hidePreload();
+			clearInterval(int)
+		},9900-howManyPreload)
+	}
 
-	hidePreload();
+	// hidePreload();
 	
 })

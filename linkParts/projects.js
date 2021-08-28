@@ -183,6 +183,17 @@ let appData = {
     id:15,
     //description:``,
   },
+  "Tic-Tac-Toe":{
+    type:"game",
+    date:"28.08.21",
+    imgLink:"tictactoe/",
+    img:["1.jpg"],
+    link:projectLinkFolder+"games/tictactoe/index.html",
+    smallDesc:"You know what is it!",
+    tech:["HTML5","CSS3","JS"],
+    id:16,
+    //description:``,
+  },
 }
  
 
@@ -219,114 +230,7 @@ let appData = {
 
 
 
-if(window.location.href.split("/").pop().substr(0,10)=="index.html"){
-  for (let i = Object.values(appData).length-1; i >= Object.values(appData).length-12; i--) {
-
-    // //if is undefined in objects
-    // if(Object.values(appData)[i].imgLink == undefined) break;
-    // if(Object.values(appData)[i].type == undefined) break;
-    // if(Object.values(appData)[i].img == undefined) break;
-    // if(Object.values(appData)[i].link == undefined) break;
-    // if(Object.values(appData)[i].tech == undefined) break;
-    // if(Object.values(appData)[i].smallDesc == undefined) break;
-
-    //Create elements
-    let div = document.createElement("div"),
-        photo = document.createElement("div"),
-        info = document.createElement("div"),
-        name = document.createElement("div"),
-        desc = document.createElement("div"),
-        tech = document.createElement("div"),
-        href = document.createElement("a"),
-        id = document.createElement("div"),
-        like = document.createElement("i");
-
-    //Add class names for elements
-    div.className = "project";
-    photo.className = "photo";
-    info.className = "info";
-    name.className = "name";
-    desc.className = "desc";
-    tech.className = "tech";
-    id.id = "p"+Object.values(appData)[i].id;
-
-    if(localStorage.getItem("saved")){
-      let saved = localStorage.getItem("saved").split(",").map( s => +s );
-      if (saved.includes(Object.values(appData)[i].id)) {
-        like.className = "bx bxs-heart";
-      } else {
-        like.className = "bx bx-heart";
-      }
-    } else {
-      like.className = "bx bx-heart";
-    }
-
-    //Add values in elements
-    name.textContent = Object.keys(appData)[i];
-    desc.textContent = Object.values(appData)[i].smallDesc;
-    href.setAttribute("href",Object.values(appData)[i].link);
-    href.textContent = "View project"
-
-    for(let it = 0;it<Object.values(appData)[i].tech.length;it++){
-      let img = document.createElement("img");
-      img.setAttribute("alt",techFolder+Object.values(appData)[i].tech[it]+"");
-      img.setAttribute("src",techFolder+Object.values(appData)[i].tech[it]+".png");
-
-      tech.appendChild(img);
-
-    }
-
-    //Add images
-    for (let im = 0; im < Object.values(appData)[i].img.length; im++) {
-      let img = document.createElement("img");
-      img.setAttribute("alt",Object.keys(appData)[i]+"");
-      img.setAttribute("src",projectImgFolder+Object.values(appData)[i].imgLink+Object.values(appData)[i].img[im]);
-      photo.appendChild(img);
-
-
-      if(Object.values(appData)[i].img.length==1){
-        photo.classList.add("onePhoto")
-        if (Object.values(appData)[i].id==7) {
-          photo.style.background = "rgb(241 255 121)";
-        }
-        if (Object.values(appData)[i].id==9) {
-          photo.style.backgroundColor = "#26001a";
-        }
-        if (Object.values(appData)[i].id==10) {
-          photo.style.backgroundColor = "#0195dd";
-        }
-        if (Object.values(appData)[i].id==11) {
-          photo.style.backgroundColor = "#fff41c";
-        }
-        if (Object.values(appData)[i].id==12) {
-          photo.style.backgroundColor = "#3a0088";
-        }
-        if (Object.values(appData)[i].id==13) {
-          photo.style.backgroundColor = "#26afff";
-        }
-        if (Object.values(appData)[i].id==15) {
-          photo.style.backgroundColor = "#000000";
-        }
-      }
-    }
-
-    //Create DOM tree
-
-    info.appendChild(name);
-    info.appendChild(desc);
-    info.appendChild(tech);
-    info.appendChild(href);
-    info.appendChild(like);
-
-    div.appendChild(photo);
-    div.appendChild(info);
-    div.appendChild(id);
-
-    //Add ELEMENT in HTML
-    projectsBlock.appendChild(div);
-
-  }
-} else if(window.location.href.split("/").pop().substr(0,13)=="projects.html"){
+if(window.location.href.split("/").pop().substr(0,13)=="projects.html"){
   for (let i = Object.values(appData).length-1; i >= 0; i--) {
 
     // //if is undefined in objects
@@ -400,6 +304,113 @@ if(window.location.href.split("/").pop().substr(0,10)=="index.html"){
       let img = document.createElement("img");
       img.setAttribute("alt",Object.keys(appData)[i]+"");
       img.setAttribute("src","../"+projectImgFolder+Object.values(appData)[i].imgLink+Object.values(appData)[i].img[im]);
+      photo.appendChild(img);
+
+
+      if(Object.values(appData)[i].img.length==1){
+        photo.classList.add("onePhoto")
+        if (Object.values(appData)[i].id==7) {
+          photo.style.background = "rgb(241 255 121)";
+        }
+        if (Object.values(appData)[i].id==9) {
+          photo.style.backgroundColor = "#26001a";
+        }
+        if (Object.values(appData)[i].id==10) {
+          photo.style.backgroundColor = "#0195dd";
+        }
+        if (Object.values(appData)[i].id==11) {
+          photo.style.backgroundColor = "#fff41c";
+        }
+        if (Object.values(appData)[i].id==12) {
+          photo.style.backgroundColor = "#3a0088";
+        }
+        if (Object.values(appData)[i].id==13) {
+          photo.style.backgroundColor = "#26afff";
+        }
+        if (Object.values(appData)[i].id==15) {
+          photo.style.backgroundColor = "#000000";
+        }
+      }
+    }
+
+    //Create DOM tree
+
+    info.appendChild(name);
+    info.appendChild(desc);
+    info.appendChild(tech);
+    info.appendChild(href);
+    info.appendChild(like);
+
+    div.appendChild(photo);
+    div.appendChild(info);
+    div.appendChild(id);
+
+    //Add ELEMENT in HTML
+    projectsBlock.appendChild(div);
+
+  }
+} else {
+  for (let i = Object.values(appData).length-1; i >= Object.values(appData).length-12; i--) {
+
+    // //if is undefined in objects
+    // if(Object.values(appData)[i].imgLink == undefined) break;
+    // if(Object.values(appData)[i].type == undefined) break;
+    // if(Object.values(appData)[i].img == undefined) break;
+    // if(Object.values(appData)[i].link == undefined) break;
+    // if(Object.values(appData)[i].tech == undefined) break;
+    // if(Object.values(appData)[i].smallDesc == undefined) break;
+
+    //Create elements
+    let div = document.createElement("div"),
+        photo = document.createElement("div"),
+        info = document.createElement("div"),
+        name = document.createElement("div"),
+        desc = document.createElement("div"),
+        tech = document.createElement("div"),
+        href = document.createElement("a"),
+        id = document.createElement("div"),
+        like = document.createElement("i");
+
+    //Add class names for elements
+    div.className = "project";
+    photo.className = "photo";
+    info.className = "info";
+    name.className = "name";
+    desc.className = "desc";
+    tech.className = "tech";
+    id.id = "p"+Object.values(appData)[i].id;
+
+    if(localStorage.getItem("saved")){
+      let saved = localStorage.getItem("saved").split(",").map( s => +s );
+      if (saved.includes(Object.values(appData)[i].id)) {
+        like.className = "bx bxs-heart";
+      } else {
+        like.className = "bx bx-heart";
+      }
+    } else {
+      like.className = "bx bx-heart";
+    }
+
+    //Add values in elements
+    name.textContent = Object.keys(appData)[i];
+    desc.textContent = Object.values(appData)[i].smallDesc;
+    href.setAttribute("href",Object.values(appData)[i].link);
+    href.textContent = "View project"
+
+    for(let it = 0;it<Object.values(appData)[i].tech.length;it++){
+      let img = document.createElement("img");
+      img.setAttribute("alt",techFolder+Object.values(appData)[i].tech[it]+"");
+      img.setAttribute("src",techFolder+Object.values(appData)[i].tech[it]+".png");
+
+      tech.appendChild(img);
+
+    }
+
+    //Add images
+    for (let im = 0; im < Object.values(appData)[i].img.length; im++) {
+      let img = document.createElement("img");
+      img.setAttribute("alt",Object.keys(appData)[i]+"");
+      img.setAttribute("src",projectImgFolder+Object.values(appData)[i].imgLink+Object.values(appData)[i].img[im]);
       photo.appendChild(img);
 
 
