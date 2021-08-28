@@ -15,23 +15,22 @@ body{
 .check{
 	background: #eee;
 	width: 50vw;
-	height: 50vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	border-radius: 20px;
+	overflow: hidden;
 }
 .header{
 	background: #ff9f1a;
 	width: 100%;
 	height: 15%;
-	padding: 1rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	color: white;
 	font-weight: bold;
-	border: 2px solid #ff9f1a;
 }
 .body{
 	flex: 1 1 auto;
@@ -68,14 +67,15 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: 2px solid #ff9f1a;
 }
 .footer input{
 	cursor: pointer;
 	border: none;
-	width: 100%;
+	padding: 1rem 3rem;
 	min-height: 100%;
 	font-size: 2rem;
+	background-color: white;
+	border-radius: 100px;
 }
 select.lang{
 	width: 100px;
@@ -89,14 +89,22 @@ option{
 	border: 2px solid #ff9f1a
 }
 
-
 @media(max-width: 480px){
+	.header{
+		font-size: .7rem;
+	}
+	.preout,.out{
+		font-size: 1.5rem;
+	}
+}
+@media(max-width: 767px){
 	body{
-		align-items: unset;
+		align-items: center;
 	}
 	.check{
-		margin:1rem;
+		margin:4rem 1rem 1rem 1rem;
 		width: unset;
+		height: unset;
 	}
 	.header,.footer,.body{
 		margin: 0;

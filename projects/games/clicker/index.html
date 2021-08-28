@@ -25,10 +25,12 @@
 			body{
 				background-color: black;
 				min-height: 100%;
+				overflow: hidden;
 				display: flex;
 				justify-content: center;
 				align-items: center;
 				margin: 0px;
+				width: 100VW;
   				font-family: "Zen Dots", cursive;
 			}
 			.game{
@@ -83,6 +85,20 @@
 			}
 			#button{
 				padding: 4rem 8rem;
+			}
+
+			@media (max-width: 767px) {
+				#button {
+				    padding: 1rem 3rem;
+				    font-size: 1.5rem;
+				}
+				#display{
+					font-size: 1.5rem;
+				}
+				button {
+				    padding: 1rem 3rem;
+				    font-size: 1.5rem;
+				}
 			}
 		</style>
 		

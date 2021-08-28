@@ -11,7 +11,7 @@ function languages(){
 			let date = document.querySelector(".body input").value,
 				month = date.split("-")[1],
 				day = date.split("-")[0],
-				zodiac;
+				zodiac = "???";
 
 			if (!isNaN(+month)) {
 				if ((month == 12 && day >= 23)||(month == 1 && day <= 20)) zodiac = "Capricorn"
@@ -27,6 +27,7 @@ function languages(){
 				if ((month == 10 && day >= 23)||(month == 11 && day <= 21)) zodiac = "Scorpio"
 				if ((month == 11 && day >= 22)||(month == 12 && day <= 22)) zodiac = "Sagittarius"
 				if (month > 12||month<1||day>31||day<1) zodiac = "ALIEN"
+				if (+(month)==NaN||+(day)==NaN||String(day).length==0||String(month).length) zodiac = "ALIEN"
 			}
 
 			document.querySelector(".out").textContent = `You are a ${zodiac}`
@@ -55,6 +56,7 @@ function languages(){
 				if ((month == 10 && day >= 23)||(month == 11 && day <= 21)) zodiac = "Скорпіон"
 				if ((month == 11 && day >= 22)||(month == 12 && day <= 22)) zodiac = "Стрілець"
 				if (month > 12||month<1||day>31||day<1) zodiac = "ПРИБУЛЕЦЬ"
+				if (+(month)==NaN||+(day)==NaN||String(day).length==0||String(month).length) zodiac = "ПРИБУЛЕЦЬ"
 			}
 
 			document.querySelector(".out").textContent = `Ти ${zodiac}`
@@ -83,6 +85,7 @@ function languages(){
 				if ((month == 10 && day >= 23)||(month == 11 && day <= 21)) zodiac = "Скорпион"
 				if ((month == 11 && day >= 22)||(month == 12 && day <= 22)) zodiac = "Стрелецы"
 				if (month > 12||month<1||day>31||day<1) zodiac = "ПРИШЕЛЕЦ"
+				if (+(month)==NaN||+(day)==NaN||String(day).length==0||String(month).length) zodiac = "ПРИШЕЛЕЦ"
 			}	
 
 			document.querySelector(".out").textContent = `Ты ${zodiac}`
