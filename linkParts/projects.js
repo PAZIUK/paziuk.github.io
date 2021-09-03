@@ -194,6 +194,17 @@ let appData = {
     id:16,
     //description:``,
   },
+  "Calculator":{
+    type:"game",
+    date:"03.09.21",
+    imgLink:"calc/",
+    img:["1.jpg"],
+    link:projectLinkFolder+"programs/calc/index.html",
+    smallDesc:"You know what is it!",
+    tech:["HTML5","CSS3","JS"],
+    id:17,
+    //description:``,
+  },
 }
  
 

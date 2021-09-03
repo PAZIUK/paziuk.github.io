@@ -12,13 +12,13 @@ function hidePreload(){
 	}
 }
 document.addEventListener("DOMContentLoaded",()=>{
-	if (howManyPreload>=9900) {
+	if (howManyPreload>=5300) {
 		hidePreload();
 	} else {
 		setTimeout(()=>{
 			hidePreload();
 			clearInterval(int)
-		},9900-howManyPreload)
+		},5300-howManyPreload)
 	}
 
 	// hidePreload();

@@ -1,0 +1,31 @@
+body{
+	margin: 0;
+	width: 100vw;
+	min-height: 100vh;
+	overflow-x: hidden;
+	box-sizing: border-box;
+}
+.calculator{
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+.out{
+	width: 100%;
+	height: 40vh;
+	background-color: black;
+}
+.numsBtns{
+	height: 60vh;
+	width: 40vw;
+	border-right: 2px solid #f3f3f3;
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+}
+.numsBtns button{
+	cursor: pointer;
+	border-radius: 0px;
+	border-color: black;
+	font-size: 2rem;
+}
