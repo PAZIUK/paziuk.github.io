@@ -71,10 +71,12 @@ function maxNumbersAddition(){
 // Task 6
 let numA = 6,
 	numB = 12;
-
-let sum = 0;
-for (var i = numA; i <= numB; i++) {
-	sum += i;
+function sum(){
+	let sum = 0;
+	for (var i = numA; i <= numB; i++) {
+		sum += i;
+	}
+	return sum;
 }
 
 //-----------------------------------------------------------------
@@ -84,22 +86,26 @@ let arrayReverse = array.reverse(); // ["JS","CSS","HTML"];
 
 //-----------------------------------------------------------------
 // Task 8
-let number = 11,
+let number = 1,
 	timesTo1 = 0;
 
 function transformation(){
-	if ((number%2)!=0) {
-		number++;
-		timesTo1++;
-	}
-
-	for (let i = number; number != 1; i++) {
+	if(number != 1){
 		if ((number%2)!=0) {
 			number++;
 			timesTo1++;
 		}
-		number = number/2;
-		timesTo1++;
+
+		for (let i = number; number != 1; i++) {
+			if ((number%2)!=0) {
+				number++;
+				timesTo1++;
+			}
+			number = number/2;
+			timesTo1++;
+		}
+		return timesTo1;
+	} else {
+		return timesTo1;
 	}
-	return timesTo1;
 }
