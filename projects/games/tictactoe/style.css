@@ -213,3 +213,40 @@ body{
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
+@media(min-width: 100px) and (max-width: 480px){
+  .select-box{
+    max-width: unset;
+    width: 90vw;
+  }
+}
+@media(min-width: 481px) and (max-width: 767px){
+  .select-box{
+    max-width: unset;
+    width: 90vw;
+  }
+  .select-box .credit{
+    font-size: 1.5rem;
+  }
+  .select-box .title{
+    font-size: 1.5rem;
+  }
+  .select-box header{
+    font-size: 1.5rem;
+  }
+}
+@media(min-width: 768px) and (max-width: 1023px){
+  .select-box{
+    max-width: unset;
+    width: 90vw;
+  }
+  .select-box .credit{
+    font-size: 1.5rem;
+  }
+  .select-box .title{
+    font-size: 1.5rem;
+  }
+  .select-box header{
+    font-size: 1.5rem;
+  }
+}
