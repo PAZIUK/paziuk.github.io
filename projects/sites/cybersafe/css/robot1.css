@@ -1,0 +1,92 @@
+.robot1{
+  opacity: 0;
+  transform: translate(-300%,0);
+}
+.robot1.active{
+  transition: all 1s ease;
+  display: flex;
+  opacity: 1;
+  transform: translate(0);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.robot1.active .text{
+  padding: .5rem 2rem;
+  border: 3px solid var(--color-1);
+  border-radius: 10px;
+  background: white;
+  padding: 1rem;
+  font-size: 1.3rem;
+  position: relative;
+  transition: all 1s ease;
+  transform: translate(700%,0);
+  z-index: 1;
+}
+.robot1.active .text:after{
+  content: "";
+  border: .53rem solid transparent;
+  border-left-color: var(--color-1);
+  position: absolute;
+  right: -2%;
+  top: 10%;
+}
+.level2 .robot1.active .text:after{
+  content: "";
+  border: .53rem solid transparent;
+  border-left-color: var(--color-1);
+  position: absolute;
+  right: -2%;
+  top: 3%;
+}
+.robot1.active .photo{
+  transition: all .7s ease;
+  z-index: 2;
+}
+.robot1.active .photo img{
+  width: 10rem;
+}
+.robot1.active .text.active{
+  max-width: unset;
+  transform: translate(0);
+}
+.robot-choose{
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.4rem;
+}
+.level1 h2{
+  transition: all .7s ease;
+  transform: translate(-700%,0);
+}
+.level1 h2.active{
+  transform: translate(0);
+}
+.robot-choose .levels{
+  font-size: 1.4rem;
+}
+.robot-choose .levels .level{
+  width: 100%;
+  font-size: 1.4rem;
+  border: 2px solid transparent;
+  background: white;
+  cursor: pointer;
+  transition: all .7s ease;
+  transform: translate(700%,0);
+  display: none;
+}
+#btn1{
+  transition: all .7s ease;
+  transform: translate(-700%,0);
+}
+#btn1.active{
+  transform: translate(0);
+}
+.robot-choose .levels .level.active{
+  display: unset;
+  transform: translate(0);
+}
+.robot-choose .levels .level:hover{
+  transform: scale(.9);
+  border: 2px solid var(--color-1);
+}

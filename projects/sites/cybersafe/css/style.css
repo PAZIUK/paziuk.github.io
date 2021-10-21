@@ -18,7 +18,6 @@ body{
   display: flex;
   flex-direction: column;
   transition: all 2s;
-  min-height: 100vh;
 }
 h1,h2,h3,h4,h5,h6{
   color: var(--color-3);
@@ -26,7 +25,7 @@ h1,h2,h3,h4,h5,h6{
 .wrapper{
   min-width: 320px;
   max-width: 1200px;
-  padding: 1.5rem;
+  padding: 0 1.4rem;
   margin: 0px auto;
 }
 .header{
@@ -62,7 +61,7 @@ header .box{
 .box{
   background: white;
   padding: 1rem;
-  margin: 1.5rem 0;
+  margin: 1.4rem 0;
   border-radius: 10px;
 }
 
@@ -115,7 +114,7 @@ header .box{
   display: flex;
   justify-content: center;
 }
-#letsGo{
+#letsGo, .btns button{
   color: var(--color-1);
   font-size: 30px;
   font-weight: bold;
@@ -129,7 +128,7 @@ header .box{
   transition: all .7s ease;
   cursor: pointer;
 }
-#letsGo:hover{
+#letsGo:hover,.btns button:hover{
   padding: 0.3rem 4rem;
   border-color: var(--color-1);
   color: white;
@@ -152,5 +151,22 @@ footer .box .text{
   display: none;
 }
 .level1.active{
+  display: flex;
+  flex-direction: column;
+}
+.level1 h2{
+  font-size: 2rem;
+  color: white;
+  margin: 0 auto;
+}
+
+
+.level2{
+  transition: all .7 ease;
+  transform: translate(0,700%);
+  display: none;
+}
+.level2.active{
+  transform: translate(0);
   display: flex;
 }
