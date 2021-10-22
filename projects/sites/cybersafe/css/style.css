@@ -3,6 +3,7 @@
 	--color-1:#008aff; 
 	--color-2:#00ffe7; 
 	--color-3:#333; 
+  --color-4:#f00; 
 }
 *{
   outline: none;
@@ -134,6 +135,26 @@ header .box{
   color: white;
   background: var(--color-1);
 }
+.btns button.bad{
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem 1rem;
+  border-radius: 100px;
+  border: 3px solid var(--color-4);
+  background: white;
+  transition: all .7s ease;
+  cursor: pointer;
+}
+.btns button.bad:hover{
+  padding: 0.3rem 4rem;
+  border-color: var(--color-4);
+  color: white;
+  background: var(--color-4);
+}
 footer .box{
   display: flex;
 }
@@ -161,12 +182,13 @@ footer .box .text{
 }
 
 
-.level2{
+.level2,.level3,.level4{
   transition: all .7 ease;
   transform: translate(0,700%);
   display: none;
 }
-.level2.active{
+.level2.active,.level3.active,.level4.active{
   transform: translate(0);
   display: flex;
+  flex-direction: column;
 }

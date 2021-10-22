@@ -28,7 +28,7 @@
   border: .53rem solid transparent;
   border-left-color: var(--color-1);
   position: absolute;
-  right: -2%;
+  right: -1.1rem;
   top: 10%;
 }
 .level2 .robot1.active .text:after{
@@ -36,7 +36,7 @@
   border: .53rem solid transparent;
   border-left-color: var(--color-1);
   position: absolute;
-  right: -2%;
+  right: -1.1rem;
   top: 3%;
 }
 .robot1.active .photo{
@@ -75,11 +75,11 @@
   transform: translate(700%,0);
   display: none;
 }
-#btn1{
+#btn1,.btns button{
   transition: all .7s ease;
-  transform: translate(-700%,0);
+  transform: translate(-1000%,0);
 }
-#btn1.active{
+#btn1.active,.btns button.active{
   transform: translate(0);
 }
 .robot-choose .levels .level.active{
