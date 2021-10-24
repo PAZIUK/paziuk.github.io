@@ -433,7 +433,7 @@ document.querySelector("#checkBtn4").onclick = ()=>{
 	if (isTest4) {
 		document.querySelector("#checkBtn4").classList.remove("active");
 		document.querySelector("#checkBtn4").style.display = "none";
-		btn13.classList.add("active");
+		btn16.classList.add("active");
 		document.querySelector(".level6 .box.r3 .robot1 .text .test1 button.active").classList.add("right");
 		setTimeout(()=>{
 			document.querySelector(".level6 .box.r3 .robot1 .text .test1 button.active").classList.remove("active");
