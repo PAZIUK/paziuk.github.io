@@ -182,12 +182,12 @@ footer .box .text{
 }
 
 
-.level2,.level3,.level4{
+.level2,.level3,.level4,.level5,.level6,.level7{
   transition: all .7 ease;
   transform: translate(0,700%);
   display: none;
 }
-.level2.active,.level3.active,.level4.active{
+.level2.active,.level3.active,.level4.active,.level5.active,.level6.active,.level7.active{
   transform: translate(0);
   display: flex;
   flex-direction: column;

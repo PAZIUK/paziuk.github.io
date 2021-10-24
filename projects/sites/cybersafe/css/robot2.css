@@ -23,6 +23,7 @@
   transition: all 1s ease;
   transform: translate(700%,0);
   z-index: 1;
+  line-height: 2rem;
 }
 .robot2.active .text:after{
   content: "";

@@ -22,6 +22,7 @@
   transition: all 1s ease;
   transform: translate(700%,0);
   z-index: 1;
+  line-height: 2rem;
 }
 .robot1.active .text:after{
   content: "";
@@ -89,4 +90,15 @@
 .robot-choose .levels .level:hover{
   transform: scale(.9);
   border: 2px solid var(--color-1);
+}
+
+.robot1 .text .photo{
+  width: 100%;
+  margin: .2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.robot1 .text .photo img{
+  width: 100%;
 }
