@@ -44,7 +44,7 @@ let nextBtn5 = document.querySelector("#nextBtn5");
 let nextBtn6 = document.querySelector("#nextBtn6");
 let nextBtn7 = document.querySelector("#nextBtn7");
 let nextBtn8 = document.querySelector("#nextBtn8");
-let nextBtn9 = document.querySelector("#nextBtn9");
+// let nextBtn9 = document.querySelector("#nextBtn9");
 
 let startGameBtn = document.querySelector("#startGame");
 
@@ -615,13 +615,13 @@ nextBtn8.addEventListener("click",function(){
 })
 
 //meanwhile button
-nextBtn9.addEventListener("click",function(){
-	window.scrollTo(0,0);
-	helloBlock.querySelector("header").style.display = 'none';
-	helloBlock.querySelector(".box.hello").style.display = 'none';
-	helloBlock.querySelector("footer").style.display = 'none';
-	addActiveBox(".level8",".level8 .robot2");
-	setTimeout(()=>{
-		addActiveBox(".level8 .robot2 .text",btn20);
-	},200)
-})
+// nextBtn9.addEventListener("click",function(){
+// 	window.scrollTo(0,0);
+// 	helloBlock.querySelector("header").style.display = 'none';
+// 	helloBlock.querySelector(".box.hello").style.display = 'none';
+// 	helloBlock.querySelector("footer").style.display = 'none';
+// 	addActiveBox(".level8",".level8 .robot2");
+// 	setTimeout(()=>{
+// 		addActiveBox(".level8 .robot2 .text",btn20);
+// 	},200)
+// })
