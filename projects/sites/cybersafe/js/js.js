@@ -697,9 +697,9 @@ window.onscroll = ()=>{
 // 	removeActiveBox(helloBlock.querySelector("footer"));
 // })
 
-window.onload = helloFooterDown()
-window.onresize = helloFooterDown()
-// setInterval(helloFooterDown,1000)
+// window.onload = helloFooterDown()
+// window.onresize = helloFooterDown()
+setInterval(helloFooterDown,1000)
 function helloFooterDown(){
 	if (helloBlock.querySelector("footer").classList.contains("active")) {
 		if (((helloBlock.offsetHeight+48)<document.documentElement.scrollHeight)) {
