@@ -28,6 +28,7 @@ h1,h2,h3,h4,h5,h6{
   max-width: 1200px;
   padding: 0 1.4rem;
   margin: 0px auto;
+  position: relative;
 }
 .header{
   display: flex;
@@ -66,6 +67,9 @@ header .box{
   border-radius: 10px;
 }
 
+.hello-block{
+  margin-top: 3rem;
+}
 .hello-block header{
   opacity: 0;
   transition: all 1s ease;
@@ -115,7 +119,7 @@ header .box{
   display: flex;
   justify-content: center;
 }
-#letsGo, .btns button{
+#letsGo, .btns button,.robot-choose .levels .level{
   color: var(--color-1);
   font-size: 30px;
   font-weight: bold;
@@ -129,7 +133,7 @@ header .box{
   transition: all .7s ease;
   cursor: pointer;
 }
-#letsGo:hover,.btns button:hover{
+#letsGo:hover,.btns button:hover,.robot-choose .levels .level:hover{
   padding: 0.3rem 4rem;
   border-color: var(--color-1);
   color: white;
@@ -155,6 +159,19 @@ header .box{
   color: white;
   background: var(--color-4);
 }
+.btns button.noactive1,#letsGo.noactive1,.robot-choose .levels .level.noactive1{
+  color: white;
+  background: #d6d6d6;
+  border-color: #bdbdbd;
+  padding: 0.3rem 4rem;
+  cursor: default;
+}
+.btns button[disabled="disabled"]:hover{
+  color: white;
+  background: #d6d6d6;
+  border-color: #bdbdbd;
+  cursor: default;
+}
 footer .box{
   display: flex;
 }
@@ -166,7 +183,19 @@ footer .box .text{
   font-size: 1.4rem;
   font-weight: bold;
 }
-
+.box.start{
+  transition: all .7 ease;
+  transform: translate(0,700%);
+  display: none;
+}
+.box.start h2{
+  color: black;
+}
+.box.start.active{
+  transform: translate(0);
+  display: flex;
+  flex-direction: column;
+}
 
 .level1{
   display: none;
@@ -182,13 +211,146 @@ footer .box .text{
 }
 
 
-.level2,.level3,.level4,.level5,.level6,.level7{
+.level2,.level3,.level4,.level5,.level6,.level7,.level8,.level9{
+  margin-top: 3rem;
   transition: all .7 ease;
   transform: translate(0,700%);
   display: none;
 }
-.level2.active,.level3.active,.level4.active,.level5.active,.level6.active,.level7.active{
+.level2.active,.level3.active,.level4.active,.level5.active,
+.level6.active,.level7.active,.level8.active,.level9.active{
   transform: translate(0);
   display: flex;
   flex-direction: column;
+}
+.level1 .box:first-child,
+.level2 .box:first-child,
+.level3 .box:first-child,
+.level4 .box:first-child,
+.level5 .box:first-child,
+.level6 .box:first-child,
+.level7 .box:first-child,
+.level8 .box:first-child,
+.level9 .box:first-child{
+  margin-top: 0;
+}
+
+#startGame{
+  transition: all .7 ease;
+  display: none;
+  padding: 2rem 15rem;
+  font-size: 3rem;
+  border-radius: 100px;
+  border:4px solid red;
+  cursor: pointer;
+  background: white;
+  animation-name: border;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.startBtn{
+  display: none;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  height: 10rem;
+}
+.startBtn.active{
+  display: flex;
+}
+#startGame.active{
+  display: flex;
+}
+
+@-webkit-keyframes border {
+  from {
+    border-width: 4px;
+  }
+  50%{
+    border-width: 1px;
+  } 
+  to { 
+    border-width: 4px; 
+  }  
+}
+@-moz-keyframes move_eye { 
+  from {
+    border-width: 4px;
+  }
+  50%{
+    border-width: 1px;
+  } 
+  to { 
+    border-width: 4px; 
+  }   
+}
+@-o-keyframes move_eye { 
+  from {
+    border-width: 4px;
+  }
+  50%{
+    border-width: 1px;
+  } 
+  to { 
+    border-width: 4px; 
+  }    
+}
+@keyframes border{
+  from {
+    border-width: 4px;
+  }
+  50%{
+    border-width: 1px;
+  } 
+  to { 
+    border-width: 4px; 
+  }  
+}
+
+#mark{
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  top: .5rem;
+  left: 47.5%;
+}
+#mark.active{
+  display: flex;
+}
+.pnBtn,.markBox{
+  display: none;
+  cursor: pointer;
+  background: white;
+  border:none;
+  border-radius: 10px;
+  padding: .1rem .5rem;
+}
+.markBox .markNum{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: .5rem;
+  font-size: 1.5rem;
+}
+.markBox{
+  display: flex;
+  cursor: default;
+}
+.pnBtn img,.markBox img{
+  width: 2rem;
+}
+.pnBtn.nBtn{
+  position: absolute;
+  top: .5rem;
+  right: 1.4rem;
+}
+.pnBtn.pBtn{
+  position: absolute;
+  top: .5rem;
+  left: 1.4rem;
+}
+.pnBtn.nBtn.active,.pnBtn.pBtn.active{
+  display: flex;
 }

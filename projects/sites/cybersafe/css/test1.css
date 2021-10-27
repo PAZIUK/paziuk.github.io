@@ -25,13 +25,18 @@
 }
 .test1 button.active{
 	transform: scale(1.1);
+	color: white;
 }
-.test1 button.active.noRight{
+.test1 button.noRight{
 	border-color: red;
+	color: white;
 	background: red;
+	cursor: default;
 }
-.test1 button.active.right{
+.test1 button.right{
 	border-color: #00ff0f;
 	background: #00ff0f;
 	transform: scale(1);
+	color: white;
+	cursor: default;
 }

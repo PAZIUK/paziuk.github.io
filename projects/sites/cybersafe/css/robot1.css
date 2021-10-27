@@ -8,7 +8,7 @@
   opacity: 1;
   transform: translate(0);
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
 }
 .robot1.active .text{
@@ -65,18 +65,10 @@
 }
 .robot-choose .levels{
   font-size: 1.4rem;
+  display: flex;
+  justify-content: center;
 }
-.robot-choose .levels .level{
-  width: 100%;
-  font-size: 1.4rem;
-  border: 2px solid transparent;
-  background: white;
-  cursor: pointer;
-  transition: all .7s ease;
-  transform: translate(700%,0);
-  display: none;
-}
-#btn1,.btns button{
+#btn1,.btns button,.robot-choose .levels .level{
   transition: all .7s ease;
   transform: translate(-1000%,0);
 }
@@ -84,12 +76,8 @@
   transform: translate(0);
 }
 .robot-choose .levels .level.active{
-  display: unset;
   transform: translate(0);
-}
-.robot-choose .levels .level:hover{
-  transform: scale(.9);
-  border: 2px solid var(--color-1);
+  display: unset;
 }
 
 .robot1 .text .photo{
