@@ -201,6 +201,7 @@ function level1() {
 		addActiveBox(".level1 .robot1 .text",btn1)
 	},200)
 	helloBlock.style.display = 'none';
+	window.scrollTo(0,0);
 }
 
 
@@ -535,6 +536,7 @@ document.querySelector("#lastBtn").addEventListener("click",function(){
 	setTimeout(()=>{
 		document.querySelectorAll("#titles .pupil")[1].classList.add("active")
 	},1000);
+	removeActiveBox("#mark")
 })
 
 prevBtn1.addEventListener("click",function(){

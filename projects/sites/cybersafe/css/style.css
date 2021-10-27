@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;500;700;900&display=swap');
 :root{
-	--color-1:#008aff; 
-	--color-2:#00ffe7; 
-	--color-3:#333; 
+  --color-1:#008aff; 
+  --color-2:#00ffe7; 
+  --color-3:#333; 
   --color-4:#f00; 
 }
 *{
@@ -39,7 +39,7 @@ h1,h2,h3,h4,h5,h6{
 }
 header .box{
   background-color: #fff;
-	padding: 1% 1.5rem;
+  padding: 1% 1.5rem;
   border-radius: 10px;
   z-index: 10;
 }
@@ -332,7 +332,8 @@ footer .box .text{
   justify-content: center;
   align-items: center;
   top: .5rem;
-  left: 47.5%;
+  left: 0;
+  width: 100%;
 }
 #mark.active{
   display: flex;
@@ -618,8 +619,141 @@ footer .box .text{
   #lesson1{
     font-size: 1.5rem;
   }
-  #mark{
-    left: 38.5%;
+  .startBtn{
+    width: unset;
+  }
+  #startGame{
+    padding: 1rem 4rem;
+  }
+  .downloadFake .upside .buttons img{
+    width: 1rem;
+    margin-right: .3rem;
+  }
+  .downloadFake .upside .line{
+    padding: .1rem .3rem;
+  }
+  .downloadFake .upside .line img{
+    width: 1rem;
+    margin-right: .2rem;
+  }
+  .downloadFake .content .left{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .downloadFake .content{
+    flex-direction: column;
+  }
+  .downloadFake .content .right .info .info_detail .key{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0;
+  }
+  .downloadFake .content .right .info .info_detail{
+    flex-direction: column;
+  }
+  .downloadFake .content .right .info .info_detail .value{
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .downloadFake .content .right .fakeD button, .downloadFake .content .right .rightD button{
+    font-size: 1rem;
+  }
+  .downloadFake .content .right .fakeD{
+    font-size: unset;
+  }
+  .downloadFake .content .right .rightD button{
+    font-size: 1rem; 
+  }
+  .downloadFake .upside .line{
+    font-size: .5rem;
+  }
+  .downloadFake .content .left img{
+    width: 10rem;
+  }
+  #titles{
+    padding: 1rem .5rem;
+    margin-top: 30vh;
+  }
+  #titles h1{
+    font-size: 1.4rem;
+  }
+  #titles .names{
+    padding: unset;
+    margin-top: 1rem;
+  }
+  #titles .names h2{
+    font-size: 1rem;
+  }
+}
+@media(min-width: 321px) and (max-width: 480px){
+  body{
+    width: 100%;
+  }
+  .logo img{
+    width: 2rem;
+  }
+  .hello-block header{
+    margin: 0 .2rem;
+  }
+  footer .box .text{
+    font-size: .6rem;
+    margin-top: .5rem;
+  }
+  .box{
+    margin: 1.4rem .2rem;
+  }
+  .logo{
+    padding: .3rem 2rem;
+  }
+  .hello .text{
+    font-size: 1rem;
+  }
+  .hello .text h1{
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  .wrapper{
+    padding: 0;
+  }
+  .hello .photo{
+    display: flex;
+    justify-content: center;
+  }
+  .hello .photo_text{
+    display: unset;
+  }
+  .hello-block footer .box{
+    display: flex;
+    flex-direction: column; 
+  }
+  .pnBtn.pBtn{
+    left: .2rem;
+  }
+  .pnBtn.nBtn{
+    right: .2rem;
+  }
+  .level1 .box,
+  .level2 .box,
+  .level3 .box,
+  .level4 .box,
+  .level5 .box,
+  .level6 .box,
+  .level7 .box,
+  .level8 .box,
+  .level9 .box{
+    margin-top: 0;
+  }
+  .box.r3 .text{
+    padding: .5rem;
+  }
+  #lesson1{
+    font-size: 1.5rem;
   }
   .startBtn{
     width: unset;
@@ -679,11 +813,274 @@ footer .box .text{
   }
   #titles{
     padding: 1rem .5rem;
+    margin-top: 30vh;
   }
   #titles h1{
     font-size: 1.4rem;
   }
   #titles .names{
     padding: unset;
+    margin-top: 1rem;
+  }
+  #titles .names h2{
+    font-size: 1rem;
+  }
+}
+@media(min-width: 481px) and (max-width: 767px){
+  body{
+    width: 100%;
+  }
+  .logo img{
+    width: 2rem;
+  }
+  .hello-block header{
+    margin: 0 1rem;
+  }
+  footer .box .text{
+    font-size: .6rem;
+    margin-top: .5rem;
+  }
+  .box{
+    margin: 1.4rem 1rem;
+  }
+  .logo{
+    padding: .3rem 2rem;
+  }
+  .hello .text{
+    font-size: 1rem;
+  }
+  .hello .text h1{
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  .wrapper{
+    padding: 0;
+  }
+  .hello .photo{
+    display: flex;
+    justify-content: center;
+  }
+  .hello .photo_text{
+    display: unset;
+  }
+  .hello-block footer .box{
+    display: flex;
+    flex-direction: column; 
+  }
+  .pnBtn.pBtn{
+    left: 1rem;
+  }
+  .pnBtn.nBtn{
+    right: 1rem;
+  }
+  .level1 .box,
+  .level2 .box,
+  .level3 .box,
+  .level4 .box,
+  .level5 .box,
+  .level6 .box,
+  .level7 .box,
+  .level8 .box,
+  .level9 .box{
+    margin-top: 0;
+  }
+  .box.r3 .text{
+    padding: .5rem;
+  }
+  #lesson1{
+    font-size: 1.5rem;
+  }
+  .startBtn{
+    width: unset;
+  }
+  #startGame{
+    padding: 1rem 4rem;
+  }
+  .downloadFake .upside .buttons img{
+    width: 1rem;
+    margin-right: .3rem;
+  }
+  .downloadFake .upside .line{
+    padding: .1rem .3rem;
+  }
+  .downloadFake .upside .line img{
+    width: 1rem;
+    margin-right: .2rem;
+  }
+  .downloadFake .content .left{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .downloadFake .content{
+    flex-direction: column;
+  }
+  .downloadFake .content .right .info .info_detail .key{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0;
+  }
+  .downloadFake .content .right .info .info_detail{
+    flex-direction: column;
+  }
+  .downloadFake .content .right .info .info_detail .value{
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .downloadFake .content .right .fakeD button, .downloadFake .content .right .rightD button{
+    font-size: 1rem;
+  }
+  .downloadFake .content .right .fakeD{
+    font-size: unset;
+  }
+  .downloadFake .content .right .rightD button{
+    font-size: 1rem; 
+  }
+  .downloadFake .upside .line{
+    font-size: 1rem;
+  }
+  .downloadFake .content .left img{
+    width: 10rem;
+  }
+  #titles{
+    padding: 1rem .5rem;
+    margin-top: 30vh;
+  }
+  #titles h1{
+    font-size: 1.4rem;
+  }
+  #titles .names{
+    padding: unset;
+    margin-top: 1rem;
+  }
+  #titles .names h2{
+    font-size: 1rem;
+  }
+}
+@media(min-width: 768px) and (max-width: 960px){
+  body{
+    width: 100%;
+  }
+  .hello-block header{
+    margin: 0 1rem;
+  }
+  footer .box .text{
+    font-size: 1rem;
+  }
+  .box{
+    margin: 1.4rem 1rem;
+  }
+  .logo{
+    padding: .3rem 2rem;
+  }
+  .hello .text{
+    font-size: 1rem;
+  }
+  .hello .text h1{
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  .wrapper{
+    padding: 0;
+  }
+  .hello .photo{
+    display: flex;
+    justify-content: center;
+  }
+  .pnBtn.pBtn{
+    left: 1rem;
+  }
+  .pnBtn.nBtn{
+    right: 1rem;
+  }
+  .level1 .box,
+  .level2 .box,
+  .level3 .box,
+  .level4 .box,
+  .level5 .box,
+  .level6 .box,
+  .level7 .box,
+  .level8 .box,
+  .level9 .box{
+    margin-top: 0;
+  }
+  .box.r3 .text{
+    padding: .5rem;
+  }
+  #lesson1{
+    font-size: 1.5rem;
+  }
+  .startBtn{
+    width: unset;
+  }
+  #startGame{
+    padding: 1rem 4rem;
+  }
+  .downloadFake .upside .buttons img{
+    width: 1.5rem;
+    margin-right: .3rem;
+  }
+  .downloadFake .upside .line{
+    padding: .1rem .3rem;
+  }
+  .downloadFake .upside .line img{
+    width: 1.5rem;
+    margin-right: .2rem;
+  }
+  .downloadFake .content .left{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3rem;
+  }
+  .downloadFake .content .right .info .info_detail .key{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0;
+  }
+  .downloadFake .content .right .info .info_detail{
+    flex-direction: column;
+  }
+  .downloadFake .content .right .info .info_detail .value{
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .downloadFake .content .right .fakeD button, .downloadFake .content .right .rightD button{
+    font-size: 1rem;
+  }
+  .downloadFake .content .right .fakeD{
+    font-size: unset;
+  }
+  .downloadFake .content .right .rightD button{
+    font-size: 1rem; 
+  }
+  .downloadFake .upside .line{
+    font-size: 1.5rem;
+  }
+  .downloadFake .content .left img{
+    width: 10rem;
+  }
+  #titles{
+    margin-top: 30vh;
+  }
+  #titles h1{
+    font-size: 1.4rem;
+  }
+  #titles .names{
+    padding: unset;
+    margin-top: 1rem;
+  }
+  #titles .names h2{
+    font-size: 1rem;
   }
 }
