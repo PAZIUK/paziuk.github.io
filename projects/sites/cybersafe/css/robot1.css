@@ -90,3 +90,34 @@
 .robot1 .text .photo img{
   width: 100%;
 }
+
+@media(max-width: 320px){
+  .robot1.active{
+    flex-direction: column-reverse;
+  }
+  .robot1.active .photo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .robot1.active .text{
+    margin-top: .5rem;
+    font-size: 1.1rem;
+    line-height: 1.1rem;
+  }
+  .robot1.active .text:after,.level2 .robot1.active .text:after{
+    content: "";
+    border-bottom-color: var(--color-1);
+    top: -1.1rem;
+    left: 48%;
+    border-left-color: transparent;
+    right: unset;
+  }
+  #btn7,#btn10,#btn13,#btn16,#btn19{
+    display: none;
+  }
+  #btn7.active,#btn10.active,#btn13.active,#btn16.active,#btn19.active{
+    display: flex;
+  }
+}

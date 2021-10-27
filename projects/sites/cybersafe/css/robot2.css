@@ -66,3 +66,28 @@
 .box.r2.active,.box.r3.active,.box.r4.active{
   display: unset;
 }
+
+@media(max-width: 320px){
+  .robot2.active{
+    flex-direction: column-reverse;
+  }
+  .robot2.active .photo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .robot2.active .text{
+    margin-top: .5rem;
+    font-size: 1.1rem;
+    line-height: 1.1rem;
+  }
+  .robot2.active .text:after,.level2 .robot2.active .text:after{
+    content: "";
+    border-bottom-color: var(--color-4);
+    top: -1.1rem;
+    left: 48%;
+    border-right-color: transparent;
+    right: unset;
+  }
+}

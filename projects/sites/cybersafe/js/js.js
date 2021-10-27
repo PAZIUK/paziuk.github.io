@@ -26,6 +26,9 @@ let btn17 = document.querySelector("#btn17");
 let btn18 = document.querySelector("#btn18");
 let btn19 = document.querySelector("#btn19");
 let btn20 = document.querySelector("#btn20");
+let btn21 = document.querySelector("#btn21");
+let fakeDBtn = document.querySelector("#fakeDBtn");
+let rightDBtn = document.querySelector("#rightDBtn");
 
 let prevBtn1 = document.querySelector("#prevBtn1");
 let prevBtn2 = document.querySelector("#prevBtn2");
@@ -44,7 +47,7 @@ let nextBtn5 = document.querySelector("#nextBtn5");
 let nextBtn6 = document.querySelector("#nextBtn6");
 let nextBtn7 = document.querySelector("#nextBtn7");
 let nextBtn8 = document.querySelector("#nextBtn8");
-// let nextBtn9 = document.querySelector("#nextBtn9");
+let nextBtn9 = document.querySelector("#nextBtn9");
 
 let startGameBtn = document.querySelector("#startGame");
 
@@ -97,24 +100,26 @@ function removeActiveBox(){
 	}
 }
 function scroll(...args){
-	let allBoxes = [];
-	let scrollHigh = 0;
-	for (let i = 0; i < arguments.length; i++) {
-		allBoxes.push(arguments[i])
-	}
-	for (let i = 0; i < allBoxes.length; i++) {
-		scrollHigh += document.querySelector(allBoxes[i]).offsetHeight;
-	}
-	scrollHigh+=32;
-	let tosc = window.scrollY;
-  	let intsc = setInterval(()=>{
-  		if(scrollHigh>tosc){
-			tosc+=50;
-			window.scrollTo(0,tosc)
-		} else {
-			clearInterval(intsc);
+	if(document.body.clientWidth>320){
+		let allBoxes = [];
+		let scrollHigh = 0;
+		for (let i = 0; i < arguments.length; i++) {
+			allBoxes.push(arguments[i])
 		}
-	},50)
+		for (let i = 0; i < allBoxes.length; i++) {
+			scrollHigh += document.querySelector(allBoxes[i]).offsetHeight;
+		}
+		scrollHigh+=32;
+		let tosc = window.scrollY;
+	  	let intsc = setInterval(()=>{
+	  		if(scrollHigh>tosc){
+				tosc+=50;
+				window.scrollTo(0,tosc)
+			} else {
+				clearInterval(intsc);
+			}
+		},50)
+	}
 }
 function test(checkBtn,nextBtn,testBtns){
 	let testActiveBtn = "";
@@ -177,6 +182,17 @@ function mark(doing,number) {
 	}
 	document.querySelector("#mark .markNum").textContent = MARK;
 }
+function load(){
+	let i = 0;
+	let int = setInterval(()=>{
+		document.querySelector(".level9 .load .line").style.width = i+"%";
+		i++;
+		if (i==101) {
+			addActiveBox("#startGameAD")
+			clearInterval(int)
+		}
+	},50)
+}
 
 function level1() {
 	window.scrollTo(0,0);
@@ -184,9 +200,7 @@ function level1() {
 	setTimeout(()=>{
 		addActiveBox(".level1 .robot1 .text",btn1)
 	},200)
-	helloBlock.querySelector("header").style.display = 'none';
-	helloBlock.querySelector(".box.hello").style.display = 'none';
-	helloBlock.querySelector("footer").style.display = 'none';
+	helloBlock.style.display = 'none';
 }
 
 
@@ -197,8 +211,10 @@ document.addEventListener("DOMContentLoaded",()=>{
 			helloBlock.querySelector("header"),
 			helloBlock.querySelector(".box.hello"),
 			helloBlock.querySelector(".box.hello .btns button"),
-			helloBlock.querySelector("footer")
+			helloBlock.querySelector(".hellononv")
 		);
+		helloFooterDown()
+		addActiveBox(helloBlock.querySelector("footer"));
 	},100)
 })
 
@@ -207,8 +223,9 @@ letsGoBtn.addEventListener("click",function(){
 	removeActiveBox(
 			helloBlock.querySelector("header"),
 			helloBlock.querySelector(".box.hello"),
+			helloBlock.querySelector(".hellononv"),
 			helloBlock.querySelector("footer")
-		);
+	);
 	setTimeout(()=>{
 		level1();
 		addActiveBox(prevBtn1);
@@ -467,24 +484,68 @@ startGameBtn.addEventListener("click",()=>{
 	setTimeout(()=>{
 		addActiveBox(".level9 .robot2 .text",btn21);
 	},100)
+	window.scrollTo(0,0);
 })
 
 btn21.addEventListener("click",function(){
 	noActiveBtn(this);
 	addActiveBox(".level9 .box.r2");
 	scroll(".level9 .box.r1");
+	let badGameDate = document.querySelector("#badGameDate");
+	let DATE = new Date();
+	let year = DATE.getFullYear();
+	let month = DATE.getMonth()+1;
+	let day = DATE.getDate();
+	let hour = DATE.getHours();
+	let minute = DATE.getMinutes();
+	let seconds = DATE.getSeconds();
+	if (hour.length==1) {
+		hour = "0"+hour;
+	}
+	if (minute.length==1) {
+		minute = "0"+minute;
+	}
+	if (seconds.length==1) {
+		seconds = "0"+seconds;
+	}
+	let date = day+"."+month+"."+year+" "+hour+":"+minute+":"+seconds;
+	badGameDate.textContent = date;
+})
+
+rightDBtn.addEventListener("click",function(){
+	addActiveBox(".level9 .load");
+	load();
+})
+document.querySelector("#startGameAD").addEventListener("click",function(){
+	removeActiveBox(".level9");
+	addActiveBox(".level10",".level10 .robot2");
+	setTimeout(addActiveBox(".level10 .robot2 .text","#lastBtn"),1000)
+})
+document.querySelector("#lastBtn").addEventListener("click",function(){
+	noActiveBtn(this);
+	removeActiveBox(".level10");
+	addActiveBox("#titles");
+	document.querySelectorAll(".wrapper")[0].style.display = "flex"
+	document.querySelectorAll(".wrapper")[0].style.alignItems = "center"
+	document.querySelectorAll(".wrapper")[0].style.justifyContent = "center"
+	addActiveBox("#titles h1");
+	setTimeout(()=>{
+		document.querySelectorAll("#titles .pupil")[0].classList.add("active")
+	},500);
+	setTimeout(()=>{
+		document.querySelectorAll("#titles .pupil")[1].classList.add("active")
+	},1000);
 })
 
 prevBtn1.addEventListener("click",function(){
 	this.setAttribute("isClicked","1")
-	helloBlock.querySelector("header").style.display = 'unset';
-	helloBlock.querySelector(".box.hello").style.display = 'flex';
-	helloBlock.querySelector("footer").style.display = 'unset';
+	helloBlock.style.display = 'flex';
 	removeActiveBox(".level1",prevBtn1,nextBtn2)
 	addActiveBox(
 			helloBlock.querySelector("header"),
 			helloBlock.querySelector(".box.hello"),
 			helloBlock.querySelector("footer"),
+			helloBlock.querySelector(".hellononv"),
 			nextBtn1
 		);
 })
@@ -539,12 +600,11 @@ nextBtn1.addEventListener("click",function(){
 	window.scrollTo(0,0);
 	addActiveBox(".level1",prevBtn1);
 	removeActiveBox(nextBtn1)
-	helloBlock.querySelector("header").style.display = 'none';
-	helloBlock.querySelector(".box.hello").style.display = 'none';
-	helloBlock.querySelector("footer").style.display = 'none';
+	helloBlock.style.display = 'none';
 	if (prevBtn2.getAttribute("isClicked") == 1) {
 		addActiveBox(nextBtn2)
 	}
+	removeActiveBox(helloBlock.querySelector("footer"));
 })
 
 nextBtn2.addEventListener("click",function(){
@@ -614,14 +674,40 @@ nextBtn8.addEventListener("click",function(){
 	removeActiveBox(nextBtn8,'.level7')
 })
 
-//meanwhile button
-// nextBtn9.addEventListener("click",function(){
-// 	window.scrollTo(0,0);
-// 	helloBlock.querySelector("header").style.display = 'none';
-// 	helloBlock.querySelector(".box.hello").style.display = 'none';
-// 	helloBlock.querySelector("footer").style.display = 'none';
-// 	addActiveBox(".level8",".level8 .robot2");
-// 	setTimeout(()=>{
-// 		addActiveBox(".level8 .robot2 .text",btn20);
-// 	},200)
-// })
+window.onscroll = ()=>{
+	document.querySelectorAll(".pnBtn.nBtn").forEach(item=>{
+		item.style.top = (window.scrollY+8)+"px";
+	})
+	document.querySelectorAll(".pnBtn.pBtn").forEach(item=>{
+		item.style.top = (window.scrollY+8)+"px"
+	})
+}
+
+// meanwhile button
+nextBtn9.addEventListener("click",function(){
+	window.scrollTo(0,0);
+	helloBlock.style.display = "none";
+	helloBlock.style.height = 0+"px";
+	addActiveBox(".level8",".level8 .robot2");
+	setTimeout(()=>{
+		addActiveBox(".level8 .robot2 .text",btn20);
+	},200)
+	removeActiveBox(helloBlock.querySelector("footer"));
+})
+
+window.onload = helloFooterDown()
+window.onresize = helloFooterDown()
+// setInterval(helloFooterDown,1000)
+function helloFooterDown(){
+	if (helloBlock.querySelector("footer").classList.contains("active")) {
+		if (((helloBlock.offsetHeight+48)<document.documentElement.scrollHeight)) {
+			helloBlock.style.height = (document.documentElement.scrollHeight-48)+"px";
+		} else if(document.querySelector(".hellononv").offsetHeight>1&&helloBlock.offsetHeight>document.documentElement.clientHeight){
+			let i = helloBlock.offsetHeight+48;
+			while(i>document.documentElement.clientHeight){
+				i--;
+				helloBlock.style.height = (i-60)+"px";
+			}
+		} 
+	}
+}
