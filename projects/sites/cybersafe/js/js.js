@@ -47,7 +47,7 @@ let nextBtn5 = document.querySelector("#nextBtn5");
 let nextBtn6 = document.querySelector("#nextBtn6");
 let nextBtn7 = document.querySelector("#nextBtn7");
 let nextBtn8 = document.querySelector("#nextBtn8");
-let nextBtn9 = document.querySelector("#nextBtn9");
+// let nextBtn9 = document.querySelector("#nextBtn9");
 
 let startGameBtn = document.querySelector("#startGame");
 
@@ -686,16 +686,16 @@ window.onscroll = ()=>{
 }
 
 // meanwhile button
-nextBtn9.addEventListener("click",function(){
-	window.scrollTo(0,0);
-	helloBlock.style.display = "none";
-	helloBlock.style.height = 0+"px";
-	addActiveBox(".level8",".level8 .robot2");
-	setTimeout(()=>{
-		addActiveBox(".level8 .robot2 .text",btn20);
-	},200)
-	removeActiveBox(helloBlock.querySelector("footer"));
-})
+// nextBtn9.addEventListener("click",function(){
+// 	window.scrollTo(0,0);
+// 	helloBlock.style.display = "none";
+// 	helloBlock.style.height = 0+"px";
+// 	addActiveBox(".level8",".level8 .robot2");
+// 	setTimeout(()=>{
+// 		addActiveBox(".level8 .robot2 .text",btn20);
+// 	},200)
+// 	removeActiveBox(helloBlock.querySelector("footer"));
+// })
 
 window.onload = helloFooterDown()
 window.onresize = helloFooterDown()
