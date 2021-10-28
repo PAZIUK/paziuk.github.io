@@ -8,6 +8,9 @@
 *{
   outline: none;
 }
+html{
+  height: 100vh;
+}
 body{
   background-color: #2c3851;
   font-family: 'Nunito', sans-serif;
@@ -18,7 +21,7 @@ body{
   display: flex;
   flex-direction: column;
   transition: all 2s;
-  min-height: 100vh;
+  height: 100%;
 }
 h1,h2,h3,h4,h5,h6{
   color: var(--color-3);
@@ -29,7 +32,7 @@ h1,h2,h3,h4,h5,h6{
   padding: 0 1.4rem;
   margin: 0px auto;
   position: relative;
-  min-height: 100vh;
+  min-height: 100%;
 }
 .header{
   display: flex;
@@ -557,9 +560,6 @@ footer .box .text{
 
 /*MEDIA*/
 @media(max-width: 320px){
-  body{
-    width: 100%;
-  }
   .logo img{
     width: 2rem;
   }
@@ -693,9 +693,6 @@ footer .box .text{
   }
 }
 @media(min-width: 321px) and (max-width: 480px){
-  body{
-    width: 100%;
-  }
   .logo img{
     width: 2rem;
   }
@@ -829,9 +826,6 @@ footer .box .text{
   }
 }
 @media(min-width: 481px) and (max-width: 767px){
-  body{
-    width: 100%;
-  }
   .logo img{
     width: 2rem;
   }
@@ -965,9 +959,6 @@ footer .box .text{
   }
 }
 @media(min-width: 768px) and (max-width: 960px){
-  body{
-    width: 100%;
-  }
   .hello-block header{
     margin: 0 1rem;
   }
@@ -1085,4 +1076,6 @@ footer .box .text{
   #titles .names h2{
     font-size: 1rem;
   }
+}
+@media(min-width: 961px){
 }

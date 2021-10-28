@@ -541,7 +541,7 @@ document.querySelector("#lastBtn").addEventListener("click",function(){
 prevBtn1.addEventListener("click",function(){
 	this.setAttribute("isClicked","1")
 	helloBlock.style.display = 'flex';
-	removeActiveBox(".level1",prevBtn1,nextBtn2)
+	removeActiveBox(".level1",prevBtn1,nextBtn2);
 	addActiveBox(
 			helloBlock.querySelector("header"),
 			helloBlock.querySelector(".box.hello"),
