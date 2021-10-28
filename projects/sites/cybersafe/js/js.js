@@ -214,7 +214,6 @@ document.addEventListener("DOMContentLoaded",()=>{
 			helloBlock.querySelector(".box.hello .btns button"),
 			helloBlock.querySelector(".hellononv")
 		);
-		helloFooterDown()
 		addActiveBox(helloBlock.querySelector("footer"));
 	},100)
 })
@@ -696,20 +695,3 @@ window.onscroll = ()=>{
 // 	},200)
 // 	removeActiveBox(helloBlock.querySelector("footer"));
 // })
-
-// window.onload = helloFooterDown()
-// window.onresize = helloFooterDown()
-setInterval(helloFooterDown,1000)
-function helloFooterDown(){
-	if (helloBlock.querySelector("footer").classList.contains("active")) {
-		if (((helloBlock.offsetHeight+48)<document.documentElement.scrollHeight)) {
-			helloBlock.style.height = (document.documentElement.scrollHeight-48)+"px";
-		} else if(document.querySelector(".hellononv").offsetHeight>1&&helloBlock.offsetHeight>document.documentElement.clientHeight){
-			let i = helloBlock.offsetHeight+48;
-			while(i>document.documentElement.clientHeight){
-				i--;
-				helloBlock.style.height = (i-60)+"px";
-			}
-		} 
-	}
-}
