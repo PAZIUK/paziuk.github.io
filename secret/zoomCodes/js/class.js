@@ -27,7 +27,7 @@ backButton.addEventListener("click",function(){
 })
 let lessons = document.querySelectorAll(".lesson");
 lessons.forEach(item=>{
-	item.style.height = item.querySelector(".btn").offsetHeight+"px";
+	item.style.height = item.querySelector(".btn").offsetHeight+8+"px";
 })
 let lessonBtns = document.querySelectorAll('button.lessonBtn');
 window.onresize = ()=>{
