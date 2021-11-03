@@ -1,35 +1,3 @@
-"use strict"
-document.addEventListener("DOMContentLoaded",function(){
-	setTimeout(()=>{
-		document.querySelector(".PASSWORD input").classList.add("active")
-		document.querySelector(".PASSWORD button").classList.add("active")
-	},200)
-})
-document.querySelector(".PASSWORD input").addEventListener("input",function(){
-	if (this.value.length>5) {
-		let value = this.value.substr(0,5);
-		this.value = value;
-	}
-})
-let checkPasswordBtn = document.querySelector("#checkPassword");
-checkPasswordBtn.addEventListener("click",()=>checkPassword(checkPasswordBtn));
-
-let PASSWORDS = [
-	"05042",
-	"10031",
-]
-
-function checkPassword(btn){
-	let PASSWORD = btn.parentElement.querySelector("input").value;
-	if(PASSWORDS.includes(PASSWORD)){
-		console.log(1);
-	} else {
-		btn.parentElement.querySelector(".errorText").classList.add("active")
-		setTimeout(()=>{
-			btn.parentElement.querySelector(".errorText").classList.remove("active");
-		},2000);
-	}
-}
 // let loadBlock = document.querySelector(".load");
 // let loadTime = 0;
 // let loadImgDeg = 0;
@@ -51,9 +19,15 @@ function checkPassword(btn){
 // 		},1000-loadTime)
 // 	}
 // })
+
+let backButton = document.querySelector(".classInfo img");
+backButton.addEventListener("click",function(){
+	localStorage.setItem('classCodeNow', window.location.pathname.split("/").pop().split(".")[0]);
+	window.location.href = "../index.html"
+})
 let lessons = document.querySelectorAll(".lesson");
 lessons.forEach(item=>{
-	item.style.height = item.querySelector(".btn").offsetHeight+8+"px";
+	item.style.height = item.querySelector(".btn").offsetHeight+"px";
 })
 let lessonBtns = document.querySelectorAll('button.lessonBtn');
 window.onresize = ()=>{
@@ -86,8 +60,8 @@ lessonImgs.forEach(item=>{
 let teachers = document.querySelectorAll('.teachers');
 teachers.forEach(item=>{
 	if(item.children.length==1){
-		item.style.display = "flex";
-		item.style.justifyContent = "center";
+		item.style.gridеemplateсolumns = "repeat(1,1fr)";
+		item.style.gridGap = ".3rem";
 	}
 })
 
