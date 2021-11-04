@@ -30,6 +30,9 @@ lessons.forEach(item=>{
 	let blockHeight = item.querySelector(".btn").offsetHeight+8;
 	item.style.height = blockHeight+"px";
 	item.setAttribute("myHeight",blockHeight);
+	// let marginForImg = (item.querySelector(".btn").offsetHeight - item.querySelector(".btn img").offsetHeight) / 2;
+	// console.log(marginForImg)
+	// document.querySelector(".btn img.btnImg").style.top = marginForImg+"px";
 })
 let lessonBtns = document.querySelectorAll('button.lessonBtn');
 window.onresize = ()=>{
