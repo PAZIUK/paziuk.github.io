@@ -27,7 +27,9 @@ backButton.addEventListener("click",function(){
 })
 let lessons = document.querySelectorAll(".lesson");
 lessons.forEach(item=>{
-	item.style.height = item.querySelector(".btn").offsetHeight+8+"px";
+	let blockHeight = item.querySelector(".btn").offsetHeight+8;
+	item.style.height = blockHeight+"px";
+	item.setAttribute("myHeight",blockHeight);
 })
 let lessonBtns = document.querySelectorAll('button.lessonBtn');
 window.onresize = ()=>{
@@ -70,12 +72,15 @@ function anim(btn,block,num){
 	if(num&&num==1) {
 		if(btn.classList.contains("active")) {
 			//друге нажаття
-			let btnHeight = block.querySelector(".btn").offsetHeight+8;
+			let blockHeight = block.getAttribute("myHeight");
 			let nowHeight = block.offsetHeight;
 			let int = setInterval(()=>{
 				nowHeight-=5;
 				block.style.height = nowHeight+"px";
-				if (btnHeight>=nowHeight) {
+				if (blockHeight==nowHeight) {
+					clearInterval(int);
+				} else if(blockHeight>nowHeight){
+					block.style.height = blockHeight+"px";
 					clearInterval(int);
 				}
 			},1)

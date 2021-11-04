@@ -5,8 +5,6 @@ let PASSWORDS = {
 }
 let PASSWORDKeys = Object.keys(PASSWORDS);
 let PASSWORDValues = Object.values(PASSWORDS);
-console.log(PASSWORDKeys)
-console.log(PASSWORDValues)
 
 function checkPassword(btn){
 	let PASSWORD = btn.parentElement.querySelector("input").value;
