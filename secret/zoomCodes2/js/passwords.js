@@ -74,18 +74,12 @@ function settings() {
 }
 
 let classId = localStorage.getItem('classCodeNow');
-if (classId) {
-  document.querySelector(".PASSWORD input").value = classId;
+if (localStorage.getItem('classCode')) {
+  let classCode = localStorage.getItem('classCode');
+  document.querySelector(".PASSWORD input").value = classCode;
   document.querySelector(".PASSWORD .className").classList.add("active");
-  settings();
-  login();
 } else {
-  if (localStorage.getItem('classCode')) {
-    let classCode = localStorage.getItem('classCode');
-    window.location.href = `classes/${classCode}.html`;
-  } else {
-    document.querySelector(".PASSWORD .className").classList.add("active");
-    login();
-    settings();
-  }
+  document.querySelector(".PASSWORD .className").classList.add("active");
+  login();
+  settings();
 }
