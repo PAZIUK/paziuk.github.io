@@ -1,20 +1,28 @@
 "use strict"
 let loadBlock = document.querySelector(".load");
 let aIG = 0;
-let int = setInterval(() => {
-  if (loadBlock != null) {
-    aIG += 45;
-    loadBlock.querySelector("img").style.transform = `rotate(${aIG}deg)`;
-  } else {
-    clearInterval(int);
-  }
-}, 200);
 window.onload = () => {
   let link = window.location.href.split("#")
   if (link.length > 1) {
     let whatADay = link[1];
     showDay(whatADay);
+    let int = setInterval(() => {
+      if (loadBlock.classList.contains("active")) {
+        aIG += 45;
+        loadBlock.querySelector("img").style.transform = `rotate(${aIG}deg)`;
+      } else {
+        clearInterval(int);
+      }
+    }, 200);
   } else {
+    let int = setInterval(() => {
+      if (loadBlock.classList.contains("active")) {
+        aIG += 45;
+        loadBlock.querySelector("img").style.transform = `rotate(${aIG}deg)`;
+      } else {
+        clearInterval(int);
+      }
+    }, 200);
     document.querySelector(".days").classList.add("active")
     let daysBtns = document.querySelectorAll(".days button");
     setTimeout(
@@ -50,7 +58,7 @@ function showDay(day) {
       let header = document.querySelector("header.classInfo");
       document.querySelectorAll(".days button").forEach(i => {
         if (i.getAttribute("id") == day) {
-          header.querySelector(".name").textContent = i.textContent;
+          header.querySelector(".name").textContent = i.textContent.toUpperCase();
           header.classList.add("active");
         }
       })

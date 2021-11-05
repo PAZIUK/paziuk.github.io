@@ -39,18 +39,30 @@ const TEACHERS = {
   //id 19
   "Стрелнікова Марина Манолівна": "https://us05web.zoom.us/j/2470796665?pwd=YnFBcEhtUlc0cXA3NXZwMTBDam5EZz09",
   //id 20
-  "": "",
+  "Король Галина Василівна": "https://us04web.zoom.us/j/5713849450?pwd=cHp0S0t0c2JxNVp4dlBGNFBod0hWQT09",
   //id 21
-  "": "",
+  "Пазюк Зоряна Михайлівна": "https://zoom.us/j/2952516060?pwd=ZWh6dlZsdm1pTFFMWWRheXorMkhoQT09",
   //id 22
-  "": "",
+  "Ралик Оксана Іванівна": "https://us04web.zoom.us/j/7764410678?pwd=Z2lBRjBBaCtMUFlpbzJjSUhaYytDZz09",
   //id 23
-  "": "",
+  "Михайлюк Світлана Володимирівна": "https://us04web.zoom.us/j/3596491642?pwd=dXpCbXdjME1nYzJWWEppcE5ZeFBCUT09",
   //id 24
-  "": "",
+  "Микитей Ольга Михайлівна": "https://us05web.zoom.us/j/9686277425?pwd=dGVVZE5FN0gyc1R5TkRVQyttRk0vUT09",
   //id 25
-  "": "",
+  "Лахман Віра Василівна": "https://zoom.us/j/8167580898?pwd=NDc2UDZUL1E5YVpsOXZMNlNVbldLdz09",
   //id 26
+  "": "",
+  //id 
+  "": "",
+  //id 
+  "": "",
+  //id 
+  "": "",
+  //id 
+  "": "",
+  //id 
+  "": "",
+  //id 
   "": "",
 }
 
@@ -59,11 +71,16 @@ let lessonsBlocks = document.querySelectorAll(".btns .lesson");
 for (let i = 0; i < lessonsBlocks.length; i++) {
   let startBtn = document.createElement("div");
   let lessonBtn = document.createElement("button");
+  let lessonBtnText = document.createElement("div");
   let lessonBtnImg = document.createElement("img");
+  let lessonNumber = document.createElement("div");
 
   startBtn.classList.add("btn");
   lessonBtn.classList.add("lessonBtn");
-  lessonBtn.textContent = lessonsBlocks[i].getAttribute("lessonName");
+  lessonBtnText.classList.add("lessonBtnText");
+  lessonNumber.classList.add("lessonNumber");
+  lessonBtnText.textContent = lessonsBlocks[i].getAttribute("lessonName").toUpperCase();
+  lessonNumber.textContent = lessonsBlocks[i].getAttribute("num") + ".";
   lessonBtnImg.classList.add("btnImg");
   lessonBtnImg.setAttribute("src", "https://img.icons8.com/android/48/000000/plus.png");
 
@@ -80,10 +97,24 @@ for (let i = 0; i < lessonsBlocks.length; i++) {
     info.classList.add("info");
     desc.classList.add("desc");
 
-    linkButton.setAttribute("onclick", `window.location.href = '${Object.values(TEACHERS)[ID]}'`);
+    linkButton.addEventListener("click", () => {
+      window.open(Object.values(TEACHERS)[ID]);
+    });
     linkButton.textContent = "Перейти в ZOOM";
-
-    desc.textContent = Object.keys(TEACHERS)[ID];
+    if (Object.keys(TEACHERS)[ID].length >= 29) {
+      let firstSpace = Object.keys(TEACHERS)[ID].split(" ");
+      let newString = "";
+      for (let index = 0; index < firstSpace.length; index++) {
+        if (index == 0) {
+          newString += firstSpace[index] + " <br class='mobile'/>"
+        } else {
+          newString += ` ${firstSpace[index]}`
+        }
+      }
+      desc.innerHTML = newString;
+    } else {
+      desc.textContent = Object.keys(TEACHERS)[ID];
+    }
 
     info.appendChild(desc);
 
@@ -93,6 +124,8 @@ for (let i = 0; i < lessonsBlocks.length; i++) {
     teachersBlock.appendChild(teacher);
   }
 
+  lessonBtn.appendChild(lessonBtnText);
+  lessonBtn.appendChild(lessonNumber);
   startBtn.appendChild(lessonBtn);
   startBtn.appendChild(lessonBtnImg);
 

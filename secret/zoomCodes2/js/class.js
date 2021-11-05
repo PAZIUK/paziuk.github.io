@@ -26,25 +26,14 @@ backButton.addEventListener("click", function () {
   localStorage.setItem('classCode', arrayOfLinks[arrayOfLinks.length - 2]);
   window.location.href = "nav.html"
 })
-let lessons = document.querySelectorAll(".lesson");
 let time = 0;
 let intLessons = setInterval(() => {
-  lessons.forEach(item => {
-    let blockHeight = item.querySelector(".btn").offsetHeight + 8;
-    item.style.height = blockHeight + "px";
-    item.setAttribute("myHeight", blockHeight);
-    if (item.querySelector(".btn").offsetHeight != 0 && time >= 1000) {
-      document.querySelector(".load").classList.remove("active");
-      clearInterval(intLessons)
-    }
-    // let marginForImg = (item.querySelector(".btn").offsetHeight - item.querySelector(".btn img").offsetHeight) / 2;
-    // console.log(marginForImg)
-    // document.querySelector(".btn img.btnImg").style.top = marginForImg+"px";
-  })
+  addHeightProperty();
   time += 100;
 }, 100)
 let lessonBtns = document.querySelectorAll('button.lessonBtn');
 window.onresize = () => {
+  addHeightProperty();
   lessonBtns.forEach(item => {
     anim(item.parentElement, item.parentElement.parentElement, 2)
     setTimeout(item.parentElement.classList.remove('active'), 1000)
@@ -124,4 +113,19 @@ function anim(btn, block, num) {
       }, 1)
     }
   }
+}
+
+function addHeightProperty() {
+  let lessons = document.querySelectorAll(".lesson");
+  lessons.forEach(item => {
+    let blockHeight = item.querySelector(".btn").offsetHeight + 8;
+    item.style.height = blockHeight + "px";
+    item.setAttribute("myHeight", blockHeight);
+    if (item.querySelector(".btn").offsetHeight != 0 && time >= 1000) {
+      document.querySelector(".load").classList.remove("active");
+      clearInterval(intLessons)
+    }
+    let marginForImg = (item.querySelector(".btn").offsetHeight - 4) / 2;
+    item.querySelector(".btn img.btnImg").style.top = marginForImg + "px";
+  })
 }
