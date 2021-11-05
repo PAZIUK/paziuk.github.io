@@ -78,6 +78,8 @@ if (localStorage.getItem('classCode')) {
   let classCode = localStorage.getItem('classCode');
   document.querySelector(".PASSWORD input").value = classCode;
   document.querySelector(".PASSWORD .className").classList.add("active");
+  login();
+  settings();
 } else {
   document.querySelector(".PASSWORD .className").classList.add("active");
   login();
