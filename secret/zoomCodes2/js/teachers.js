@@ -1,7 +1,7 @@
 "use strict"
 const TEACHERS = {
   //id 1
-  "Цуркан Галина Іванівна": "https://us04web.zoom.us/j/5468798806?pwd=TGdzcHlFai9JYU1wc3lVTzZjRzZoQT09",
+  "НЕДОСТУПНО": "",
   //id 2
   "Ілюк Катерина Валентинівна": "https://us05web.zoom.us/j/6589970070?pwd=Vlp3dTU3ayt5eTNtTGpYSkhOTGU5dz09",
   //id 3
@@ -51,14 +51,14 @@ const TEACHERS = {
   //id 25
   "Лахман Віра Василівна": "https://zoom.us/j/8167580898?pwd=NDc2UDZUL1E5YVpsOXZMNlNVbldLdz09",
   //id 26
+  "Цуркан Галина Іванівна": "https://us04web.zoom.us/j/5468798806?pwd=TGdzcHlFai9JYU1wc3lVTzZjRzZoQT09",
+  //id 27
+  "Дарвай Марія Іванівна": "https://us02web.zoom.us/j/4133326413?pwd=ZmF5UjNFQXMyU3NCWE81Y3YrQVRjUT09",
+  //id 28
   "": "",
-  //id 
+  //id 29
   "": "",
-  //id 
-  "": "",
-  //id 
-  "": "",
-  //id 
+  //id 30
   "": "",
   //id 
   "": "",
@@ -80,7 +80,6 @@ for (let i = 0; i < lessonsBlocks.length; i++) {
   lessonBtnText.classList.add("lessonBtnText");
   lessonNumber.classList.add("lessonNumber");
   lessonBtnText.textContent = lessonsBlocks[i].getAttribute("lessonName").toUpperCase();
-  lessonNumber.textContent = lessonsBlocks[i].getAttribute("num") + ".";
   lessonBtnImg.classList.add("btnImg");
   lessonBtnImg.setAttribute("src", "https://img.icons8.com/android/48/000000/plus.png");
 
@@ -98,7 +97,9 @@ for (let i = 0; i < lessonsBlocks.length; i++) {
     desc.classList.add("desc");
 
     linkButton.addEventListener("click", () => {
-      window.open(Object.values(TEACHERS)[ID]);
+      if (ID != 0) {
+        window.open(Object.values(TEACHERS)[ID]);
+      }
     });
     linkButton.textContent = "Перейти в ZOOM";
     if (Object.keys(TEACHERS)[ID].length >= 29) {

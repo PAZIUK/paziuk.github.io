@@ -62,6 +62,11 @@ function showDay(day) {
           header.classList.add("active");
         }
       })
+      let inc = 1;
+      item.querySelectorAll(".btns .lesson").forEach(it=>{
+        it.querySelector(".lessonBtn .lessonNumber").textContent = inc+".";
+        inc++;      
+      })
     }
   })
 
