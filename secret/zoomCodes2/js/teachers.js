@@ -37,7 +37,7 @@ const TEACHERS = {
   //id 18
   "Савчук Василина Василівна": "https://us04web.zoom.us/j/2359560419?pwd=bVBoRFI3K25lYlBxVXl2b2JIREtWUT09",
   //id 19
-  "Стрелнікова Марина Манолівна": "https://us05web.zoom.us/j/2470796665?pwd=YnFBcEhtUlc0cXA3NXZwMTBDam5EZz09",
+  "Стрельнікова Марина Маноліївна": "https://us05web.zoom.us/j/2470796665?pwd=YnFBcEhtUlc0cXA3NXZwMTBDam5EZz09",
   //id 20
   "Король Галина Василівна": "https://us04web.zoom.us/j/5713849450?pwd=cHp0S0t0c2JxNVp4dlBGNFBod0hWQT09",
   //id 21
@@ -55,7 +55,7 @@ const TEACHERS = {
   //id 27
   "Дарвай Марія Іванівна": "https://us02web.zoom.us/j/4133326413?pwd=ZmF5UjNFQXMyU3NCWE81Y3YrQVRjUT09",
   //id 28
-  "": "",
+  "Гнідан Марія Василівна": "https://us05web.zoom.us/j/8033956122?pwd=bFdxVEVoMXU1cHlEUzdCQkFQSU94UT09І",
   //id 29
   "": "",
   //id 30
