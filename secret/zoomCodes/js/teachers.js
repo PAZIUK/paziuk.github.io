@@ -96,12 +96,13 @@ for (let i = 0; i < lessonsBlocks.length; i++) {
   let teachersBlock = document.createElement("div");
   teachersBlock.classList.add("teachers")
   let teachersIds = lessonsBlocks[i].getAttribute("teachers").split(",");
-  for (let i = 0; i < teachersIds.length; i++) {
-    let ID = teachersIds[i] - 1;
+  for (let ind = 0; ind < teachersIds.length; ind++) {
+    let ID = teachersIds[ind] - 1;
     let teacher = document.createElement("div");
     let info = document.createElement("div");
     let desc = document.createElement("div");
     let linkButton = document.createElement("button");
+    let QRCodeButton = document.createElement("button");
     teacher.classList.add("teacher");
     info.classList.add("info");
     desc.classList.add("desc");
@@ -112,6 +113,16 @@ for (let i = 0; i < lessonsBlocks.length; i++) {
       }
     });
     linkButton.textContent = "Перейти в ZOOM";
+    if (ID != 0) {
+      QRCodeButton.classList.add("QRCode");
+      QRCodeButton.addEventListener("click", () => {
+        let QRCodeBlock = showQRCode(ID,Object.keys(TEACHERS)[ID]);
+        document.querySelector(".HTMLQRCodeBLock .cross").addEventListener("click",function(){
+          document.querySelector(".HTMLQRCodeBLock").classList.remove("active");
+        })
+      });
+      QRCodeButton.textContent = "Відкрити QR-Код";
+    }
     if (Object.keys(TEACHERS)[ID].length >= 29) {
       let firstSpace = Object.keys(TEACHERS)[ID].split(" ");
       let newString = "";
@@ -132,6 +143,13 @@ for (let i = 0; i < lessonsBlocks.length; i++) {
     teacher.appendChild(info);
     teacher.appendChild(linkButton);
 
+    // let isPC = whatDevice(navigator.platform.toLowerCase());
+    // if (isPC == true) {
+    //   if (ID != 0) {
+    //     teacher.appendChild(QRCodeButton);
+    //   }
+    // }
+
     teachersBlock.appendChild(teacher);
   }
 
@@ -143,21 +161,26 @@ for (let i = 0; i < lessonsBlocks.length; i++) {
   lessonsBlocks[i].appendChild(startBtn);
   lessonsBlocks[i].appendChild(teachersBlock);
 }
+function showQRCode(id,name){
+  id = id+1;
+  let mainBlock = document.querySelector(".HTMLQRCodeBLock");
+  mainBlock.querySelector(".main .teacherName").textContent = name;
+  let imgLink = "";
+  if (id<10) {
+    imgLink = `../../QRCodes/1700${id}.png`
+  } else {
+    imgLink = `../../QRCodes/170${id}.png`
+  }
+  mainBlock.querySelector(".main .code img").setAttribute("src",imgLink);
+  mainBlock.classList.add("active");
+  console.log(imgLink)
+}
 
-/* <div class="btn">
-  <button class="lessonBtn">ХІМІЯ</button>
-  <img class="btnImg" src="https://img.icons8.com/android/48/000000/plus.png" />
-</div>
-<div class="teachers">
-  <div class="teacher">
-    <div class="info">
-      <div class="desc">
-        Цуркан Галина Іванівна
-      </div>
-    </div>
-    <button
-      onclick="window.location.href = 'https://us04web.zoom.us/j/5468798806?pwd=TGdzcHlFai9JYU1wc3lVTzZjRzZoQT09'">
-      Перейти в ZOOM
-    </button>
-  </div>
-</div> */
+function whatDevice(OS){
+  OS = OS.toLowerCase();
+  if (OS.substr(0,5) == "linux"||OS.substr(0,3) == "mac"||OS.substr(0,3) == "win"){
+    return true;
+  } else {
+    return false;
+  }
+}
