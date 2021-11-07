@@ -57,12 +57,22 @@ const TEACHERS = {
   //id 28
   "Гнідан Марія Василівна": "https://us05web.zoom.us/j/8033956122?pwd=bFdxVEVoMXU1cHlEUzdCQkFQSU94UT09І",
   //id 29
-  "": "",
+  "Шевага Галина Михайлівна": "https://us04web.zoom.us/j/7635973549?pwd=OHEwak13WEhQejhxRGt2K2UzeU1iZz09",
   //id 30
+  "Пазюк Зоя Іванівна": "https://us04web.zoom.us/j/2955475300?pwd=NUY5VlpIWDVtR21IbTVac2gyV2lWUT09",
+  //id 31
+  "Котляр Світлана Михайлівна": "https://zoom.us/j/2588424173?pwd=enBQZC9jemNNMWovZnB0RktvR0kxZz09",
+  //id 32
+  "Женихай Оксана Дмитрівна": "https://us04web.zoom.us/j/2022138816?pwd=dkNycVNEdWhraDM1dEt2YmtGT0I3QT09",
+  //id 33
+  "Дідич Юлія Валеріївна": "https://us04web.zoom.us/j/3867689431?pwd=ZEZSQUVVTVc1OWdmY0NCUnU2OFVVQT09",
+  //id 34
+  "Косар Марічка Юріївна": "https://us05web.zoom.us/j/2011323898?pwd=TUxWY0xCNk1EWnU0QWxHQ3pOZzJuZz09",
+  //id 35
   "": "",
-  //id 
+  //id 36
   "": "",
-  //id 
+  //id 37
   "": "",
 }
 
