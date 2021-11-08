@@ -118,7 +118,12 @@ for (let i = 0; i < lessonsBlocks.length; i++) {
       QRCodeButton.addEventListener("click", () => {
         let QRCodeBlock = showQRCode(ID,Object.keys(TEACHERS)[ID]);
         document.querySelector(".HTMLQRCodeBLock .cross").addEventListener("click",function(){
-          document.querySelector(".HTMLQRCodeBLock").classList.remove("active");
+          hideQRCode();
+        })
+        document.addEventListener('keydown', function (e) {
+          if (e.key == "Escape"){
+            hideQRCode();
+          }
         })
       });
       QRCodeButton.textContent = "Відкрити QR-Код";
@@ -143,7 +148,7 @@ for (let i = 0; i < lessonsBlocks.length; i++) {
     teacher.appendChild(info);
     teacher.appendChild(linkButton);
 
-    // let isPC = whatDevice(navigator.platform.toLowerCase());
+    let isPC = whatDevice(navigator.platform.toLowerCase());
     // if (isPC == true) {
     //   if (ID != 0) {
     //     teacher.appendChild(QRCodeButton);
@@ -163,6 +168,7 @@ for (let i = 0; i < lessonsBlocks.length; i++) {
 }
 function showQRCode(id,name){
   id = id+1;
+  document.body.style.overflow = "hidden";
   let mainBlock = document.querySelector(".HTMLQRCodeBLock");
   mainBlock.querySelector(".main .teacherName").textContent = name;
   let imgLink = "";
@@ -173,7 +179,6 @@ function showQRCode(id,name){
   }
   mainBlock.querySelector(".main .code img").setAttribute("src",imgLink);
   mainBlock.classList.add("active");
-  console.log(imgLink)
 }
 
 function whatDevice(OS){
@@ -184,3 +189,29 @@ function whatDevice(OS){
     return false;
   }
 }
+
+function hideQRCode(){
+  document.body.style.overflow = "unset";
+  document.querySelector(".HTMLQRCodeBLock").classList.remove("active");
+  let mainBlock = document.querySelector(".HTMLQRCodeBLock");
+  mainBlock.querySelector(".main .teacherName").textContent = "";
+  mainBlock.querySelector(".main .code img").removeAttribute("src");
+}
+
+/* <div class="btn">
+  <button class="lessonBtn">ХІМІЯ</button>
+  <img class="btnImg" src="https://img.icons8.com/android/48/000000/plus.png" />
+</div>
+<div class="teachers">
+  <div class="teacher">
+    <div class="info">
+      <div class="desc">
+        Цуркан Галина Іванівна
+      </div>
+    </div>
+    <button
+      onclick="window.location.href = 'https://us04web.zoom.us/j/5468798806?pwd=TGdzcHlFai9JYU1wc3lVTzZjRzZoQT09'">
+      Перейти в ZOOM
+    </button>
+  </div>
+</div> */

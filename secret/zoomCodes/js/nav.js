@@ -2,41 +2,21 @@
 
 let loadBlock = document.querySelector(".load");
 let aIG = 0;
-window.onload = () => {
-  let link = window.location.href.split("#")
-  if (link.length > 1) {
-    let whatADay = link[1];
-    showDay(whatADay);
-    let int = setInterval(() => {
-      if (loadBlock.classList.contains("active")) {
-        aIG += 45;
-        loadBlock.querySelector("img").style.transform = `rotate(${aIG}deg)`;
-      } else {
-        clearInterval(int);
-      }
-    }, 200);
-  } else {
-    let int = setInterval(() => {
-      if (loadBlock.classList.contains("active")) {
-        aIG += 45;
-        loadBlock.querySelector("img").style.transform = `rotate(${aIG}deg)`;
-      } else {
-        clearInterval(int);
-      }
-    }, 200);
-    document.querySelector(".days").classList.add("active")
-    let daysBtns = document.querySelectorAll(".days button");
-    setTimeout(
-      daysBtns.forEach(item => {
-        item.classList.add("active");
-        item.addEventListener("click", function () {
-          showDay(this.getAttribute('id'));
-          window.location.reload();
-        })
-      })
-      , 100)
-  }
+
+window.onload = ()=>{
+  aDayOrNot();
+  localStorage.setItem("linkNow",window.location.href);
 }
+
+// setInterval(()=>{
+//   console.log(window.location.href)
+//   if (localStorage.getItem("linkNow")!=window.location.href) {
+//     aDayOrNot();
+//     console.log(localStorage.getItem("linkNow"))
+//     console.log(window.location.href)
+//   }
+// },500)
+
 
 let daysBtns = document.querySelectorAll(".days button");
 daysBtns.forEach(item => {
@@ -44,6 +24,7 @@ daysBtns.forEach(item => {
     let href = item.getAttribute("id");
     window.location.href = `#${href}`;
     showDay(href);
+    localStorage.setItem("linkNow",window.location.href);
   })
 })
 
@@ -71,6 +52,49 @@ function showDay(day) {
     }
   })
 
+}
+
+function aDayOrNot(){
+  let link = window.location.href.split("#")
+  if (link.length > 1) {
+    document.querySelector(".days").classList.remove("active")
+    let whatADay = link[1];
+    // console.log(whatADay)
+    showDay(whatADay);
+    let int = setInterval(() => {
+      if (loadBlock.classList.contains("active")) {
+        aIG += 45;
+        loadBlock.querySelector("img").style.transform = `rotate(${aIG}deg)`;
+      } else {
+        clearInterval(int);
+      }
+    }, 200);
+  } else {
+    // console.log(1)
+    document.querySelector("header.classInfo").classList.remove("active");
+    document.querySelectorAll(".btns").forEach(item => {
+      item.classList.remove("active")
+    })
+    let int = setInterval(() => {
+      if (loadBlock.classList.contains("active")) {
+        aIG += 45;
+        loadBlock.querySelector("img").style.transform = `rotate(${aIG}deg)`;
+      } else {
+        clearInterval(int);
+      }
+    }, 200);
+    document.querySelector(".days").classList.add("active")
+    let daysBtns = document.querySelectorAll(".days button");
+    setTimeout(
+      daysBtns.forEach(item => {
+        item.classList.add("active");
+        item.addEventListener("click", function () {
+          showDay(this.getAttribute('id'));
+          window.location.reload();
+        })
+      })
+      , 100)
+  }
 }
 
 // const schedule = {
