@@ -72,6 +72,8 @@ const TEACHERS = {
   "Василевич Галина Миколаївна": "https://us05web.zoom.us/j/4401693860?pwd=R3N6RGZ3RkVTTlVTUXdHRGdNdkZOUT09",
   //id 36
   "": "",
+  //id 37
+  "Прізвище Ім'я По-Батькові": "https://us05web.zoom.us/j/4791491048?pwd=dHlTdTcrSkRwK3VTRFNHVzJxWCtuUT09",
 }
 
 let lessonsBlocks = document.querySelectorAll(".btns .lesson");
