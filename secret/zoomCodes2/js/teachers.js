@@ -118,7 +118,12 @@ for (let i = 0; i < lessonsBlocks.length; i++) {
       QRCodeButton.addEventListener("click", () => {
         let QRCodeBlock = showQRCode(ID,Object.keys(TEACHERS)[ID]);
         document.querySelector(".HTMLQRCodeBLock .cross").addEventListener("click",function(){
-          document.querySelector(".HTMLQRCodeBLock").classList.remove("active");
+          hideQRCode();
+        })
+        document.addEventListener('keydown', function (e) {
+          if (e.key == "Escape"){
+            hideQRCode();
+          }
         })
       });
       QRCodeButton.textContent = "Відкрити QR-Код";
@@ -163,6 +168,7 @@ for (let i = 0; i < lessonsBlocks.length; i++) {
 }
 function showQRCode(id,name){
   id = id+1;
+  document.body.style.overflow = "hidden";
   let mainBlock = document.querySelector(".HTMLQRCodeBLock");
   mainBlock.querySelector(".main .teacherName").textContent = name;
   let imgLink = "";
@@ -182,6 +188,14 @@ function whatDevice(OS){
   } else {
     return false;
   }
+}
+
+function hideQRCode(){
+  document.body.style.overflow = "unset";
+  document.querySelector(".HTMLQRCodeBLock").classList.remove("active");
+  let mainBlock = document.querySelector(".HTMLQRCodeBLock");
+  mainBlock.querySelector(".main .teacherName").textContent = "";
+  mainBlock.querySelector(".main .code img").removeAttribute("src");
 }
 
 /* <div class="btn">
