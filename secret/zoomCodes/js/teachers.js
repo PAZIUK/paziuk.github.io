@@ -25,7 +25,7 @@ const TEACHERS = {
   //id 12
   "Масло Тетяна Олексіївна": "https://us04web.zoom.us/j/6902500564?pwd=QzJkalg5ZkFEY0luVkdVVFh6eUNWdz09",
   //id 13
-  "Ганич Дмитро Васильович": "https://zoom.us/j/97488011769?pwd=Y0Zqb1d4NEhUamZlNVJzLzROVVMvUT09",
+  "Ганич Дмитро Васильович": "https://us05web.zoom.us/j/5344642693?pwd=SUdROFpCMHI2clU0ekNieXRBNmFTdz09",
   //id 14
   "Паньків Оксана Василівна": "https://zoom.us/j/4647730505?pwd=NEV2ckxoSlVlV3B6SVROYThBZmNoUT09",
   //id 15
