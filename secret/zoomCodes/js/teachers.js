@@ -69,10 +69,8 @@ const TEACHERS = {
   //id 34
   "Косар Марічка Юріївна": "https://us05web.zoom.us/j/2011323898?pwd=TUxWY0xCNk1EWnU0QWxHQ3pOZzJuZz09",
   //id 35
-  "": "",
+  "Василевич Галина Миколаївна": "https://us05web.zoom.us/j/4401693860?pwd=R3N6RGZ3RkVTTlVTUXdHRGdNdkZOUT09",
   //id 36
-  "": "",
-  //id 37
   "": "",
 }
 
