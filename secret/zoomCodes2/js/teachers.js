@@ -149,11 +149,11 @@ for (let i = 0; i < lessonsBlocks.length; i++) {
     teacher.appendChild(linkButton);
 
     let isPC = whatDevice(navigator.platform.toLowerCase());
-    // if (isPC == true) {
-    //   if (ID != 0) {
-    //     teacher.appendChild(QRCodeButton);
-    //   }
-    // }
+    if (isPC == true) {
+      if (ID != 0) {
+        teacher.appendChild(QRCodeButton);
+      }
+    }
 
     teachersBlock.appendChild(teacher);
   }
