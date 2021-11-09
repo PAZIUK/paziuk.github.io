@@ -149,11 +149,11 @@ for (let i = 0; i < lessonsBlocks.length; i++) {
     teacher.appendChild(linkButton);
 
     let isPC = whatDevice(navigator.platform.toLowerCase());
-    // if (isPC == true) {
-    //   if (ID != 0) {
-    //     teacher.appendChild(QRCodeButton);
-    //   }
-    // }
+    if (isPC == true) {
+      if (ID != 0) {
+        teacher.appendChild(QRCodeButton);
+      }
+    }
 
     teachersBlock.appendChild(teacher);
   }
@@ -197,21 +197,3 @@ function hideQRCode(){
   mainBlock.querySelector(".main .teacherName").textContent = "";
   mainBlock.querySelector(".main .code img").removeAttribute("src");
 }
-
-/* <div class="btn">
-  <button class="lessonBtn">ХІМІЯ</button>
-  <img class="btnImg" src="https://img.icons8.com/android/48/000000/plus.png" />
-</div>
-<div class="teachers">
-  <div class="teacher">
-    <div class="info">
-      <div class="desc">
-        Цуркан Галина Іванівна
-      </div>
-    </div>
-    <button
-      onclick="window.location.href = 'https://us04web.zoom.us/j/5468798806?pwd=TGdzcHlFai9JYU1wc3lVTzZjRzZoQT09'">
-      Перейти в ZOOM
-    </button>
-  </div>
-</div> */
