@@ -8,16 +8,6 @@ window.onload = ()=>{
   localStorage.setItem("linkNow",window.location.href);
 }
 
-// setInterval(()=>{
-//   console.log(window.location.href)
-//   if (localStorage.getItem("linkNow")!=window.location.href) {
-//     aDayOrNot();
-//     console.log(localStorage.getItem("linkNow"))
-//     console.log(window.location.href)
-//   }
-// },500)
-
-
 let daysBtns = document.querySelectorAll(".days button");
 daysBtns.forEach(item => {
   item.addEventListener("click", function () {

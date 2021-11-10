@@ -1,25 +1,3 @@
-// let loadBlock = document.querySelector(".load");
-// let loadTime = 0;
-// let loadImgDeg = 0;
-// let int = setInterval(()=>{
-// 	loadTime += 50
-// 	loadImgDeg += 20;
-// 	loadBlock.querySelector("img").style.transform = `rotate(${loadImgDeg}deg)`
-// 	if (loadTime>1000) {
-// 		clearInterval(int)
-// 	}
-// }
-// ,50)
-// document.addEventListener("DOMContentLoaded",function(){
-// 	if (loadTime>1000) {
-// 		loadBlock.classList.remove("active");
-// 	} else {
-// 		setTimeout(()=>{
-// 			loadBlock.classList.remove("active");
-// 		},1000-loadTime)
-// 	}
-// })
-
 let backButton = document.querySelector(".classInfo img");
 backButton.addEventListener("click", function () {
   let arrayOfLinks = window.location.pathname.split("/");
