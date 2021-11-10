@@ -17,7 +17,7 @@ const TEACHERS = {
   //id 8
   "Малинник Василь Васильович": "https://us04web.zoom.us/j/8010710853?pwd=eGs1OGlXUUZSeVUwNjA2NG5nRVg1UT09",
   //id 9
-  "Баланецький Віктор Петрович": "https://us04web.zoom.us/j/9282320929?pwd=dCszYnlOL3h4OFllTWNQbnVydlQ4UT09",
+  "Баланецький Віктор Петрович": "https://us04web.zoom.us/j/9282320929?pwd=SEcyNjNKWmFWVHNPV0dXL0sxdVB5Zz09",
   //id 10
   "Дарійчук Людмила Василівна": "https://us04web.zoom.us/j/2438672024?pwd=UDdURjhjRSttdnlJVHBVeWJxZml4Zz09",
   //id 11
