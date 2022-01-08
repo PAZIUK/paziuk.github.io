@@ -3,6 +3,8 @@
 let loadBlock = document.querySelector(".load");
 let aIG = 0;
 
+document.head.innerHTML += "<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>"
+
 window.onload = ()=>{
   aDayOrNot();
   localStorage.setItem("linkNow",window.location.href);
@@ -47,6 +49,7 @@ function showDay(day) {
 function aDayOrNot(){
   let link = window.location.href.split("#")
   if (link.length > 1) {
+    // console.log(2)
     document.querySelector(".days").classList.remove("active")
     let whatADay = link[1];
     // console.log(whatADay)

@@ -54,7 +54,9 @@ function settings() {
     if (PASSWORDKeys.includes(input.value)) {
       let ind = PASSWORDKeys.indexOf(input.value);
       document.querySelector(".PASSWORD .className").textContent = Object.values(PASSWORDS)[ind];
-      document.querySelector(".PASSWORD .className").classList.add("active");
+      setTimeout(() => {
+        document.querySelector(".PASSWORD .className").classList.add("active")
+      }, 200)
     } else {
       document.querySelector(".PASSWORD .className").classList.remove("active");
     }
@@ -63,7 +65,9 @@ function settings() {
     if (PASSWORDKeys.includes(this.value)) {
       let ind = PASSWORDKeys.indexOf(this.value);
       document.querySelector(".PASSWORD .className").textContent = Object.values(PASSWORDS)[ind];
-      document.querySelector(".PASSWORD .className").classList.add("active");
+      setTimeout(() => {
+        document.querySelector(".PASSWORD .className").classList.add("active")
+      }, 200)
     } else {
       document.querySelector(".PASSWORD .className").classList.remove("active");
     }
@@ -78,11 +82,15 @@ let classId = localStorage.getItem('classCodeNow');
 if (localStorage.getItem('classCode')) {
   let classCode = localStorage.getItem('classCode');
   document.querySelector(".PASSWORD input").value = classCode;
-  document.querySelector(".PASSWORD .className").classList.add("active");
+  setTimeout(() => {
+    document.querySelector(".PASSWORD .className").classList.add("active")
+  }, 200)
   login();
   settings();
 } else {
-  document.querySelector(".PASSWORD .className").classList.add("active");
+  setTimeout(() => {
+    document.querySelector(".PASSWORD .className").classList.add("active")
+  }, 200)
   login();
   settings();
 }
