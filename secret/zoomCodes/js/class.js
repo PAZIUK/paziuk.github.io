@@ -1,3 +1,5 @@
+"use strict"
+
 let backButton = document.querySelector(".classInfo img");
 backButton.addEventListener("click", function () {
   let arrayOfLinks = window.location.pathname.split("/");
