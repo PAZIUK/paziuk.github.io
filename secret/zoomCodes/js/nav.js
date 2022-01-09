@@ -23,17 +23,25 @@ daysBtns.forEach(item => {
 function showDay(day) {
   document.querySelector(".days").classList.remove("active")
   document.body.classList.add("active");
-  loadBlock.classList.add("active");
   let btnsBlocks = document.querySelectorAll(".btns");
 
   btnsBlocks.forEach(item => {
     if (item.classList.contains(day)) {
       item.classList.add("active");
+      let allLessonBloks = item.querySelectorAll(".lesson");
+      let ind = 0;
+      setInterval(()=>{
+        if(ind<allLessonBloks.length){
+          allLessonBloks[ind].classList.add("active")
+          ind++
+        }
+      },200)
       let header = document.querySelector("header.classInfo");
       document.querySelectorAll(".days button").forEach(i => {
         if (i.getAttribute("id") == day) {
           header.querySelector(".name").textContent = i.textContent.toUpperCase();
           header.classList.add("active");
+          header.querySelector("img").classList.add("active");
         }
       })
       let inc = 1;
@@ -49,10 +57,9 @@ function showDay(day) {
 function aDayOrNot(){
   let link = window.location.href.split("#")
   if (link.length > 1) {
-    // console.log(2)
     document.querySelector(".days").classList.remove("active")
+    document.querySelector(".background").classList.add("active")
     let whatADay = link[1];
-    // console.log(whatADay)
     showDay(whatADay);
     let int = setInterval(() => {
       if (loadBlock.classList.contains("active")) {
@@ -63,8 +70,8 @@ function aDayOrNot(){
       }
     }, 200);
   } else {
-    // console.log(1)
     document.querySelector("header.classInfo").classList.remove("active");
+    document.querySelector(".background").classList.remove("active")
     document.querySelectorAll(".btns").forEach(item => {
       item.classList.remove("active")
     })
@@ -88,6 +95,40 @@ function aDayOrNot(){
       })
       , 100)
   }
+}
+let backPos = 9000;
+let background = document.querySelector(".background");
+toLeft();
+function toRight(){
+  let endInterval = setInterval(()=>{
+    if(document.querySelector(".background").classList.contains("active")){
+      clearInterval(endInterval)
+    } else {
+      backPos+=1
+      let value = backPos/100;
+      background.style.backgroundPosition = `${value}% 50%`
+      if((backPos/100)==100){
+        toLeft()
+        clearInterval(endInterval)
+      }
+    }
+  },10)
+}
+function toLeft(){
+  let endInterval = setInterval(()=>{
+    if(document.querySelector(".background").classList.contains("active")){
+      background.style.backgroundPosition = `50% 50%`
+      clearInterval(endInterval)
+    } else {
+      backPos-=1
+      let value = backPos/100;
+      background.style.backgroundPosition = `${value}% 50%`
+      if((backPos/100)==0){
+        toRight()
+        clearInterval(endInterval)
+      }
+    }
+  },10)
 }
 
 // const schedule = {
