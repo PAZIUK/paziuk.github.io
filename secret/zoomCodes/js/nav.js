@@ -1,6 +1,5 @@
 "use strict"
 
-let loadBlock = document.querySelector(".load");
 let aIG = 0;
 
 document.head.innerHTML += "<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>"
@@ -9,6 +8,22 @@ window.onload = ()=>{
   aDayOrNot();
   localStorage.setItem("linkNow",window.location.href);
 }
+function addBackBtn() {
+  let div = document.createElement("div")
+  let img = document.createElement("img")
+
+  div.classList.add("back","active")
+
+  img.setAttribute("src","https://img.icons8.com/ios-filled/50/000000/long-arrow-left.png")
+
+  div.appendChild(img)
+  document.body.appendChild(div)
+}
+addBackBtn()
+
+document.querySelector(".back").addEventListener("click",function(){
+  window.location.href = "../../index.html"
+})
 
 let daysBtns = document.querySelectorAll(".days button");
 daysBtns.forEach(item => {
@@ -22,6 +37,7 @@ daysBtns.forEach(item => {
 
 function showDay(day) {
   document.querySelector(".days").classList.remove("active")
+  document.querySelector(".back").classList.remove("active")
   document.body.classList.add("active");
   let btnsBlocks = document.querySelectorAll(".btns");
 
@@ -42,6 +58,7 @@ function showDay(day) {
           header.querySelector(".name").textContent = i.textContent.toUpperCase();
           header.classList.add("active");
           header.querySelector("img").classList.add("active");
+          setInterval(()=>{header.style.transform = "translate(0)"},100)
         }
       })
       let inc = 1;
@@ -61,28 +78,12 @@ function aDayOrNot(){
     document.querySelector(".background").classList.add("active")
     let whatADay = link[1];
     showDay(whatADay);
-    let int = setInterval(() => {
-      if (loadBlock.classList.contains("active")) {
-        aIG += 45;
-        loadBlock.querySelector("img").style.transform = `rotate(${aIG}deg)`;
-      } else {
-        clearInterval(int);
-      }
-    }, 200);
   } else {
     document.querySelector("header.classInfo").classList.remove("active");
     document.querySelector(".background").classList.remove("active")
     document.querySelectorAll(".btns").forEach(item => {
       item.classList.remove("active")
     })
-    let int = setInterval(() => {
-      if (loadBlock.classList.contains("active")) {
-        aIG += 45;
-        loadBlock.querySelector("img").style.transform = `rotate(${aIG}deg)`;
-      } else {
-        clearInterval(int);
-      }
-    }, 200);
     document.querySelector(".days").classList.add("active")
     let daysBtns = document.querySelectorAll(".days button");
     setTimeout(
@@ -104,7 +105,7 @@ function toRight(){
     if(document.querySelector(".background").classList.contains("active")){
       clearInterval(endInterval)
     } else {
-      backPos+=1
+      backPos+=2
       let value = backPos/100;
       background.style.backgroundPosition = `${value}% 50%`
       if((backPos/100)==100){
@@ -120,7 +121,7 @@ function toLeft(){
       background.style.backgroundPosition = `50% 50%`
       clearInterval(endInterval)
     } else {
-      backPos-=1
+      backPos-=2
       let value = backPos/100;
       background.style.backgroundPosition = `${value}% 50%`
       if((backPos/100)==0){

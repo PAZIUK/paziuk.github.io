@@ -100,7 +100,7 @@ let background = document.querySelector(".background");
 toRight();
 function toRight(){
   let endInterval = setInterval(()=>{
-    backPos+=1
+    backPos+=2
     let value = backPos/100;
     background.style.backgroundPosition = `${value}% 50%`
     if((backPos/100)==100){
@@ -111,7 +111,7 @@ function toRight(){
 }
 function toLeft(){
   let endInterval = setInterval(()=>{
-    backPos-=1
+    backPos-=2
     let value = backPos/100;
     background.style.backgroundPosition = `${value}% 50%`
     if((backPos/100)==0){

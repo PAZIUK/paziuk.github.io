@@ -102,7 +102,6 @@ function addHeightProperty() {
     item.style.height = blockHeight + "px";
     item.setAttribute("myHeight", blockHeight);
     if (item.querySelector(".btn").offsetHeight != 0 && time >= 1000) {
-      document.querySelector(".load").classList.remove("active");
       clearInterval(intLessons)
     }
     let marginForImg = (item.querySelector(".btn").offsetHeight - 4) / 2;
