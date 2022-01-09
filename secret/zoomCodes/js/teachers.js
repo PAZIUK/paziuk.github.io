@@ -182,9 +182,8 @@ function showQRCode(id,name){
 }
 
 function whatDevice(OS){
-  OS = OS.toLowerCase();
-  console.log(OS)
-  if (OS.substr(0,3) == "mac"||OS.substr(0,3) == "win"){
+  OS = OS.toLowerCase().substr(0,3)
+  if (OS == "mac"||OS == "win"){
     return true;
   } else {
     return false;
