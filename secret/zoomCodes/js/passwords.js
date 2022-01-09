@@ -51,14 +51,17 @@ function settings() {
       document.querySelector(".PASSWORD button").classList.add("active")
     }, 200)
     let input = document.querySelector(".PASSWORD input");
-    if (PASSWORDKeys.includes(input.value)) {
-      let ind = PASSWORDKeys.indexOf(input.value);
-      document.querySelector(".PASSWORD .className").textContent = Object.values(PASSWORDS)[ind];
-      setTimeout(() => {
-        document.querySelector(".PASSWORD .className").classList.add("active")
-      }, 200)
-    } else {
-      document.querySelector(".PASSWORD .className").classList.remove("active");
+    console.log(input.value.length)
+    if(input.value.length>0){
+      if (PASSWORDKeys.includes(input.value)) {
+        let ind = PASSWORDKeys.indexOf(input.value);
+        document.querySelector(".PASSWORD .className").textContent = Object.values(PASSWORDS)[ind];
+        setTimeout(() => {
+          document.querySelector(".PASSWORD .className").classList.add("active")
+        }, 200)
+      } else {
+        document.querySelector(".PASSWORD .className").classList.remove("active");
+      }
     }
   })
   document.querySelector(".PASSWORD input").addEventListener("input", function () {
@@ -88,9 +91,6 @@ if (localStorage.getItem('classCode')) {
   login();
   settings();
 } else {
-  setTimeout(() => {
-    document.querySelector(".PASSWORD .className").classList.add("active")
-  }, 200)
   login();
   settings();
 }
