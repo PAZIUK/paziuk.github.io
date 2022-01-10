@@ -95,7 +95,7 @@ if (localStorage.getItem('classCode')) {
   settings();
 }
 
-let backPos = 0;
+let backPos = 1000;
 let background = document.querySelector(".background");
 toRight();
 function toRight(){
@@ -103,7 +103,7 @@ function toRight(){
     backPos+=2
     let value = backPos/100;
     background.style.backgroundPosition = `${value}% 50%`
-    if((backPos/100)==100){
+    if((backPos/100)==90){
       toLeft()
       clearInterval(endInterval)
     }
@@ -114,7 +114,7 @@ function toLeft(){
     backPos-=2
     let value = backPos/100;
     background.style.backgroundPosition = `${value}% 50%`
-    if((backPos/100)==0){
+    if((backPos/100)==10){
       toRight()
       clearInterval(endInterval)
     }

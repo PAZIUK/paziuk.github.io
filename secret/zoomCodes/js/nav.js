@@ -21,6 +21,15 @@ function addBackBtn() {
 }
 addBackBtn()
 
+function addBackground() {
+  let div = document.createElement("div")
+
+  div.classList.add("background")
+
+  document.body.appendChild(div)
+}
+addBackground()
+
 document.querySelector(".back").addEventListener("click",function(){
   window.location.href = "../../index.html"
 })
@@ -108,7 +117,7 @@ function toRight(){
       backPos+=2
       let value = backPos/100;
       background.style.backgroundPosition = `${value}% 50%`
-      if((backPos/100)==100){
+      if((backPos/100)==90){
         toLeft()
         clearInterval(endInterval)
       }
@@ -124,7 +133,7 @@ function toLeft(){
       backPos-=2
       let value = backPos/100;
       background.style.backgroundPosition = `${value}% 50%`
-      if((backPos/100)==0){
+      if((backPos/100)==10){
         toRight()
         clearInterval(endInterval)
       }

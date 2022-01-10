@@ -116,15 +116,7 @@ for (let i = 0; i < lessonsBlocks.length; i++) {
     if (ID != 0) {
       QRCodeButton.classList.add("QRCode");
       QRCodeButton.addEventListener("click", () => {
-        let QRCodeBlock = showQRCode(ID,Object.keys(TEACHERS)[ID]);
-        document.querySelector(".HTMLQRCodeBLock .cross").addEventListener("click",function(){
-          hideQRCode();
-        })
-        document.addEventListener('keydown', function (e) {
-          if (e.key == "Escape"){
-            hideQRCode();
-          }
-        })
+        showQRCode(ID,Object.keys(TEACHERS)[ID]);
       });
       QRCodeButton.textContent = "Відкрити QR-Код";
     }
@@ -169,16 +161,50 @@ for (let i = 0; i < lessonsBlocks.length; i++) {
 function showQRCode(id,name){
   id = id+1;
   document.body.style.overflow = "hidden";
-  let mainBlock = document.querySelector(".HTMLQRCodeBLock");
-  mainBlock.querySelector(".main .teacherName").textContent = name;
-  let imgLink = "";
+  let imgLink;
   if (id<10) {
     imgLink = `../../QRCodes/1700${id}.png`
   } else {
     imgLink = `../../QRCodes/170${id}.png`
   }
-  mainBlock.querySelector(".main .code img").setAttribute("src",imgLink);
-  mainBlock.classList.add("active");
+  let mainBlock = document.createElement("div");
+  let cross = document.createElement("div")
+  let crossImg = document.createElement("img")
+  let main = document.createElement("div")
+  let teacherName = document.createElement("div")
+  let code = document.createElement("div")
+  let QRcode = document.createElement("img")
+
+
+  mainBlock.classList.add("HTMLQRCodeBLock","active");
+  cross.classList.add("cross")
+  main.classList.add("main")
+  teacherName.classList.add("teacherName")
+  code.classList.add("code")
+  crossImg.setAttribute("src", "https://img.icons8.com/emoji/48/000000/cross-mark-emoji.png");
+  QRcode.setAttribute("src",imgLink)
+
+  teacherName.textContent = name;
+
+  code.appendChild(QRcode)
+
+  cross.appendChild(crossImg)
+  main.appendChild(teacherName)
+  main.appendChild(code)
+
+  mainBlock.appendChild(cross)
+  mainBlock.appendChild(main)
+
+  document.body.appendChild(mainBlock)
+
+  cross.addEventListener("click",function(){
+    hideQRCode();
+  })
+  document.addEventListener('keydown', function (e) {
+    if (e.key == "Escape"){
+      hideQRCode();
+    }
+  })
 }
 
 function whatDevice(OS){
@@ -191,9 +217,5 @@ function whatDevice(OS){
 }
 
 function hideQRCode(){
-  document.body.style.overflow = "unset";
-  document.querySelector(".HTMLQRCodeBLock").classList.remove("active");
-  let mainBlock = document.querySelector(".HTMLQRCodeBLock");
-  mainBlock.querySelector(".main .teacherName").textContent = "";
-  mainBlock.querySelector(".main .code img").removeAttribute("src");
+  document.body.removeChild(document.querySelector(".HTMLQRCodeBLock"))
 }
