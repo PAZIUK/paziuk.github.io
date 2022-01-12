@@ -51,7 +51,6 @@ function settings() {
       document.querySelector(".PASSWORD button").classList.add("active")
     }, 200)
     let input = document.querySelector(".PASSWORD input");
-    console.log(input.value.length)
     if(input.value.length>0){
       if (PASSWORDKeys.includes(input.value)) {
         let ind = PASSWORDKeys.indexOf(input.value);
@@ -95,15 +94,19 @@ if (localStorage.getItem('classCode')) {
   settings();
 }
 
-let backPos = 1000;
+let backPos = 2000;
 let background = document.querySelector(".background");
 toRight();
 function toRight(){
   let endInterval = setInterval(()=>{
-    backPos+=2
+    if(window.innerWidth>480){
+      backPos+=2
+    } else {
+      backPos+=1
+    }
     let value = backPos/100;
     background.style.backgroundPosition = `${value}% 50%`
-    if((backPos/100)==90){
+    if((backPos/100)>=80){
       toLeft()
       clearInterval(endInterval)
     }
@@ -111,10 +114,14 @@ function toRight(){
 }
 function toLeft(){
   let endInterval = setInterval(()=>{
-    backPos-=2
+    if(window.innerWidth>480){
+      backPos-=2
+    } else {
+      backPos-=1
+    }
     let value = backPos/100;
     background.style.backgroundPosition = `${value}% 50%`
-    if((backPos/100)==10){
+    if((backPos/100)<=20){
       toRight()
       clearInterval(endInterval)
     }

@@ -111,32 +111,31 @@ let background = document.querySelector(".background");
 toLeft();
 function toRight(){
   let endInterval = setInterval(()=>{
-    if(document.querySelector(".background").classList.contains("active")){
-      clearInterval(endInterval)
-    } else {
+    if(window.innerWidth>480){
       backPos+=2
-      let value = backPos/100;
-      background.style.backgroundPosition = `${value}% 50%`
-      if((backPos/100)==90){
-        toLeft()
-        clearInterval(endInterval)
-      }
+    } else {
+      backPos+=1
+    }
+    let value = backPos/100;
+    background.style.backgroundPosition = `${value}% 50%`
+    if((backPos/100)>=80){
+      toLeft()
+      clearInterval(endInterval)
     }
   },10)
 }
 function toLeft(){
   let endInterval = setInterval(()=>{
-    if(document.querySelector(".background").classList.contains("active")){
-      background.style.backgroundPosition = `50% 50%`
-      clearInterval(endInterval)
-    } else {
+    if(window.innerWidth>480){
       backPos-=2
-      let value = backPos/100;
-      background.style.backgroundPosition = `${value}% 50%`
-      if((backPos/100)==10){
-        toRight()
-        clearInterval(endInterval)
-      }
+    } else {
+      backPos-=1
+    }
+    let value = backPos/100;
+    background.style.backgroundPosition = `${value}% 50%`
+    if((backPos/100)<=20){
+      toRight()
+      clearInterval(endInterval)
     }
   },10)
 }
