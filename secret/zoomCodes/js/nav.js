@@ -84,12 +84,13 @@ function aDayOrNot(){
   let link = window.location.href.split("#")
   if (link.length > 1) {
     document.querySelector(".days").classList.remove("active")
-    document.querySelector(".background").classList.add("active")
+    document.querySelector(".background").classList.remove("active")
     let whatADay = link[1];
     showDay(whatADay);
   } else {
     document.querySelector("header.classInfo").classList.remove("active");
-    document.querySelector(".background").classList.remove("active")
+    document.querySelector(".background").classList.add("active")
+    toLeft();
     document.querySelectorAll(".btns").forEach(item => {
       item.classList.remove("active")
     })
@@ -108,34 +109,33 @@ function aDayOrNot(){
 }
 let backPos = 9000;
 let background = document.querySelector(".background");
-toLeft();
 function toRight(){
   let endInterval = setInterval(()=>{
-    if(window.innerWidth>480){
-      backPos+=2
+    if(!background.classList.contains("active")){
+      clearInterval(endInterval)
     } else {
       backPos+=1
-    }
-    let value = backPos/100;
-    background.style.backgroundPosition = `${value}% 50%`
-    if((backPos/100)>=80){
-      toLeft()
-      clearInterval(endInterval)
+      let value = backPos/100;
+      background.style.backgroundPosition = `${value}% 50%`
+      if((backPos/100)>=80){
+        toLeft()
+        clearInterval(endInterval)
+      }
     }
   },10)
 }
 function toLeft(){
   let endInterval = setInterval(()=>{
-    if(window.innerWidth>480){
-      backPos-=2
+    if(!background.classList.contains("active")){
+      clearInterval(endInterval)
     } else {
       backPos-=1
-    }
-    let value = backPos/100;
-    background.style.backgroundPosition = `${value}% 50%`
-    if((backPos/100)<=20){
-      toRight()
-      clearInterval(endInterval)
+      let value = backPos/100;
+      background.style.backgroundPosition = `${value}% 50%`
+      if((backPos/100)<=20){
+        toRight()
+        clearInterval(endInterval)
+      }
     }
   },10)
 }
