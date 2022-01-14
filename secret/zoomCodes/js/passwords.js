@@ -25,6 +25,8 @@ let PASSWORDValues = Object.values(PASSWORDS);
 
 function checkPassword(btn) {
   let PASSWORD = btn.parentElement.querySelector("input").value;
+  let nameOfClass = Object.values(PASSWORDS)[PASSWORDKeys.indexOf(PASSWORD)]
+  localStorage.setItem("nameOfClass",nameOfClass)
   if (PASSWORDKeys.includes(PASSWORD)) {
     localStorage.setItem('classCode', PASSWORD);
     window.location.href = `classes/${PASSWORD}/nav.html`;
@@ -54,7 +56,8 @@ function settings() {
     if(input.value.length>0){
       if (PASSWORDKeys.includes(input.value)) {
         let ind = PASSWORDKeys.indexOf(input.value);
-        document.querySelector(".PASSWORD .className").textContent = Object.values(PASSWORDS)[ind];
+        let nameOfClass = Object.values(PASSWORDS)[ind]
+        document.querySelector(".PASSWORD .className").textContent = nameOfClass;
         setTimeout(() => {
           document.querySelector(".PASSWORD .className").classList.add("active")
         }, 200)
@@ -87,43 +90,45 @@ if (localStorage.getItem('classCode')) {
   setTimeout(() => {
     document.querySelector(".PASSWORD .className").classList.add("active")
   }, 200)
-  login();
   settings();
+  login();
+  
 } else {
-  login();
   settings();
+  login();
+  
 }
 
-let backPos = 2000;
-let background = document.querySelector(".background");
-toRight();
-function toRight(){
-  let endInterval = setInterval(()=>{
-    if(window.innerWidth>480){
-      backPos+=2
-    } else {
-      backPos+=1
-    }
-    let value = backPos/100;
-    background.style.backgroundPosition = `${value}% 50%`
-    if((backPos/100)>=80){
-      toLeft()
-      clearInterval(endInterval)
-    }
-  },10)
-}
-function toLeft(){
-  let endInterval = setInterval(()=>{
-    if(window.innerWidth>480){
-      backPos-=2
-    } else {
-      backPos-=1
-    }
-    let value = backPos/100;
-    background.style.backgroundPosition = `${value}% 50%`
-    if((backPos/100)<=20){
-      toRight()
-      clearInterval(endInterval)
-    }
-  },10)
-}
+// let backPos = 2000;
+// let background = document.querySelector(".background");
+// toRight();
+// function toRight(){
+//   let endInterval = setInterval(()=>{
+//     if(window.innerWidth>480){
+//       backPos+=2
+//     } else {
+//       backPos+=1
+//     }
+//     let value = backPos/100;
+//     background.style.backgroundPosition = `${value}% 50%`
+//     if((backPos/100)>=80){
+//       toLeft()
+//       clearInterval(endInterval)
+//     }
+//   },10)
+// }
+// function toLeft(){
+//   let endInterval = setInterval(()=>{
+//     if(window.innerWidth>480){
+//       backPos-=2
+//     } else {
+//       backPos-=1
+//     }
+//     let value = backPos/100;
+//     background.style.backgroundPosition = `${value}% 50%`
+//     if((backPos/100)<=20){
+//       toRight()
+//       clearInterval(endInterval)
+//     }
+//   },10)
+// }

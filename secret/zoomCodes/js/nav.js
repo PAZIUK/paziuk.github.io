@@ -7,6 +7,7 @@ document.head.innerHTML += "<link href='https://unpkg.com/boxicons@2.0.9/css/box
 window.onload = ()=>{
   aDayOrNot();
   localStorage.setItem("linkNow",window.location.href);
+  document.head.querySelector("title").textContent += ` - ${localStorage.getItem("nameOfClass")}`
 }
 function addBackBtn() {
   let div = document.createElement("div")
@@ -90,7 +91,7 @@ function aDayOrNot(){
   } else {
     document.querySelector("header.classInfo").classList.remove("active");
     document.querySelector(".background").classList.add("active")
-    toLeft();
+    // toLeft();
     document.querySelectorAll(".btns").forEach(item => {
       item.classList.remove("active")
     })
@@ -107,38 +108,38 @@ function aDayOrNot(){
       , 100)
   }
 }
-let backPos = 9000;
-let background = document.querySelector(".background");
-function toRight(){
-  let endInterval = setInterval(()=>{
-    if(!background.classList.contains("active")){
-      clearInterval(endInterval)
-    } else {
-      backPos+=1
-      let value = backPos/100;
-      background.style.backgroundPosition = `${value}% 50%`
-      if((backPos/100)>=80){
-        toLeft()
-        clearInterval(endInterval)
-      }
-    }
-  },10)
-}
-function toLeft(){
-  let endInterval = setInterval(()=>{
-    if(!background.classList.contains("active")){
-      clearInterval(endInterval)
-    } else {
-      backPos-=1
-      let value = backPos/100;
-      background.style.backgroundPosition = `${value}% 50%`
-      if((backPos/100)<=20){
-        toRight()
-        clearInterval(endInterval)
-      }
-    }
-  },10)
-}
+// let backPos = 9000;
+// let background = document.querySelector(".background");
+// function toRight(){
+//   let endInterval = setInterval(()=>{
+//     if(!background.classList.contains("active")){
+//       clearInterval(endInterval)
+//     } else {
+//       backPos+=1
+//       let value = backPos/100;
+//       background.style.backgroundPosition = `${value}% 50%`
+//       if((backPos/100)>=80){
+//         toLeft()
+//         clearInterval(endInterval)
+//       }
+//     }
+//   },10)
+// }
+// function toLeft(){
+//   let endInterval = setInterval(()=>{
+//     if(!background.classList.contains("active")){
+//       clearInterval(endInterval)
+//     } else {
+//       backPos-=1
+//       let value = backPos/100;
+//       background.style.backgroundPosition = `${value}% 50%`
+//       if((backPos/100)<=20){
+//         toRight()
+//         clearInterval(endInterval)
+//       }
+//     }
+//   },10)
+// }
 
 // const schedule = {
 //   1: [["09:00:00"],["09:30:00"]],
