@@ -99,36 +99,3 @@ if (localStorage.getItem('classCode')) {
   
 }
 
-// let backPos = 2000;
-// let background = document.querySelector(".background");
-// toRight();
-// function toRight(){
-//   let endInterval = setInterval(()=>{
-//     if(window.innerWidth>480){
-//       backPos+=2
-//     } else {
-//       backPos+=1
-//     }
-//     let value = backPos/100;
-//     background.style.backgroundPosition = `${value}% 50%`
-//     if((backPos/100)>=80){
-//       toLeft()
-//       clearInterval(endInterval)
-//     }
-//   },10)
-// }
-// function toLeft(){
-//   let endInterval = setInterval(()=>{
-//     if(window.innerWidth>480){
-//       backPos-=2
-//     } else {
-//       backPos-=1
-//     }
-//     let value = backPos/100;
-//     background.style.backgroundPosition = `${value}% 50%`
-//     if((backPos/100)<=20){
-//       toRight()
-//       clearInterval(endInterval)
-//     }
-//   },10)
-// }
