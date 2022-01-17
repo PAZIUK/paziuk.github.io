@@ -1,0 +1,183 @@
+.Projects{
+        padding: 0rem 1rem 2rem 1rem;
+        background: var(--color-5);
+        position: relative;
+}
+.Projects .title{
+  padding-top: 2rem;
+  background-color: var(--color-5);
+  width: 100%;
+  position: relative;
+  z-index: 15;
+}
+.Projects h1{
+  display: none;
+  color: red; 
+  font-size: 3rem;
+  justify-content: center;
+  margin-top: 5rem;
+}
+.Projects .projects{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: .6rem;
+}
+.Projects .projects .project{
+  height: 200px;
+  width: 100%;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.Projects .projects .project.hide{
+  display: none;
+}
+.Projects .projects .project.show{
+  display: unset;
+}
+.Projects .projects .project .photo{
+  height: 100%;
+  overflow: hidden;
+  background-color: white;
+}
+.Projects .projects .project .photo.onePhoto{
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.Projects .projects .project .photo img{
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+.Projects .projects .project .info{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(255,255,255,1);
+  transform: translateX(-110%);
+  transition: all 1s ease 0s;
+  border-radius: 10px;
+}
+.Projects .projects .project .info.active{
+  transform: translate(0);
+}
+.Projects .projects .project .info .name{
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.Projects .projects .project .info .desc{
+  font-size: 1rem;
+  text-align: center;
+}
+.Projects .projects .project .info .tech {
+  display: flex;
+  justify-content: center;
+  border: 2px solid var(--color-3);
+  border-radius: 100px;
+  padding: .2rem .8rem;
+  position: relative;
+}
+.Projects .projects .project .info .tech img{
+  width: 2rem;
+  margin-left: 1rem;
+}
+.Projects .projects .project .info .tech img:first-child{
+  margin: 0;
+}
+.Projects .projects .project .info a{
+  cursor: pointer;
+  padding: .5rem 2rem;
+  border-radius: 100px;
+  color: white;
+  background-color: var(--color-3);
+  cursor: pointer;
+  border:none;
+  text-decoration: none;
+  transition: all .7s ease;
+}
+.Projects .projects .project .info a:hover{
+  padding: .5rem 3rem;
+}
+.Projects .projects .project .info i{
+  position: absolute;
+  top: .2rem;
+  right: .5rem;
+  font-size: 1.5rem;
+}
+.Projects .projects .project .info i:hover{
+  cursor: pointer;
+}
+.Projects .projects .project .info i.bxs-heart{
+  color: red;
+}
+
+.Projects .btnMoreProjects{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+.Projects .btnMoreProjects a{
+  text-decoration: none;
+  padding: 1rem 4rem;
+  border-radius: 100px;
+  margin-top: 2rem;
+  color: white;
+  background-color: var(--color-3);
+  cursor: pointer;
+  border:none;
+}
+.Projects .btnMoreProjects a:hover{
+  box-shadow: 0 5px 45px rgba(0, 138, 255,.4);
+}
+
+
+
+.Filters .btns,.Filters .tech{
+  display: flex;
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 100px;
+  overflow: hidden;
+}
+.Filters .btns button,.Filters .tech button{
+	font-size: 2rem;
+  cursor: pointer;
+  border:none;
+  display: flex;
+  color: var(--color-1);
+  align-items: center;
+  font-family: var(--f-f-2);
+  padding: 0rem;
+  width: 100%;
+  position: relative;
+  justify-content: center; 
+  background-color: white;
+  border-right: 2px solid white; 
+}
+.Filters .tech button{
+  font-size: 1.7rem;
+}
+.Filters .btns button.active,.Filters .tech button.active,.Filters .btns button:hover, .Filters .tech button:hover{
+  background-color: var(--color-3);
+  color: white;
+  border: none;
+  border-right: 2px solid white; 
+}
+.Filters .btns button:last-child,.Filters .tech button:last-child{
+  border: none;
+}
+.Filters .btns button:last-child:hover, .Filters .tech button:last-child:hover{
+  background-color: var(--color-3);
+  color: white;
+  border: none;
+}
