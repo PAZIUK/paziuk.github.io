@@ -218,4 +218,5 @@ function whatDevice(OS){
 
 function hideQRCode(){
   document.body.removeChild(document.querySelector(".HTMLQRCodeBLock"))
+  document.body.style.overflow = "unset";
 }
