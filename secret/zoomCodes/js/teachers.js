@@ -89,7 +89,7 @@ for (let i = 0; i < lessonsBlocks.length; i++) {
   lessonBtn.classList.add("lessonBtn");
   lessonBtnText.classList.add("lessonBtnText");
   lessonNumber.classList.add("lessonNumber");
-  lessonBtnText.textContent = lessonsBlocks[i].getAttribute("lessonName").toUpperCase();
+  lessonBtnText.innerHTML = setUnicode(lessonsBlocks[i].getAttribute("lessonName").toUpperCase())
   lessonBtnImg.classList.add("btnImg");
   lessonBtnImg.setAttribute("src", "https://img.icons8.com/android/48/000000/plus.png");
 
@@ -219,4 +219,13 @@ function whatDevice(OS){
 function hideQRCode(){
   document.body.removeChild(document.querySelector(".HTMLQRCodeBLock"))
   document.body.style.overflow = "unset";
+}
+
+function setUnicode(str) {
+  while(str.indexOf("И") >= 0){
+    str = str.split("")
+    str[str.indexOf("И")] = "&#1048;"
+    str = str.join("")
+  }
+  return str
 }
