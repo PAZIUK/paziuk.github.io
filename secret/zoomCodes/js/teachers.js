@@ -73,6 +73,8 @@ const TEACHERS = {
   //id 36
   "Грицанюк Володимир Григорович": "https://us05web.zoom.us/j/4723765578?pwd=ZThFWU1TS2hSUTZIQ0Q4VldZNWtUdz09",
   //id 37
+  "Зубик Ніна Миколаївна": "https://us04web.zoom.us/j/8651028608?pwd=U3lDTWpOK0Y2Nk85eWt6b0hLM2ZDUT09",
+  //id 38
   "Прізвище Ім'я По-Батькові": "https://us05web.zoom.us/j/4791491048?pwd=dHlTdTcrSkRwK3VTRFNHVzJxWCtuUT09",
 }
 
