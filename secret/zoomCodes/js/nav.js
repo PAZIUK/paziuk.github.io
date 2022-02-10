@@ -7,7 +7,9 @@ document.head.innerHTML += "<link href='https://unpkg.com/boxicons@2.0.9/css/box
 window.onload = ()=>{
   aDayOrNot();
   localStorage.setItem("linkNow",window.location.href);
-  document.head.querySelector("title").textContent += ` - ${localStorage.getItem("nameOfClass")}`
+  if(localStorage.getItem("nameOfClass")){
+    document.head.querySelector("title").textContent += ` - ${localStorage.getItem("nameOfClass")}`
+  }
 }
 function addBackBtn() {
   let div = document.createElement("div")
