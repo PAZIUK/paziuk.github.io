@@ -1,6 +1,7 @@
 "use strict"
 
 let aIG = 0;
+let whatTimeBlock = document.querySelector(".time")
 
 document.head.innerHTML += "<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>"
 
@@ -46,6 +47,21 @@ daysBtns.forEach(item => {
     localStorage.setItem("linkNow",window.location.href);
   })
 })
+function timeFormatter(date){
+  const daysNames = {"Monday":"ПОНЕДІЛОК","Tuesday":"ВІВТОРОК","Wednesday":"СЕРЕДА","Thursday":"ЧЕТВЕР","Friday":"П'ЯТНИЦЯ'","Saturday":"СУБОТА","Sunday":"НЕДІЛЯ"}
+  const nowTime = date.toLocaleString('en-UK', {timeZone: 'Europe/Kiev', dateStyle: 'full', timeStyle: 'full'})
+  let enDay = nowTime.split(",")[0]
+  if(Object.keys(daysNames).includes(enDay)){
+    whatTimeBlock.querySelector(".whatDay").textContent = Object.values(daysNames)[Object.keys(daysNames).indexOf(enDay)]
+  }
+  whatTimeBlock.querySelector(".whatTime p.h").textContent = nowTime.split(",")[1].split(" ")[5].split(":")[0]
+  whatTimeBlock.querySelector(".whatTime p.m").textContent = nowTime.split(",")[1].split(" ")[5].split(":")[1]
+  whatTimeBlock.querySelector(".whatTime p.s").textContent = nowTime.split(",")[1].split(" ")[5].split(":")[2]
+}
+setInterval(()=>{
+  const date = new Date();
+  timeFormatter(date)
+},1000)
 
 function showDay(day) {
   document.querySelector(".days").classList.remove("active")
@@ -90,6 +106,7 @@ function aDayOrNot(){
     document.querySelector(".background").classList.remove("active")
     let whatADay = link[1];
     showDay(whatADay);
+    whatTimeBlock.classList.add("noactive")
   } else {
     document.querySelector("header.classInfo").classList.remove("active");
     document.querySelector(".background").classList.add("active")
@@ -108,6 +125,13 @@ function aDayOrNot(){
         })
       })
       , 100)
+    document.body.style.overflowY = "hidden"
+    setTimeout(()=>{
+      whatTimeBlock.classList.add("active")
+      setTimeout(()=>{
+        document.body.style.overflowY = "unset"
+      },1000)
+    },1000)
   }
 }
 // let backPos = 9000;
