@@ -48,7 +48,7 @@ daysBtns.forEach(item => {
   })
 })
 function timeFormatter(date){
-  const daysNames = {"Monday":"ПОНЕДІЛОК","Tuesday":"ВІВТОРОК","Wednesday":"СЕРЕДА","Thursday":"ЧЕТВЕР","Friday":"П'ЯТНИЦЯ'","Saturday":"СУБОТА","Sunday":"НЕДІЛЯ"}
+  const daysNames = {"Monday":"ПОНЕДІЛОК","Tuesday":"ВІВТОРОК","Wednesday":"СЕРЕДА","Thursday":"ЧЕТВЕР","Friday":"П'ЯТНИЦЯ","Saturday":"СУБОТА","Sunday":"НЕДІЛЯ"}
   const nowTime = date.toLocaleString('en-UK', {timeZone: 'Europe/Kiev', dateStyle: 'full', timeStyle: 'full'})
   let enDay = nowTime.split(",")[0]
   if(Object.keys(daysNames).includes(enDay)){
