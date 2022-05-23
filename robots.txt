@@ -1,6 +1,5 @@
 User-agent: *
 User-agent: Googlebot
-Disallow: /site/img/favicons/favicon-32x32.png
 Allow: /
 
 Sitemap: https://paziuk.github.io/sitemap.xml
