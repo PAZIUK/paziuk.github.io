@@ -111,7 +111,7 @@ if(technologies){
 				item.querySelector(".moreBlock").classList.add("active")
 				item.querySelector(".moreBlock").style.top = "3rem"
 				let startMarginFrom = technologies.length-(window.getComputedStyle(item.parentElement).getPropertyValue('grid-template-columns').split(" ").length)
-				console.log(window.getComputedStyle(item.parentElement).getPropertyValue('grid-template-columns').split(" "))
+				if(startMarginFrom==6){startMarginFrom=7}
 				if(+item.getAttribute("tech")>startMarginFrom){
 					for (let i = 0; i < technologies.length; i++) {
 						if(+technologies[i].getAttribute("tech")>startMarginFrom){
