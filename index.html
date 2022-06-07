@@ -1,214 +1,402 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Serhiy Paziuk</title>
-	<link rel="stylesheet" href="site/css/reset.css">
-	<link rel="apple-touch-icon" sizes="180x180" href="site/img/favicons/apple-touch-icon.png">	 
-	<link rel="shortcut icon" href="site/img/favicons/favicon-32x32.png" type="image/png">	 
-	<link rel="shortcut icon" href="site/img/favicons/favicon.ico" type="image/x-icon">	 
-	<link rel="icon" type="image/png" sizes="32x32" href="site/img/favicons/favicon-32x32.png">	 
-	<link rel="icon" type="image/png" sizes="16x16" href="site/img/favicons/favicon-16x16.png">	 
-	<link rel="manifest" href="site/img/favicons/site.webmanifest">	 
-	<link rel="mask-icon" href="site/img/favicons/safari-pinned-tab.svg" color="#00ffd7">	 
-	<meta name="msapplication-TileColor" content="#00ffd7">	 
-	<meta name="msapplication-TileImage" content="site/img/favicons/mstile-144x144.png">	 
-	<meta name="theme-color" content="#00ffd7">	
+<html lang="en">
+	<head>
 
-</head>
-<body>
-	<style>
-		@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800;900&Days+One:wght@400&display=swap');
-		body{
-		background-image: url(site/img/BACKGROUND.jpg);
-		background-size: cover;
-		min-height: 100vh;
-		font-family: 'Days One', sans-serif;
-		overflow-x: hidden;
-		display: flex;
-		align-items: center;
-		}
-		.wrapper{
-		max-width: 1920px;
-		margin: 0 auto;
-		}
-		section.hello {
-		width: 100vw;
-		display: flex;
-		}
-		section.hello .wrapper {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex: 1 1 auto;
-		flex-direction: column;
-		}
-		section.hello .wrapper .description {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		}
-		section.hello .wrapper .description .name {
-		margin-bottom: 3rem;
-		font-size: 2rem;
-		color: #171137;
-		font-family: 'Days One', sans-serif;
-		background-color: #fff;
-		font-weight: 900;
-		text-align: center;
-		padding: 1rem 1.5rem;
-		border-radius: 100px;
-		}
-		section.hello .wrapper .description .name span{
-		font-weight: bold;
-		color: red;
-		font-family: 'Days One', sans-serif;
-		}
-		section.hello .wrapper .description .shortText {
-		margin-bottom: 3rem;
-		font-family: 'Montserrat', sans-serif;
-		font-weight: 500;
-		color: white;
-		font-size: 2rem;
-		text-align: center;
-		width: 100%;
-		line-height: 1.5;
-		}
-		section.hello .wrapper .description a{
-		text-decoration: none;
-		display: flex;
-		position: relative;
-		padding: 1rem 3rem;
-		background-color: white;
-		color: #171137;
-		border: none;
-		cursor: pointer;
-		font-weight: 900;
-		font-size: 2rem;
-		font-family: 'Montserrat', sans-serif;
-		flex: 0 0;
-		border-radius: 20px;
-		text-align: center;
-		color: #171137;
-		transition: all .7s ease;
-		-webkit-box-shadow: 17px 16px 25px 6px rgba(49, 167, 219, 0.2);
-		-moz-box-shadow: 17px 16px 25px 6px rgba(49, 167, 219, 0.2);
-		box-shadow: 17px 16px 25px 6px rgba(49, 167, 219, 0.2);
-		margin: 0 .3rem;
-		
-		}
-		section.hello .wrapper .description a:hover{
-		color: #fff;
-		background-color: #171137;
-		-webkit-box-shadow: 17px 16px 25px 39px rgba(49, 167, 219, 0.2);
-		-moz-box-shadow: 17px 16px 25px 39px rgba(49, 167, 219, 0.2);
-		box-shadow: 17px 16px 25px 39px rgba(49, 167, 219, 0.2);
-		padding: 1rem 4rem;
-		}
-		section.hello .wrapper .photo{
-		background-color: white;
-		height: 20rem;
-		width: 20rem;
-		border-radius: 69% 31% 70% 30% / 50% 53% 47% 50%;
-		margin-bottom: 2rem;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		-webkit-animation: 4s linear 0s infinite alternate moveBack;
-			-moz-animation: 4s linear 0s infinite alternate moveBack;
-				-o-animation: 4s linear 0s infinite alternate moveBack;
-					animation: 4s linear 0s infinite alternate moveBack;
-		}
-		@-webkit-keyframes moveBack{ 
-		0% { border-radius: 69% 31% 70% 30% / 50% 53% 47% 50%; } 
-		25% { border-radius: 75% 25% 56% 44% / 77% 63% 37% 23%  } 
-		50% { border-radius: 73% 27% 65% 35% / 30% 63% 37% 70%   }
-		100% { border-radius: 32% 68% 56% 44% / 77% 63% 37% 23%  } 
-		}
-		@-moz-keyframes moveBack {
-		0% { border-radius: 69% 31% 70% 30% / 50% 53% 47% 50%; } 
-		25% { border-radius: 75% 25% 56% 44% / 77% 63% 37% 23%  } 
-		50% { border-radius: 73% 27% 65% 35% / 30% 63% 37% 70%   }
-		100% { border-radius: 32% 68% 56% 44% / 77% 63% 37% 23%  }  
-		}
-		@-o-keyframes moveBack { 
-		0% { border-radius: 69% 31% 70% 30% / 50% 53% 47% 50%; } 
-		25% { border-radius: 75% 25% 56% 44% / 77% 63% 37% 23%  } 
-		50% { border-radius: 73% 27% 65% 35% / 30% 63% 37% 70%   }
-		100% { border-radius: 32% 68% 56% 44% / 77% 63% 37% 23%  } 
-		}
-		@keyframes moveBack { 
-		0% { border-radius: 69% 31% 70% 30% / 50% 53% 47% 50%; } 
-		25% { border-radius: 75% 25% 56% 44% / 77% 63% 37% 23%  } 
-		50% { border-radius: 73% 27% 65% 35% / 30% 63% 37% 70%   }
-		100% { border-radius: 32% 68% 56% 44% / 77% 63% 37% 23%  } 
-		}
-		br.mobile{
-		display: none;
-		}
-		@media(max-width:375px){
-		section.hello .wrapper .description .shortText{
-			font-size: 1.4rem;
-		}
-		section.hello .wrapper .description .name{
-			font-size: 1.5rem;
-		}
-		section.hello .wrapper .description a{
-			font-size: 1.2rem;
-			padding: 1rem 1.8rem;
-		}
-		}
-		@media(min-width:375px) and (max-width:480px){
-		section.hello .wrapper .description .shortText{
-			font-size: 1.6rem;
-		}
-		section.hello .wrapper .description .name{
-			font-size: 2rem;
-		}
-		section.hello .wrapper .description a{
-			font-size: 1.5rem;
-			padding: 1.3rem 2rem;
-		}
-		}
-		@media(max-width:480px){
-		section.hello .wrapper{
-			justify-content: unset;
-		}
-		section.hello .wrapper .photo{
-			height: 15rem;
-			width: 15rem;
-			margin-top: 2rem;
-		}
-		section.hello .wrapper .photo figure img{
-			width: 20rem;
-		}
-		section.hello .wrapper .description .shortText{
-			margin-bottom: 2rem;
-		}
-		section.hello .wrapper .description .name{
-			margin: 2rem 0;
-		}
-		section.hello .wrapper .description a{
-			margin-bottom: 2rem;
-		}
-		}
-		@media(max-width:600px){
-		br.mobile{
-			display: unset;
-		}
-		}
-	</style>
-	<section class="hello">
-		<div class="wrapper">
-			<div class="photo"><figure><img src="site/img/logo.webp" alt=""></figure></div>
-			<div class="description">
-				<div class="name"><span>&lt;</span> Serhiy Paziuk <span>/&gt;</span></div>
-				<p class="shortText">Full Stack Web & Python <br class="mobile">Developer</p>
-				<a href="site/index.html">DISCOVER PORTFOLIO</a>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Serhiy Paziuk</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/style.css">
+
+	    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">	 
+	  	<link rel="shortcut icon" href="img/favicons/favicon-32x32.png" type="image/png">	 
+	  	<link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">	 
+	  	<link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">	 
+	  	<link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">	 
+	  	<link rel="manifest" href="img/favicons/site.webmanifest">	 
+	  	<link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#00ffd7">	 
+	  	<meta name="msapplication-TileColor" content="#00ffd7">	 
+	  	<meta name="msapplication-TileImage" content="img/favicons/mstile-144x144.png">	 
+	  	<meta name="theme-color" content="#00ffd7">	
+
+	  	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+	</head>
+	<body>
+		<div class="navbarCircle"></div>
+		<nav class="mainNav">
+			<ul class="navbar">
+				<li><a link="index.html">HOME</a></li>
+				<li><a link="index.html#about">ABOUT</a></li>
+				<li><a link="views/projects.html">PROJECTS</a></li>
+				<li><a link="index.html#skills">SKILLS</a></li>
+			</ul>
+		</nav>
+		<button class="toggle"><i class='bx bx-menu'></i></button>
+		<div class="mainContainer">
+			<div class="mainContainerBlock">
+				<header>
+					<nav>
+						<ul class="media">
+							<li><a href="https://www.facebook.com/paziukSerhiy" target="_blank"><img src="img/media/facebook.png" alt="Facebook"></a></li>
+							<li><a href="https://www.linkedin.com/in/paziuk" target="_blank"><img src="img/media/linkedin.png" alt="Linkedin"></a></li>
+							<li><a href="https://github.com/PAZIUK" target="_blank"><img src="img/media/github.png" alt="GitHub"></a></li>
+						</ul>
+					</nav>
+				</header>
+				<main>
+					<section class="hello">
+						<div class="container">
+							<div class="info">
+								<img src="img/logo.jpg" alt="Logo">
+								<h1 class="name">Serhiy Paziuk</h1>
+								<h2 class="job">Personal Full-Stack Web Developer Website</h2>	
+							</div>				
+						</div>
+					</section>
+					<section class="about" id="about">
+						<div class="container">
+							<h2 class="title">- About Me -</h2>
+							<div class="about__block">
+								<div class="photo">
+									<img src="img/assets/meshowtoright.jpg" alt="Me">
+								</div>
+								<div class="info">
+									<h3>My Intro</h3>
+									<p class="desc">
+										Hi there, my name is Serhiy Paziuk. I can create an any website for you. Why? Because I am Full Stack Web Developer. 
+										<br>
+										<br>
+										Full Stack Web Developer is a versatile programmer who can develop a functional product from scratch. Such a specialist understands both Back-end component (software and hardware part of the service) and in Front-end (user interface). 
+										<br>
+										<br>
+										If you need a site you should to scroll down to see my projects (portfolio), and if you like my works you can contact me and we will discuss the details of our cooperation.
+									</p>
+									<ul class="contacts">
+										<li>
+											<img src="img/assets/user.png" alt="User">
+											<div class="key">Name</div>
+											:
+											<div class="value">Serhiy Paziuk</div>
+										</li>
+										<!-- <li>
+											<img src="img/assets/phone.png" alt="Phone">
+											<div class="key">Phone</div>
+											:
+											<a class="value" href="tel:+380950218131">+380 95 021 81 31</a>
+										</li> -->
+										<li>
+											<img src="img/assets/gmail.png" alt="Gmail">
+											<div class="key">Gmail</div>
+											:
+											<a class="value" href="mailto:paz.serhiy@gmail.com" target="_blank">paz.serhiy@gmail.com</a>
+										</li>
+										<li>
+											<img src="img/media/facebook.png" alt="Facebook">
+											<div class="key">Facebook</div>
+											:
+											<a class="value" href="https://www.facebook.com/paziukSerhiy" target="_blank">View Profile</a>
+										</li>
+										<li>
+											<img src="img/assets/location.png" alt="User">
+											<div class="key">Country</div>
+											:
+											<div class="value">Ukraine</div>
+										</li>
+									</ul>
+									<!-- <h3>My Interests</h3>
+									<ul class="interests">
+										<li>
+											<img src="img/assets/programming.png" alt="Programming">
+											<div class="name">Programming</div>
+										</li>
+										<li>
+											<img src="img/assets/english.png" alt="English">
+											<div class="name">Languages</div>
+											<img src="img/assets/spanish.png" alt="Spanish">
+										</li>
+										<li>
+											<img src="img/assets/music.png" alt="Music">
+											<div class="name">Music</div>
+										</li>
+										<li>
+											<img src="img/assets/workout.png" alt="Workout">
+											<div class="name">Workout</div>
+										</li>
+									</ul> -->
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="projects">
+						<div class="container">
+							<h2 class="title">- My Portfolio -</h2>
+							<div class="projectsBlock">
+								<div class="project">
+									<img class="photo" src="img/project/top-masonry.png" alt="Project">
+									<div class="hoverBlock">
+										<a href="https://top-masonry.com" target="_blank">View Project</a>
+									</div>
+								</div>
+								<div class="project">
+									<img class="photo" src="img/project/mypizza.png" alt="Project">
+									<div class="hoverBlock">
+										<a href="projects/sites/mypizza/index.html" target="_blank">View Project</a>
+									</div>
+								</div>
+								<div class="project">
+									<img class="photo" src="img/project/juliemeo.png" alt="Project">
+									<div class="hoverBlock">
+										<a href="projects/sites/juliemeo/index.html" target="_blank">View Project</a>
+									</div>
+								</div>
+								<div class="project">
+									<img class="photo" src="img/project/dilemaclothes.png" alt="Project">
+									<div class="hoverBlock">
+										<a href="projects/sites/dilemaclothes/index.html" target="_blank">View Project</a>
+									</div>
+								</div>
+								<div class="project">
+									<img class="photo" src="img/project/iamhealth.png" alt="Project">
+									<div class="hoverBlock">
+										<a href="projects/sites/iamhealth/index.html" target="_blank">View Project</a>
+									</div>
+								</div>
+								<div class="project">
+									<img class="photo" src="img/project/helloblogger.png" alt="Project">
+									<div class="hoverBlock">
+										<!-- <div class="heart">
+											<img src="img/assets/heart.png" class="active" alt="Heart">
+											<img src="img/assets/ukraineHeart.png" alt="Heart">
+										</div> -->
+										<a href="projects/sites/helloblogger/index.html" target="_blank">View Project</a>
+									</div>
+								</div>
+							</div>
+							<a href="views/projects.html">See All Projects</a>
+						</div>	
+					</section>
+					<section class="abilities" id="skills">
+						<div class="container">
+							<h2 class="title">- My Skills -</h2>
+							<div class="skillsBlock">
+								<div class="skill">
+									<div class="head">
+										<div class="name">Adaptability of the Websites</div>
+										<div class="percent">100</div>
+									</div>
+									<div class="body">
+										<div class="line"></div>
+									</div>
+								</div>
+								<div class="skill">
+									<div class="head">
+										<div class="name">Web architecture</div>
+										<div class="percent">95</div>
+									</div>
+									<div class="body">
+										<div class="line"></div>
+									</div>
+								</div>
+								<div class="skill">
+									<div class="head">
+										<div class="name">Problem Solving</div>
+										<div class="percent">90</div>
+									</div>
+									<div class="body">
+										<div class="line"></div>
+									</div>
+								</div>
+								<div class="skill">
+									<div class="head">
+										<div class="name">Organization and prioritization</div>
+										<div class="percent">85</div>
+									</div>
+									<div class="body">
+										<div class="line"></div>
+									</div>
+								</div>
+								<div class="skill">
+									<div class="head">
+										<div class="name">Communication</div>
+										<div class="percent">80</div>
+									</div>
+									<div class="body">
+										<div class="line"></div>
+									</div>
+								</div>
+								<div class="skill">
+									<div class="head">
+										<div class="name">Attention to detail</div>
+										<div class="percent">75</div>
+									</div>
+									<div class="body">
+										<div class="line"></div>
+									</div>
+								</div>
+								<div class="skill">
+									<div class="head">
+										<div class="name">Database Management Systems</div>
+										<div class="percent">70</div>
+									</div>
+									<div class="body">
+										<div class="line"></div>
+									</div>
+								</div>
+								<div class="skill">
+									<div class="head">
+										<div class="name">Search Engine Optimization</div>
+										<div class="percent">70</div>
+									</div>
+									<div class="body">
+										<div class="line"></div>
+									</div>
+								</div>
+								<div class="skill">
+									<div class="head">
+										<div class="name">Design</div>
+										<div class="percent">60</div>
+									</div>
+									<div class="body">
+										<div class="line"></div>
+									</div>
+								</div>
+							</div>
+							<h3 class="secondTitle title">- Technologies -</h3>
+							<div class="technologies">
+								<div class="technology" tech="1">
+									<div class="head">
+										<img src="img/hardSkillsImages/HTML5.png" alt="Technology">
+										<img src="img/hardSkillsImages/CSS3.png" alt="Technology">
+									</div>
+									<div class="body">
+										<div class="bodyBlock">
+											<button style="background: rgb(253,152,44);background: linear-gradient(90deg, rgba(253,152,44,1) 0%, rgba(250,80,46,1) 25%, rgba(33,150,243,1) 75%);">More Info</button>
+											<div class="moreBlock">
+												<p>HTML5 (the Hypertext Markup Language) and CSS3 (Cascading Style Sheets) are two of the core technologies for building Web pages. HTML provides the structure of the page, CSS the (visual and aural) layout, for a variety of devices. Along with graphics and scripting, HTML and CSS are the basis of building Web pages and Web Applications.</p>
+											</div>
+										</div>											
+									</div>
+								</div>
+								<div class="technology" tech="2">
+									<div class="head">
+										<img src="img/hardSkillsImages/bootstrap.svg" alt="Technology">
+									</div>
+									<div class="body">
+										<div class="bodyBlock">
+											<button style="background: #8e13fe;">More Info</button>
+											<div class="moreBlock">
+												<p>Bootstrap is a potent frontend framework used to create modern websites and web apps. It's open-source and free to use, yet features numerous HTML and CSS templates for UI interface elements such as buttons and forms. Bootstrap also supports JavaScript extensions.</p>
+											</div>
+										</div>											
+									</div>
+								</div>
+								<div class="technology" tech="3">
+									<div class="head">
+										<img src="img/hardSkillsImages/JS.png" alt="Technology">
+									</div>
+									<div class="body">
+										<div class="bodyBlock">
+											<button style="background:#ffda3e;">More Info</button>
+											<div class="moreBlock">
+												<p>JavaScript is a scripting language that enables you to create dynamically updating content, control multimedia, animate images, and pretty much everything else.</p>
+											</div>
+										</div>											
+									</div>
+								</div>
+								<div class="technology" tech="4">
+									<div class="head">
+										<img class="jquery" src="img/hardSkillsImages/JQuery.png" alt="Technology">
+									</div>
+									<div class="body">
+										<div class="bodyBlock">
+											<button style="background: #193556;">More Info</button>
+											<div class="moreBlock">
+												<p>jQuery is the most popular library on the web today. It's a library of JavaScript functions that make it easy for webpage developers to do common tasks like manipulating the webpage, responding to user events, getting data from their servers, building effects and animations, and much more.</p>
+											</div>
+										</div>											
+									</div>
+								</div>
+								<!-- <div class="technology">
+									<div class="head">
+										<img class="react" src="img/hardSkillsImages/React.png" alt="Technology">
+									</div>
+									<div class="body">
+										<div class="bodyBlock">
+											<button style="background: #5adafd;">More Info</button>
+											<div class="moreBlock">
+												<p>ReactJS is an open-source JavaScript library that is used for building user interfaces specifically for single-page applications. It's used for handling the view layer for web and mobile apps. React also allows us to create reusable UI components.</p>
+											</div>
+										</div>											
+									</div>
+								</div> -->
+								<div class="technology" tech="5">
+									<div class="head">
+										<img class="git" src="img/hardSkillsImages/GIT.png" alt="Technology">
+									</div>
+									<div class="body">
+										<div class="bodyBlock">
+											<button style="background: #de4c36;">More Info</button>
+											<div class="moreBlock">
+												<p>Git is a version control tool (software) to track the changes in the source code.</p>
+											</div>
+										</div>											
+									</div>
+								</div>
+								<div class="technology" tech="6">
+									<div class="head">
+										<img class="php" src="img/hardSkillsImages/PHP.png" alt="Technology">
+									</div>
+									<div class="body">
+										<div class="bodyBlock">
+											<button style="background:#617cbe;">More Info</button>
+											<div class="moreBlock">
+												<p>PHP is an open-source server-side scripting language that many devs use for web development. It is also a general-purpose language that you can use to make lots of projects, including Graphical User Interfaces.</p>
+											</div>
+										</div>											
+									</div>
+								</div>
+								<div class="technology" tech="7">
+									<div class="head">
+										<img class="laravel" src="img/hardSkillsImages/Laravel.png" alt="Technology">
+									</div>
+									<div class="body">
+										<div class="bodyBlock">
+											<button style="background:#fe2d20;">More Info</button>
+											<div class="moreBlock">
+												<p>Laravel is a back-end PHP-based and open-source framework used for building a wide range of custom web applications. It's an entirely server-side framework that manages data with the help of Model-View-Controller design which breaks an application back-end architecture into logical parts.</p>
+											</div>
+										</div>											
+									</div>
+								</div>
+								<div class="technology" tech="8">
+									<div class="head">
+										<img class="sql" src="img/hardSkillsImages/SQL.png" alt="Technology">
+									</div>
+									<div class="body">
+										<div class="bodyBlock">
+											<button style="background: rgb(242,145,17);background: linear-gradient(90deg, rgba(0,147,180,1) 25%, rgba(242,145,17,1) 75%);">More Info</button>
+											<div class="moreBlock">
+												<p>MySQL is a relational database management system that is based on structured query language (SQL). SQL is a standard language for storing, manipulating and retrieving data in databases.</p>
+											</div>
+										</div>											
+									</div>
+								</div>
+							</div>
+						</div>	
+					</section>
+				</main>
+				<footer>
+					<div class="container">
+						<p>Copyright © 2020-2022. <br class="mobile"> Serhiy Paziuk. All Rights Reserved.</p>
+					</div>
+				</footer>
 			</div>
 		</div>
-	</section>
-</body>
+
+		<script src="js/script.js"></script>
+
+	</body>
 </html>
