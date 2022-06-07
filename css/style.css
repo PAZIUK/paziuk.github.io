@@ -150,7 +150,7 @@ header nav ul.media li a img{
 .toggle{
   position: absolute;
   right: 2rem;
-  top: 1rem;
+  top: 1.2rem;
   z-index: 11;
   background: none;
   border: none;
@@ -162,12 +162,11 @@ header nav ul.media li a img{
   padding: 0;
 }
 .toggle,
-.toggle i{
+.toggle .menuBtn{
   transition: all .5s ease .1s;
 }
-.toggle.active i{
+.toggle.active .menuBtn{
   transform: rotate(90deg);
-  font-size: 3rem;
 }
 
 section.hello{
@@ -620,7 +619,7 @@ footer .container p br.mobile{
   nav.mainNav{
     left: 0;
   }
-  .toggle.active i{
+  .toggle.active .menuBtn{
     font-size: 2rem;
   }
   section.about .container .about__block .photo img{
@@ -707,7 +706,7 @@ footer .container p br.mobile{
     padding: .5rem 2rem;
   }
   .toggle{
-    top: .5rem;
+    top: .7rem;
   }
   section.about .container .about__block .info{
     padding: 1rem;
@@ -774,7 +773,9 @@ footer .container p br.mobile{
   }
   .toggle.active{
     margin: 5rem;
-    font-size: 5rem;
+  }
+  .toggle.active .menuBtn{
+    width: 5rem;
   }
 }
 @media (max-width:960px) {
