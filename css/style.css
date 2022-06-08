@@ -392,6 +392,9 @@ section.projects .container .projectsBlock .project{
   height: 10rem;
   overflow: hidden;
   display: flex;
+  -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6);
+  -moz-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6);
+  box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6);
 }
 section.projects .container .projectsBlock .project .hoverBlock{
   position: absolute;
