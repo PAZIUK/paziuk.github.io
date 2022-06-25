@@ -20,6 +20,7 @@ if(loading){
             i--;
             loading.style.opacity = i/100
             if(i==0){
+                loading.style.display = "none"
                 clearInterval(int);
             }
         },5)
