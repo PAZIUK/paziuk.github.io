@@ -24,5 +24,5 @@ if(loading){
                 clearInterval(int);
             }
         },5)
-    },2000)
+    },3000)
 }
