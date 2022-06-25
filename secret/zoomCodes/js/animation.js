@@ -21,7 +21,9 @@ if(loading){
         let int = setInterval(()=>{
             i--;
             loading.style.opacity = i/100
-            if(i==0){
+            if(i==10){
+                document.querySelector(".background").classList.add("active")
+            } else if(i==0){
                 loading.style.display = "none"
                 clearInterval(int);
             }
