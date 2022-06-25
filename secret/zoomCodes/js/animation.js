@@ -2,14 +2,16 @@
 const loadingLines = document.querySelectorAll(".loading .lines .line")
 if(loadingLines){
     let i = 0
-    let int = setInterval(()=>{
+    loading()
+    let int = setInterval(loading,250)
+    function loading(){
         if(loadingLines[i]){
             loadingLines[i].classList.add("active")
             i++
         } else {
             clearInterval(int)
         }
-    },250)
+    }
 }
 
 const loading = document.querySelector("section.hello")
